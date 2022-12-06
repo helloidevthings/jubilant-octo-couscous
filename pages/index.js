@@ -4,8 +4,8 @@ import styles from '../styles/Home.module.css';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: white;
-  color: pink;
+  color: white;
+  background: blue;
 `;
 
 export default function Home() {
