@@ -11,9 +11,9 @@ a {
   text-decoration: none;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -27,7 +27,7 @@ a {
 
 /* Global Reset -- Separate from Global Styles, scroll down for Global Styles :58 */
 /* These styles standardize all HTML elements and making it easier to style */
-* {
+/* * {
   margin: 0;
 }
 
@@ -35,7 +35,7 @@ a {
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} */
 
 html,
 body {
