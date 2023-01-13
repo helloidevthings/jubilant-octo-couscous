@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -20,22 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ProjectWrapper>
-          <figure>
-            <img
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1670295127/Portfolio_Images/buttercups3_de6mky.png"
-              alt="Buttercups"
-            />
-            <figcaption>This information about this thing</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1670295149/Portfolio_Images/Screen_Shot_2018-12-27_at_8.38.31_PM_dgf8lv.png"
-              alt="Buttercups"
-            />
-            <figcaption>This information about this thing</figcaption>
-          </figure>
-        </ProjectWrapper>
+        <ProjectWrapper></ProjectWrapper>
       </main>
       <Button>Dark</Button>
       <Button>Light</Button>

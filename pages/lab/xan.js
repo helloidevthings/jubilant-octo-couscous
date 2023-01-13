@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState, Fragment } from 'react';
+import Image from 'next/image';
 
 const CharacterSheet = styled.section`
   font-family: 'Fira Sans', sans-serif;
@@ -544,7 +545,7 @@ const Xan = () => {
     <CharacterSheet>
       <CharacterName>
         <figure>
-          <img
+          <Image
             src="https://64.media.tumblr.com/24def3722a5881aee1557c5d8a4e0dbe/402420ff79db394a-9a/s1280x1920/77dd9a8533148d37d72ec1642d527709410aac65.jpg"
             alt=""
           />
