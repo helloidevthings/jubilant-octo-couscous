@@ -16,28 +16,7 @@ const FirstSection = styled.section`
   margin: 1rem 0;
 `;
 
-const ScrollProgress = styled(motion.div)`
-  height: 1rem;
-  width: 10px;
-  max-width: 100vw;
-  background: pink;
-  position: sticky;
-  top: 0;
-  left: 0;
-  transition: all 0.3s ease-in-out;
-  transform-origin: top left;
-`;
-
 const Test = () => {
-  // Framer Scroll Stuff
-  const { scrollY } = useScroll();
-
-  useEffect(() => {
-    return scrollY.onChange((latest) => {
-      console.log('Page scroll: ', latest);
-    });
-  }, []);
-
   // Framer Use In View Stuff
   const container = useRef(null);
   const ref = useRef(null);
@@ -52,7 +31,6 @@ const Test = () => {
 
   return (
     <MainWrapper>
-      <ScrollProgress style={{ scaleX: scrollY }}></ScrollProgress>
       <header>
         <h1>Test Page</h1>
       </header>
