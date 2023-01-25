@@ -2,10 +2,19 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const LunchOptions = [
-  'Potschkee',
+  // 'Potschkee',
+  // "Clancy's",
+  // 'Tomatohead',
+  // 'Marble City Market',
+  'Kefi',
   "Clancy's",
+  'FinTwoo',
+  "Sweet P's",
+  'Kaizen',
+  'Jig & Reel',
+  "Yassin's",
+  'Soccer Taco',
   'Tomatohead',
-  'Marble City Market',
 ];
 
 const MainWrapper = styled.main`
