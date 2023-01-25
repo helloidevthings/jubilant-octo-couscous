@@ -15,6 +15,7 @@ const LunchOptions = [
   "Yassin's",
   'Soccer Taco',
   'Tomatohead',
+  'Babalu',
 ];
 
 const MainWrapper = styled.main`
