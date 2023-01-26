@@ -39,8 +39,9 @@ const MainWrapper = styled.main`
   --itemGradient: linear-gradient(45deg, var(--blue), #6c80e2);
   --selectedGradient: linear-gradient(45deg, #e634b0, var(--pink));
 
-  width: 100%;
-  height: 100vh;
+  /* width: 100%; */
+  max-width: 100vw;
+  height: 100%;
   padding: 1rem;
   background: var(--gradient);
   background-size: cover;
@@ -73,6 +74,13 @@ const LunchList = styled.ul`
   box-shadow: inset 2px 2px 10px 0px rgb(196 168 233 / 86%);
 `;
 
+const LunchMagic = styled.div`
+  /* position: fixed; */
+  bottom: 0;
+  background: var(--gradient);
+  padding: 1rem;
+`;
+
 const LunchResults = styled.div`
   padding: 1rem;
   color: var(--pink);
@@ -91,6 +99,7 @@ const LunchResults = styled.div`
     margin: 1rem 0;
     border: 2px solid var(--pink);
   }
+  //
 `;
 
 const LunchListItem = styled.li`
@@ -150,7 +159,7 @@ const Lunch = () => {
 
   return (
     <MainWrapper>
-      <h1>Lunch</h1>
+      <h1>What's for Lunch?</h1>
       <LunchWrapper>
         <LunchList>
           {LunchOptions.map((option, i) => {
@@ -174,12 +183,13 @@ const Lunch = () => {
               return <li key={i}>{option === null ? null : option}</li>;
             })}
           </ol>
-          <hr />
-          <ClearButton onClick={clearSelect}>Clear List</ClearButton>
-          <ChooseButton onClick={handleLunch}>Choose!</ChooseButton>
-          <h2>{option === null ? 'Lunch!' : option}</h2>
         </LunchResults>
       </LunchWrapper>
+      <LunchMagic>
+        <ClearButton onClick={clearSelect}>Clear List</ClearButton>
+        <ChooseButton onClick={handleLunch}>Choose!</ChooseButton>
+        <h2>{option === null ? 'Lunch!' : option}</h2>
+      </LunchMagic>
     </MainWrapper>
   );
 };
