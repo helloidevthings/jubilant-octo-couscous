@@ -1,27 +1,78 @@
 import styled from 'styled-components';
 import { useInView, motion, useScroll } from 'framer-motion';
-import { useRef, useEffect } from 'react';
-import Circle from '/components/Circle';
+import { useRef, useEffect, useState } from 'react';
 
 const MainWrapper = styled.main`
   width: 100vw;
   margin: 3rem auto;
   position: relative;
+`;
 
-  .bg {
-    stroke: pink;
-    opacity: 0.5;
-  }
+const OldSchoolCircle = styled.div`
+  display: grid;
+  place-content: center;
+  width: 300px;
+  height: 300px;
+  justify-items: center;
+  align-items: center;
+  position: relative;
 
-  .indicator {
-    stroke: pink;
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(
+      purple calc(${(props) => props.value} * 1%),
+      #0000 0
+    );
+    mask: radial-gradient(
+      farthest-side,
+      #0000 calc(99% - 2em),
+      #000 calc(100% - 2em)
+    );
+
+    border-radius: 50%;
+    transition: all 2s ease-in-out;
   }
 `;
 
-const SvgCircle = styled(Circle)`
+const CircleGraph = styled.div`
+  grid-column: 1;
+  grid-row: 1;
+  width: 150px;
+  height: 150px;
+  /* background: radial-gradient(
+    50px circle at 50% 50%,
+    #fff 0%,
+    #fff 50%,
+    transparent 50%
+  ); */
+  /* background: conic-gradient(purple calc(50 * 1%), #0000 0); */
+`;
+
+const SvgCircle2 = styled.svg`
+  stroke: pink;
+  stroke-width: 5px;
+
   circle {
-    stroke: blue;
+    stroke: pink;
   }
+  /* circle {
+    stroke-dashoffset: 10;
+    stroke-dasharray: 1000;
+    animation: draw 3s ease-in-out infinite alternate;
+    stroke: pink;
+  }
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1000;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  } */
 `;
 
 const FirstSection = styled.section`
@@ -45,6 +96,17 @@ const Test = () => {
   useEffect(() => {
     console.log('Element is in view: ', isInView);
   }, [isInView]);
+
+  // Calculator Stuff
+  const [value, setValue] = useState(2);
+  const [circleValue, setCircleValue] = useState(0);
+  const [moneyValue, setMoneyValue] = useState(0);
+
+  const handleValue = (e) => {
+    setValue(e.target.value);
+    setCircleValue(e.target.value * 100);
+    setMoneyValue(e.target.value * 17);
+  };
 
   return (
     <MainWrapper>
@@ -74,18 +136,50 @@ const Test = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </FirstSection>
-      <SvgCircle stroke="pink" />
-      <svg id="progress" width="75" height="75" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
-        <motion.circle
-          cx="50"
-          cy="50"
-          r="30"
-          pathLength="1"
-          className="indicator"
-          style={{ pathLength: scrollYProgress }}
+      <FirstSection>
+        <h2
+          ref={ref}
+          style={{
+            transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+        >
+          First Section
+        </h2>
+        <p
+          ref={ref}
+          style={{
+            transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </FirstSection>
+
+      <div ref={ref}>
+        <OldSchoolCircle value={value}>
+          ${moneyValue}
+          <CircleGraph></CircleGraph>
+          <CircleGraph></CircleGraph>
+          <CircleGraph></CircleGraph>
+        </OldSchoolCircle>
+        <input
+          type="range"
+          id="volume"
+          name="volume"
+          min="2"
+          max="30"
+          initialValue="2"
+          onInput={handleValue}
+          onChange={handleValue}
         />
-      </svg>
+        <label htmlFor="volume">Thing: {value} per mo</label>
+      </div>
+
       <FirstSection>
         <h2
           ref={ref}
