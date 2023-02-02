@@ -8,71 +8,64 @@ const MainWrapper = styled.main`
   position: relative;
 `;
 
-const OldSchoolCircle = styled.div`
+const CircleGraph = styled.div`
   display: grid;
-  place-content: center;
-  width: 300px;
-  height: 300px;
-  justify-items: center;
   align-items: center;
-  position: relative;
+  justify-items: center;
+  font-size: 30px;
 
-  &:before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: conic-gradient(
-      purple calc(${(props) => props.value} * 1%),
-      #0000 0
-    );
-    mask: radial-gradient(
-      farthest-side,
-      #0000 calc(99% - 2em),
-      #000 calc(100% - 2em)
-    );
+  h3 {
+    font-size: 1em;
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+    position: relative;
+    margin: 0.8em auto;
+    width: max-content;
+    z-index: 10;
 
-    border-radius: 50%;
-    transition: all 2s ease-in-out;
+    &:before {
+      content: '$';
+      display: block;
+      font-size: 0.5em;
+      position: absolute;
+      top: 0.25em;
+      left: -0.7em;
+    }
   }
 `;
 
-const CircleGraph = styled.div`
+const OldSchoolCircle = styled.div`
   grid-column: 1;
   grid-row: 1;
-  width: 150px;
-  height: 150px;
-  /* background: radial-gradient(
-    50px circle at 50% 50%,
-    #fff 0%,
-    #fff 50%,
-    transparent 50%
-  ); */
-  /* background: conic-gradient(purple calc(50 * 1%), #0000 0); */
-`;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  background: pink;
+  border-radius: 50%;
+  overflow: hidden;
 
-const SvgCircle2 = styled.svg`
-  stroke: pink;
-  stroke-width: 5px;
+  mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - 1em),
+    #000 calc(100% - 1em)
+  );
 
-  circle {
-    stroke: pink;
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: conic-gradient(
+      purple calc(${(props) => props.circleValue} * 1%),
+      #0000 0
+    );
+    transform-origin: center center;
+    transform: rotate(${(props) => props.circleValue - 100}deg);
+    transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    z-index: -1;
   }
-  /* circle {
-    stroke-dashoffset: 10;
-    stroke-dasharray: 1000;
-    animation: draw 3s ease-in-out infinite alternate;
-    stroke: pink;
-  }
-
-  @keyframes draw {
-    from {
-      stroke-dashoffset: 1000;
-    }
-
-    to {
-      stroke-dashoffset: 0;
-    }
-  } */
 `;
 
 const FirstSection = styled.section`
@@ -104,7 +97,7 @@ const Test = () => {
 
   const handleValue = (e) => {
     setValue(e.target.value);
-    setCircleValue(e.target.value * 100);
+    setCircleValue(e.target.value * 3.3339);
     setMoneyValue(e.target.value * 17);
   };
 
@@ -161,19 +154,18 @@ const Test = () => {
       </FirstSection>
 
       <div ref={ref}>
-        <OldSchoolCircle value={value}>
-          ${moneyValue}
-          <CircleGraph></CircleGraph>
-          <CircleGraph></CircleGraph>
-          <CircleGraph></CircleGraph>
-        </OldSchoolCircle>
+        <CircleGraph>
+          <h3>{moneyValue}</h3>
+          <OldSchoolCircle circleValue={circleValue}>
+            <div></div>
+          </OldSchoolCircle>
+        </CircleGraph>
         <input
           type="range"
           id="volume"
           name="volume"
           min="2"
           max="30"
-          initialValue="2"
           onInput={handleValue}
           onChange={handleValue}
         />
