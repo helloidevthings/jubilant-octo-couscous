@@ -9,6 +9,7 @@ const Tabs = styled.nav`
   width: max-content;
   border-radius: 4rem;
   padding: 0.3rem;
+  overflow: hidden;
 
   &:after {
     content: '';
