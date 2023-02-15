@@ -1,12 +1,14 @@
 import styled from 'styled-components';
-import { useInView, motion, useScroll } from 'framer-motion';
+import { useInView, useScroll } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import ButtonSlider from '../components/ButtonSlider';
 
 const MainWrapper = styled.main`
   width: 100vw;
-  margin: 3rem auto;
+  margin: 0 auto;
   position: relative;
   padding: 1rem;
+  background: var(--darkGradient90);
   --darkest: #0a0a0b;
   --light: #ffffff;
   --primary: #ff9246;
@@ -17,19 +19,26 @@ const MainWrapper = styled.main`
   --primaryGlowDark: 4px 3px 10px #5e2505;
   --darkGlow: 4px 3px 10px #000000;
   --tertiaryGlow: box-shadow: 4px 3px 10px #351C82;
+  --tertiaryGradient90: linear-gradient(90deg, #7332D3 0%, #4829A6 100%);
+
+  h1 {
+    font-family: 'Exo';
+    font-size: 2.5rem;
+    margin: 0; 
+  }
 
   input[type=text] {
-    background: var(--dark);
-    border: 1px solid var(--primary);
-    border-radius: 5px;
+    background: var(--darkGradient90);
+    border: 3px solid var(--dark);
+    border-radius: 10px;
     font-size: 1.8em;
-    padding: .1em .4em; 
+    padding: .3em .5em; 
   }
 
   input[type=range] {
   height: 30px;
   -webkit-appearance: none;
-  margin: -.7rem 0 10px;
+  margin: -15px 0 10px;
   width: 100%;
   background: transparent;
 }
@@ -38,33 +47,33 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 10px;
+  height: 5px;
   cursor: pointer;
-  box-shadow: 2px 2px 4px #FF9669;
-  background: #FFFFFF;
+  box-shadow: 2px 2px 7px #ab471c;
+  background: var(--primaryGradient90);
   border-radius: 11px;
   border: 0px solid #000000;
 }
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 2px 2px 4px #FF983D;
-  border: 0px solid #000000;
+  box-shadow: 2px 2px 4px #000;
   height: 22px;
   width: 22px;
+  border: 8px solid #fff;
   border-radius: 50px;
-  background: #FF6B21;
+  background: #ff9246;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #FFFFFF;
+  background: var(--primaryGradient90);
 }
 input[type=range]::-moz-range-track {
   width: 100%;
   height: 10px;
   cursor: pointer;
   box-shadow: 2px 2px 4px #FF9669;
-  background: #FFFFFF;
+  background: var(--primaryGradient90);
   border-radius: 11px;
   border: 0px solid #000000;
 }
@@ -81,19 +90,18 @@ input[type=range]::-ms-track {
   width: 100%;
   height: 10px;
   cursor: pointer;
-  animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-  background: #FFFFFF;
+  background: var(--primaryGradient90);
   border: 0px solid #000000;
   border-radius: 22px;
   box-shadow: 2px 2px 4px #FF9669;
 }
 input[type=range]::-ms-fill-upper {
-  background: #FFFFFF;
+  background: var(--primaryGradient90);
   border: 0px solid #000000;
   border-radius: 22px;
   box-shadow: 2px 2px 4px #FF9669;
@@ -109,17 +117,19 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #FFFFFF;
+  background: var(--primaryGradient90);
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #FFFFFF;
+  background: var(--primaryGradient90);
 }
 
 `;
 
 const CalcWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem;
@@ -175,7 +185,7 @@ const OldSchoolCircle = styled.div`
   width: 6em;
   height: 6em;
   position: relative;
-  background: pink;
+  background: #111;
   border-radius: 50%;
   overflow: hidden;
   outline: 2px solid #000;
@@ -194,7 +204,7 @@ const OldSchoolCircle = styled.div`
     left: 0;
     top: 0;
     background: conic-gradient(
-      purple calc(${(props) => props.circleValue} * 1%),
+      var(--primary) calc(${(props) => props.circleValue} * 1%),
       #0000 0
     );
     transform-origin: center center;
@@ -241,42 +251,16 @@ const Test = () => {
     setCircleValue(e.target.value * 3.3339);
   };
 
+  const movieOptions = [{ name: 'Month' }, { name: 'Year' }];
+
   return (
     <MainWrapper>
-      <header>
-        <h1>Test Page</h1>
-      </header>
-      <FirstSection>
-        <h2
-          ref={ref}
-          style={{
-            transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
-            opacity: isInView ? 1 : 0,
-            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-          }}
-        >
-          First Section
-        </h2>
-        <p
-          ref={ref}
-          style={{
-            transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
-            opacity: isInView ? 1 : 0,
-            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </FirstSection>
-
       <CalcWrapper ref={ref}>
         <section>
-          <h2>Unlimited Savings</h2>
+          <h1>Unlimited Savings</h1>
           <InputWrapper>
             <h3>How Often Do You Go To The Movies?</h3>
-            <label htmlFor="movieValueSlider">Movies per Month</label>
-
+            <ButtonSlider tabs={movieOptions} />
             <input
               type="text"
               id="movieValueText"
