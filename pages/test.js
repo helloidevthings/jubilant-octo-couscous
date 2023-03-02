@@ -33,6 +33,7 @@ const MainWrapper = styled.main`
     border-radius: 10px;
     font-size: 1.8em;
     padding: .3em .5em; 
+
   }
 
   input[type=range] {
@@ -163,13 +164,6 @@ const CircleGraph = styled.div`
       top: 0.25em;
       left: -0.7em;
     }
-    /* &:after {
-      content: 'per month';
-      font-size: 0.3em;
-      position: absolute;
-      left: 0.5em;
-      bottom: -0.5em;
-    } */
   }
 `;
 
@@ -257,10 +251,9 @@ const Test = () => {
     <MainWrapper>
       <CalcWrapper ref={ref}>
         <section>
-          <h1>Unlimited Savings</h1>
+          <h1>Potential Savings</h1>
           <InputWrapper>
-            <h3>How Often Do You Go To The Movies?</h3>
-            <ButtonSlider tabs={movieOptions} />
+            <h2>How Often Do You Go To The Movies?</h2>
             <input
               type="text"
               id="movieValueText"
@@ -288,6 +281,7 @@ const Test = () => {
             <div></div>
           </OldSchoolCircle>
         </CircleGraph>
+        <h3> You could save up to ${moneyValue * 12} per year.</h3>
       </CalcWrapper>
     </MainWrapper>
   );
