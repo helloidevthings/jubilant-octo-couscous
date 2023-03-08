@@ -142,11 +142,15 @@ const MovieGrid = styled.section`
   grid-column: 1;
   grid-row: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
   gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
   overflow: scroll;
   width: 100%;
-  max-width: 60vw;
+
+  @media (min-width: 1250px) {
+    max-width: 60vw;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  }
 
   img {
     border-radius: 6px;
@@ -157,18 +161,19 @@ const MovieGrid = styled.section`
 const CalcWrapper = styled.div`
   grid-column: 2;
   grid-row: 2;
-  display: flex;
-  margin: 0 auto;
-  max-width: 600px;
-  position: sticky;
-  right: 1rem;
-  top: 2rem;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   padding: 1rem;
-  background: var(--darkGradient90);
+  background: linear-gradient(90deg, #242424 0%, #353436 100%);
   border-radius: 30px;
+
+  @media (min-width: 1250px) {
+    position: sticky;
+    top: 2rem;
+    right: 1rem;
+    max-width: 600px;
+  }
 `;
 
 const CircleGraph = styled.div`
@@ -208,9 +213,20 @@ const InputWrapper = styled.div`
   flex-direction: column;
   max-width: 300px;
 
+  label {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5em;
+  }
+
   h2 {
     font-family: 'Exo', sans-serif;
     margin: 0;
+    font-weight: 800;
+    font-size: 1.5em;
+    text-align: center;
   }
 `;
 
@@ -256,8 +272,9 @@ const Concessions = styled.section`
   button {
     background: var(--grayDark);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 0.2em 0.5em;
+    font-size: 1.1em;
   }
 `;
 
@@ -325,6 +342,30 @@ const MoviePosters = [
     src: 'https://regalcdn.azureedge.net/REG/AIR/HO00013998/TV_SmallPosterImage/20230217-135523452.jpg',
     alt: 'Air',
   },
+  {
+    src: 'https://regalcdn.azureedge.net/REG/SuperMarioBrosTheMovie/HO00011659/TV_SmallPosterImage/20230206-074403697.jpg',
+    alt: 'Mario',
+  },
+  {
+    src: 'https://regalcdn.azureedge.net/REG/Paint/HO00013991/TV_SmallPosterImage/20230306-131036467.jpg',
+    alt: 'Paint',
+  },
+  {
+    src: 'https://regalcdn.azureedge.net/REG/Renfield/HO00013741/TV_SmallPosterImage/20230105-115131662.jpg',
+    alt: 'Renfield',
+  },
+  {
+    src: 'https://regalcdn.azureedge.net/REG/DungeonsDragonsHonorAmongThieves/HO00010993/TV_SmallPosterImage/20221205-093235598.jpg',
+    alt: 'Dungeons',
+  },
+  {
+    src: 'https://regalcdn.azureedge.net/REG/GuardiansoftheGalaxyVol3/HO00011165/TV_SmallPosterImage/20230213-083137574.jpg',
+    alt: 'Guardians',
+  },
+  {
+    src: 'https://regalcdn.azureedge.net/REG/LittleMermaidThe/HO00011716/TV_SmallPosterImage/20221013-133650238.jpg',
+    alt: 'Ariel',
+  },
 ];
 
 const Test = () => {
@@ -349,15 +390,8 @@ const Test = () => {
 
   const handleValue = (e) => {
     setMovieValue(e.target.value);
-    setCircleValue(e.target.value * 3.3339);
-    setMoneyValue(e.target.value * 17);
-  };
-
-  const movieValuePlus = () => {
-    setMovieValue(movieValue + 1);
-    setCircleValue((movieValue + 1) * 3.3339);
-    setMoneyValue((movieValue + 1) * 17);
-    console.log(movieValue);
+    setCircleValue(movieValue * 3.3339);
+    setMoneyValue(movieValue * 17);
   };
 
   const movieOptions = [{ name: 'Month' }, { name: 'Year' }];
@@ -372,7 +406,9 @@ const Test = () => {
               poster={src}
               title={alt}
               key={`${alt + i}`}
-              onClick={movieValuePlus}
+              isSelected={(selected) =>
+                setMovieValue(movieValue + (selected ? 1 : -1))
+              }
             />
           );
         })}
@@ -387,6 +423,7 @@ const Test = () => {
                 <div></div>
               </OldSchoolCircle>
             </CircleGraph>
+            <label for="movieValueText">Movies</label>
             <input
               type="text"
               id="movieValueText"
@@ -409,11 +446,11 @@ const Test = () => {
           </InputWrapper>
           <h2>Do you buy Concessions?</h2>
           <Concessions>
-            <button onClick={movieValuePlus}>$10</button>
+            {/* <button onClick={movieValuePlus}>$10</button>
             <button onClick={movieValuePlus}>$20</button>
             <button onClick={movieValuePlus}>$30</button>
             <button onClick={movieValuePlus}>$40</button>
-            <button onClick={movieValuePlus}>$50</button>
+            <button onClick={movieValuePlus}>$50</button> */}
           </Concessions>
         </section>
       </CalcWrapper>

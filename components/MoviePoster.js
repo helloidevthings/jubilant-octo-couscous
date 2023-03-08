@@ -50,13 +50,12 @@ const ImgWrap = styled.button`
   }
 `;
 
-const MoviePoster = ({ poster, title, onClick }) => {
+const MoviePoster = ({ poster, title, isSelected }) => {
   const [selected, setSelected] = useState(false);
 
   const toggleSelected = (e) => {
+    isSelected(!selected);
     setSelected(!selected);
-    console.log(selected);
-    onClick ? onClick(e) : null;
   };
 
   return (
