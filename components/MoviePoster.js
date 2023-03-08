@@ -22,7 +22,6 @@ const ImgWrap = styled.button`
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-
     opacity: ${(props) => (props.selected === false ? '1' : '0.5')};
     transition: all 0.2s ease-in-out;
   }
@@ -34,6 +33,7 @@ const ImgWrap = styled.button`
     transform: translate(-50%, -50%);
     width: 2em;
     stroke-dasharray: 50;
+    opacity: ${(props) => (props.selected === false ? '0' : '1')};
     stroke-dashoffset: ${(props) => (props.selected === false ? '50' : '0')};
     transform-origin: center;
     transition: all 0.4s ease-in-out;

@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { useInView, useScroll } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import MoviePoster from '../components/MoviePoster';
+import FoodButton from '../components/FoodButton';
 
 const MainWrapper = styled.main`
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
   position: relative;
-  padding: 1rem;
+  padding: 3rem 1rem;
   background: url('https://res.cloudinary.com/labofthingsimages/image/upload/v1678216022/bg_l2vncq.jpg') no-repeat fixed;
   object-fit: cover;
   min-height: 100vh;
@@ -165,8 +166,9 @@ const CalcWrapper = styled.div`
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background: linear-gradient(90deg, #242424 0%, #353436 100%);
+  background: linear-gradient(182deg, #29292c 0%, #141414 100%);
   border-radius: 30px;
+  box-shadow: var(--darkGlow);
 
   @media (min-width: 1250px) {
     position: sticky;
@@ -268,14 +270,6 @@ const OldSchoolCircle = styled.div`
 const Concessions = styled.section`
   display: flex;
   justify-content: space-around;
-
-  button {
-    background: var(--grayDark);
-    border: none;
-    border-radius: 8px;
-    padding: 0.2em 0.5em;
-    font-size: 1.1em;
-  }
 `;
 
 const FirstSection = styled.section`
@@ -368,6 +362,8 @@ const MoviePosters = [
   },
 ];
 
+const ConsessionsValue = [10, 20, 30, 40, 50];
+
 const Test = () => {
   // Framer Use In View Stuff
   const container = useRef(null);
@@ -446,11 +442,16 @@ const Test = () => {
           </InputWrapper>
           <h2>Do you buy Concessions?</h2>
           <Concessions>
-            {/* <button onClick={movieValuePlus}>$10</button>
-            <button onClick={movieValuePlus}>$20</button>
-            <button onClick={movieValuePlus}>$30</button>
-            <button onClick={movieValuePlus}>$40</button>
-            <button onClick={movieValuePlus}>$50</button> */}
+            {ConsessionsValue.map((price) => {
+              return (
+                <FoodButton
+                  price={price}
+                  isSelected={(selected) =>
+                    setMoneyValue(moneyValue + (selected ? price : -price))
+                  }
+                />
+              );
+            })}
           </Concessions>
         </section>
       </CalcWrapper>
