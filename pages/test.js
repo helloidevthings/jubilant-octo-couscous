@@ -381,14 +381,10 @@ const Test = () => {
 
   // Calculator Stuff
   const [movieValue, setMovieValue] = useState(0);
-  const [circleValue, setCircleValue] = useState(0);
   const [moneyValue, setMoneyValue] = useState(0);
-
-  const handleValue = (e) => {
-    setMovieValue(e.target.value);
-    setCircleValue(movieValue * 3.3339);
-    setMoneyValue(movieValue * 17);
-  };
+  const [selectedMovies, setSelectedMovies] = useState(
+    new Array(MoviePosters.length).fill(false)
+  );
 
   const movieOptions = [{ name: 'Month' }, { name: 'Year' }];
 
@@ -402,9 +398,16 @@ const Test = () => {
               poster={src}
               title={alt}
               key={`${alt + i}`}
-              isSelected={(selected) =>
-                setMovieValue(movieValue + (selected ? 1 : -1))
-              }
+              // isSelected={(selected) =>
+              //   setMovieValue(movieValue + (selected ? 1 : -1))
+              // }
+              selected={selectedMovies[i]}
+              handleClick={() => {
+                setMovieValue(movieValue + (selectedMovies[i] ? -1 : 1));
+                const newSelection = [...selectedMovies];
+                newSelection[i] = !newSelection[i];
+                setSelectedMovies(newSelection);
+              }}
             />
           );
         })}
@@ -414,8 +417,8 @@ const Test = () => {
           <InputWrapper>
             <h2>How Often Do You Go To The Movies?</h2>
             <CircleGraph>
-              <h3>{moneyValue}</h3>
-              <OldSchoolCircle circleValue={circleValue}>
+              <h3>{movieValue * 12}</h3>
+              <OldSchoolCircle circleValue={movieValue * 3.3339}>
                 <div></div>
               </OldSchoolCircle>
             </CircleGraph>
@@ -426,8 +429,8 @@ const Test = () => {
               name="movieValueText"
               min="0"
               max="60"
-              onInput={handleValue}
-              onChange={handleValue}
+              // onInput={handleValue}
+              // onChange={handleValue}
               value={movieValue}
             />
             <input
@@ -436,8 +439,28 @@ const Test = () => {
               name="movieValueSlider"
               min="0"
               max="60"
-              onInput={handleValue}
-              onChange={handleValue}
+              value={movieValue}
+              onChange={(e) => {
+                const newMovieValue = parseInt(e.target.value, 10);
+                const selectedCount = selectedMovies.filter(
+                  (val) => val
+                ).length; // Get number of true items
+                if (newMovieValue > selectedCount) {
+                  for (let i = 0; i < newMovieValue - selectedCount; i++) {
+                    const newSelection = [...selectedMovies];
+                    newSelection[newSelection.indexOf(false)] = true;
+                    setSelectedMovies(newSelection);
+                  }
+                } else if (newMovieValue < selectedCount) {
+                  for (let i = 0; i < selectedCount - newMovieValue; i++) {
+                    const newSelection = [...selectedMovies];
+                    newSelection[newSelection.lastIndexOf(true)] = false;
+                    setSelectedMovies(newSelection);
+                  }
+                }
+
+                setMovieValue(newMovieValue);
+              }}
             />
           </InputWrapper>
           <h2>Do you buy Concessions?</h2>
