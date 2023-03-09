@@ -422,7 +422,7 @@ const Test = () => {
                 <div></div>
               </OldSchoolCircle>
             </CircleGraph>
-            <label for="movieValueText">Movies</label>
+            <label htmlFor="movieValueText">Movies</label>
             <input
               type="text"
               id="movieValueText"
@@ -432,6 +432,7 @@ const Test = () => {
               // onInput={handleValue}
               // onChange={handleValue}
               value={movieValue}
+              onChange={setMovieValue}
             />
             <input
               type="range"
@@ -465,9 +466,10 @@ const Test = () => {
           </InputWrapper>
           <h2>Do you buy Concessions?</h2>
           <Concessions>
-            {ConsessionsValue.map((price) => {
+            {ConsessionsValue.map((price, i) => {
               return (
                 <FoodButton
+                  key={i}
                   price={price}
                   isSelected={(selected) =>
                     setMoneyValue(moneyValue + (selected ? price : -price))
