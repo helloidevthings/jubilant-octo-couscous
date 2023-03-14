@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Shelf = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
-  /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+  grid-auto-flow: dense;
   align-items: center;
   gap: 0.25rem;
   transition: all 0.2s ease-in-out;
@@ -60,11 +60,16 @@ const TagWrapper = styled.ul`
 const ProjectFig = styled.figure`
   position: relative;
   overflow: hidden;
+  padding: 0.5rem 0.6rem;
+  height: 25rem;
+  /* background: #14141c; */
 
   img {
     width: 100%;
-    height: 100%;
+    height: 330px;
+    border-radius: 10px;
     object-fit: cover;
+    box-shadow: 2px 4px 6px #353551;
   }
 
   &:hover figcaption > p {
@@ -89,6 +94,7 @@ const ProjectFig = styled.figure`
     transform: translateY(10px);
     transform-origin: left bottom;
     transition: all 0.3s ease-in-out;
+    border-radius: 15px;
 
     h3 {
       font-weight: 800;

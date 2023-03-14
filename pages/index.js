@@ -9,13 +9,13 @@ const Wrapper = styled.div`
 
 const ProductDesign = [
   {
-    title: 'Digital Tickets',
+    title: 'Seat Maps',
     description: 'Branding for a gym in Mexico near the beach',
     date: '2020',
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295137/Portfolio_Images/Screen_Shot_2020-04-16_at_10.25.04_AM_xoyuso.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295122/Portfolio_Images/Screen_Shot_2020-03-23_at_11.21.55_AM_rcbflw.png',
   },
   {
     title: 'Marketing Consent',
@@ -59,10 +59,10 @@ const ProjectBranding = [
   {
     title: 'Level Up Buttercup',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Logo for a local Dungeons & Dragons Group. Tshirts, Website, Streaming Frame and Animations',
     date: '2018',
     alt: 'alt',
-    tag: ['Branding', 'Print'],
+    tag: ['Branding', 'Web', 'Print'],
     path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295127/Portfolio_Images/buttercups3_de6mky.png',
   },
@@ -74,7 +74,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295118/Portfolio_Images/image-asset_8_dharjx.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295117/Portfolio_Images/b11afe19780187.562e0241bc368_nwjflq.jpg',
   },
   {
     title: 'Old City Wine Bar',
@@ -117,7 +117,7 @@ const ProjectsIllustration = [
     date: '2017',
     tag: ['Illustration', 'Print'],
     path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295195/Portfolio_Images/MVIMG_20200319_114136_ogoior.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295148/Portfolio_Images/image-asset_3_g4riz1.jpg',
   },
   {
     title: 'Playbook',
