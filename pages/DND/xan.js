@@ -6,7 +6,6 @@ const CharacterSheet = styled.section`
   font-family: 'Fira Sans', sans-serif;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (2100 - 300)));
   background: #474453;
-  background: linear-gradient(to right, #ffc0cb, #800080);
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   padding: 0.5rem;
   color: white;

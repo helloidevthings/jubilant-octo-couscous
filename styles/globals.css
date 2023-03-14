@@ -27,15 +27,6 @@ a {
 
 /* Global Reset -- Separate from Global Styles, scroll down for Global Styles :58 */
 /* These styles standardize all HTML elements and making it easier to style */
-/* * {
-  margin: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
 
 html,
 body {
@@ -62,6 +53,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  margin: 0;
 }
 
 input,
