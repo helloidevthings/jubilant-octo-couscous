@@ -46,7 +46,7 @@ const TagWrapper = styled.ul`
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 3px 10px;
-    border: 1px solid #fff;
+    border: 1px solid var(--secondary);
     border-radius: 15px;
   }
   small {
@@ -62,14 +62,13 @@ const ProjectFig = styled.figure`
   overflow: hidden;
   padding: 0.5rem 0.6rem;
   height: 25rem;
-  /* background: #14141c; */
 
   img {
     width: 100%;
     height: 330px;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 2px 4px 6px #353551;
+    box-shadow: var(--primaryBoxShadow);
   }
 
   &:hover figcaption > p {
@@ -87,7 +86,8 @@ const ProjectFig = styled.figure`
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(45deg, #14141c, #b8b7d259);
+    background: var(--primaryGradient90);
+    color: var(--primaryText);
     font-weight: 600;
     font-size: 1.2rem;
     backdrop-filter: blur(3px);
@@ -98,17 +98,14 @@ const ProjectFig = styled.figure`
 
     h3 {
       font-weight: 800;
+      padding: 0.2rem 0.8rem 0.5rem;
     }
 
     p {
       height: 0;
+      padding: 0.2rem 0.8rem 1rem;
       transform: translateY(100%) scaleY(0);
       transition: transform 0.4s ease-in-out;
-    }
-
-    h3,
-    p {
-      padding: 0.2rem 0.8rem 0.5rem;
     }
   }
 `;
