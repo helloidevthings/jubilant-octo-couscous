@@ -1,10 +1,72 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import ButtonSlider from '../components/ButtonSlider';
 import ProjectShelf from '../components/ProjectShelf';
 import { useState } from 'react';
 
 const ProductDesign = [
+  {
+    title: 'Membership Calculator',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2023',
+    alt: 'alt',
+    tag: ['Development', 'Marketing', 'UX/UI'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985956/Portfolio_Images/Screen_Shot_2023-03-16_at_12.59.02_PM_bte7b0.png',
+  },
+  {
+    title: 'Booking Test',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2023',
+    alt: 'alt',
+    tag: ['App', 'Testing', 'Research'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985748/Portfolio_Images/Screen_Shot_2023-03-16_at_12.55.38_PM_t43csq.png',
+  },
+  {
+    title: 'Regal Theatre Pages',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2023',
+    alt: 'alt',
+    tag: ['Website', 'Development'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985861/Portfolio_Images/Screen_Shot_2023-03-16_at_12.57.26_PM_q6my6b.png',
+  },
+  {
+    title: 'Regal Movie Pages',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2022',
+    alt: 'alt',
+    tag: ['Website', 'Development'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985500/Portfolio_Images/Screen_Shot_2023-03-16_at_12.51.29_PM_rpfrx2.png',
+  },
+  {
+    title: 'UI Theme',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2022',
+    alt: 'alt',
+    tag: ['Website', 'Development'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678986478/Portfolio_Images/Screen_Shot_2023-03-16_at_1.07.46_PM_hqfs6g.png',
+  },
+  {
+    title: 'Competative Analysis & Assesment',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2021',
+    alt: 'alt',
+    tag: ['App', 'Research'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678986805/Portfolio_Images/Screen_Shot_2023-03-16_at_1.10.43_PM_vjp7qw.png',
+  },
+  {
+    title: 'Cadre5 Website',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2021',
+    alt: 'alt',
+    tag: ['Website', 'Development'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678820158/Portfolio_Images/Screen_Shot_2022-02-22_at_9.22.13_AM_zszmji.png',
+  },
   {
     title: 'Seat Maps',
     description: 'Branding for a gym in Mexico near the beach',
@@ -97,6 +159,24 @@ const ProjectBranding = [
 
 const ProjectsIllustration = [
   {
+    title: 'Data Visualization',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2018',
+    alt: 'alt',
+    tag: ['Website', 'UI/UX'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678820159/Portfolio_Images/Screen_Shot_2022-02-22_at_9.29.30_AM_i59hei.png',
+  },
+  {
+    title: '404 Page',
+    description: 'Branding for a gym in Mexico near the beach',
+    date: '2018',
+    alt: 'alt',
+    tag: ['Website', 'Illustration'],
+    path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678908929/Portfolio_Images/Screen_Shot_2023-03-15_at_3.34.41_PM_kp1c2t.png',
+  },
+  {
     title: 'Branding Study Poster',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -150,6 +230,7 @@ const Wrapper = styled.div`
   --primaryBG: var(${(props) => `--${props.currentColor}Bg`});
   --secondary: var(${(props) => `--${props.currentColor}Secondary`});
   --primaryGradient90: var(${(props) => `--${props.currentColor}Gradient90`});
+  --primaryGradient180: var(${(props) => `--${props.currentColor}Gradient30`});
   --primaryBoxShadow: var(${(props) => `--${props.currentColor}BoxShadow`});
 
   --light: #ffffff;
@@ -173,8 +254,11 @@ const Wrapper = styled.div`
   --pinkBoxShadow: 2px 4px 7px 0px #d372cd;
 
   --darkGradient90: linear-gradient(90deg, #14141c, #b8b7d259);
-  --lightGradient90: linear-gradient(90deg, #f4f4fcb3, #ffffffbf);
+  --lightGradient90: linear-gradient(90deg, #c5c5d2b3, #ffffffbf);
   --pinkGradient90: linear-gradient(90deg, #fff0fea8, #ffffffbf);
+  --darkGradient30: linear-gradient(30deg, #14141c, #b8b7d259);
+  --lightGradient30: linear-gradient(30deg, #f4f4fcb3, #ffffffbf);
+  --pinkGradient30: linear-gradient(30deg, #fff0fea8, #ffffffbf);
 `;
 
 const ColorButton = styled.button`
@@ -212,7 +296,12 @@ const ColorButton = styled.button`
 `;
 
 const PortfolioSection = styled.section`
-  padding: 3rem 0.3rem;
+  padding: 1rem 0.5rem;
+  background: var(--primaryGradient180);
+
+  h2 {
+    font-size: 3rem;
+  }
 `;
 
 export default function Home() {

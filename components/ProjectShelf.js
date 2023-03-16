@@ -5,7 +5,7 @@ const Shelf = styled.section`
   grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
   grid-auto-flow: dense;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5em;
   transition: all 0.2s ease-in-out;
 `;
 
@@ -13,10 +13,6 @@ const ProjectLink = styled.a`
   border: none;
   opacity: 1;
   animation: fadeIn 1s ease-in-out;
-
-  &:hover {
-    /* grid-column: span 2; */
-  }
 
   @keyframes fadeIn {
     0% {
@@ -46,9 +42,12 @@ const TagWrapper = styled.ul`
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 3px 10px;
-    border: 1px solid var(--secondary);
+    border: 2px solid var(--secondary);
+    /* background: var(--primaryBG); */
+    /* opacity: 0.8; */
     border-radius: 15px;
   }
+
   small {
     margin-left: 0.5rem;
     font-size: 0.9rem;
@@ -71,13 +70,14 @@ const ProjectFig = styled.figure`
     box-shadow: var(--primaryBoxShadow);
   }
 
-  &:hover figcaption > p {
-    transform: translateY(0%) scaleY(1);
-    height: max-content;
-  }
-
-  &:hover figcaption {
+  &:hover figcaption,
+  &:focus-visible figcaption {
     transform: translateY(0);
+
+    & > p {
+      transform: translateY(0%) scaleY(1);
+      height: max-content;
+    }
   }
 
   figcaption {
