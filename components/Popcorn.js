@@ -4,16 +4,18 @@ import { useState } from 'react';
 const PopcornWrapper = styled.figure`
   position: relative;
   z-index: 1;
+  /* border: 10px solid #f56600;
+  border-radius: 50%; */
 
   &:after {
     content: '';
     position: absolute;
-    left: 30%;
-    bottom: -30%;
-    width: 70%;
+    left: 40%;
+    bottom: -20%;
+    width: 60%;
     height: 20%;
     border-radius: 50%;
-    background: linear-gradient(90deg, #000000 0%, #222124 100%);
+    background: linear-gradient(90deg, #00000080 0%, #22212421 100%);
     z-index: -1;
     animation: popcorn-box-shadow 2s infinite alternate;
 
@@ -52,10 +54,11 @@ const Kernal = styled.img`
 
   @keyframes popcorn {
     0% {
-      transform: translate3d(0, 0, 0);
+      /* transform: translate3d(0, 0, 0); */
     }
     100% {
-      transform: perspective(100px) translate3d(10px, 10px, 10px);
+      /* transform: perspective(100px) translate3d(30px, 10px, 10px); */
+      transform: translate(0, 10px);
     }
   }
 `;
