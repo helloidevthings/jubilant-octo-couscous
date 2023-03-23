@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import Popcorn from '../components/Popcorn';
+import Four from '../components/Four';
 
 const Container = styled.section`
   display: flex;
@@ -17,45 +18,38 @@ const Container = styled.section`
 
   h1,
   h2 {
+    font-family: 'Exo', sans-serif;
     margin: 0;
     line-height: 1.2;
-  }
-
-  h1 {
-    font-family: 'Exo', sans-serif;
-    font-size: 10rem;
-    font-weight: 400;
-
-    span {
-      /* color: #1a191d; */
-    }
-  }
-
-  h2 {
-    font-family: 'Exo', sans-serif;
     font-size: 3rem;
     font-style: italic;
+  }
+
+  h3 {
+    padding: 1rem 0 2rem;
+    font-size: 2rem;
+    text-align: center;
   }
 `;
 
 const PopcornWrapper = styled.div`
-  max-width: 500px;
+  width: 100%;
+  max-width: 750px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
 
-  /* &:before,
-  &:after {
-    content: '4';
-    position: absolute;
-    top: 50%;
-    font-size: 13em;
-    font-family: 'Exo', sans-serif;
-  } */
-
-  &:before {
-    left: 0;
+  figure {
+    width: 100%;
+    max-width: 250px;
   }
 
-  &:after {
-    right: 0;
+  svg {
+    width: 100%;
+    max-width: 160px;
   }
 `;
 
@@ -63,12 +57,28 @@ const Regal404 = () => {
   return (
     <Container>
       <PopcornWrapper>
+        <Four />
         <Popcorn />
+        <Four />
       </PopcornWrapper>
-      <h1>
+      {/* <h1>
         <span>404</span>
-      </h1>
-      <h2>Well this is a reel problem.</h2>
+      </h1> */}
+      <h1>Well this is a reel problem.</h1>
+      <h3>
+        It looks like this page has popped out for a bit, but we can usher you
+        to a new seat.
+      </h3>
+      <img
+        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1679603199/Group_1114_mwvyye.png"
+        alt="thing"
+      />
+      <p>
+        {' '}
+        <small>
+          (Seriously, though, thanks for giving us concessions on those puns.)
+        </small>
+      </p>
     </Container>
   );
 };

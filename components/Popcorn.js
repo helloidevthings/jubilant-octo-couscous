@@ -4,8 +4,11 @@ import { useState } from 'react';
 const PopcornWrapper = styled.figure`
   position: relative;
   z-index: 1;
-  /* border: 10px solid #f56600;
-  border-radius: 50%; */
+  border: 1rem solid #f56600;
+  border-radius: 50%;
+  box-shadow: 0px 9px 9px #f5660061;
+  margin-bottom: 4rem;
+  max-width: 500px;
 
   &:after {
     content: '';
@@ -31,7 +34,9 @@ const PopcornWrapper = styled.figure`
 `;
 
 const PopcornContainer = styled.img`
-  max-width: 300px;
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
   position: relative;
   animation: popcorn-box 2s infinite alternate;
 
@@ -54,11 +59,11 @@ const Kernal = styled.img`
 
   @keyframes popcorn {
     0% {
-      /* transform: translate3d(0, 0, 0); */
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      /* transform: perspective(100px) translate3d(30px, 10px, 10px); */
       transform: translate(0, 10px);
+      transform: perspective(100px) translate3d(30px, 10px, 10px);
     }
   }
 `;
