@@ -15,6 +15,18 @@ const Container = styled.section`
   background-size: cover;
   padding: 1rem;
   overflow: hidden;
+`;
+
+const TextWrap = styled.section`
+  margin: 0 auto;
+  text-align: center;
+  max-width: 800px;
+
+  img {
+    width: 100%;
+    max-width: 530px;
+    margin: 0 auto;
+  }
 
   h1,
   h2 {
@@ -22,13 +34,22 @@ const Container = styled.section`
     margin: 0;
     line-height: 1.2;
     font-size: 3rem;
+    font-weight: 900;
     font-style: italic;
+    letter-spacing: 0;
   }
 
   h3 {
+    font-family: 'Exo', sans-serif;
     padding: 1rem 0 2rem;
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: #999;
   }
 `;
 
@@ -64,21 +85,22 @@ const Regal404 = () => {
       {/* <h1>
         <span>404</span>
       </h1> */}
-      <h1>Well this is a reel problem.</h1>
-      <h3>
-        It looks like this page has popped out for a bit, but we can usher you
-        to a new seat.
-      </h3>
-      <img
-        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1679603199/Group_1114_mwvyye.png"
-        alt="thing"
-      />
-      <p>
-        {' '}
-        <small>
-          (Seriously, though, thanks for giving us concessions on those puns.)
-        </small>
-      </p>
+      <TextWrap>
+        <h1>Well this is a reel problem.</h1>
+        <h3>
+          It looks like this page has popped out for a bit, but we can usher you
+          to a new seat.
+        </h3>
+        <img
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1679603199/Group_1114_mwvyye.png"
+          alt="thing"
+        />
+        <p>
+          <em>
+            (Seriously, though, thanks for giving us concessions on those puns.)
+          </em>
+        </p>
+      </TextWrap>
     </Container>
   );
 };
