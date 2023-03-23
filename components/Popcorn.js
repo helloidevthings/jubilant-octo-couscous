@@ -66,7 +66,7 @@ const Kernal = styled.img`
       /* transform: translate(0, 10px); */
       /* transform: perspective(200px) translate3d(-30px, 15px, 40px); */
       /* transform: translate3d(-10px, 15px, 0); */
-      transform: perspective(200px) translate3d(-10px, 15px, 40px);
+      transform: perspective(300px) translate3d(-10px, 15px, 40px);
     }
   }
 `;
@@ -117,7 +117,7 @@ const Popcorn = () => {
           alt={alt}
           key={alt + i}
           style={{
-            top: `${Math.random() * 10}%`,
+            top: `-${Math.random() * 10}%`,
             left: `${Math.random() * 100}%`,
             // transform: `translate3D(0, 0, ${Math.random() * 100})`,
             animationDelay: `${Math.random() * 2}s`,
