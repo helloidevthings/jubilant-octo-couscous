@@ -12,8 +12,12 @@ const PopcornWrapper = styled.figure`
 
   border-radius: 50%;
   box-shadow: 0px 9px 9px #f5660061;
-  margin-bottom: 4rem;
   max-width: 500px;
+  margin-bottom: 1rem;
+
+  @media (min-width: 600px) {
+    margin-bottom: 4rem;
+  }
 
   &:after {
     content: '';
