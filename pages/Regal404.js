@@ -33,23 +33,39 @@ const TextWrap = styled.section`
     font-family: 'Exo', sans-serif;
     margin: 0;
     line-height: 1.2;
-    font-size: 3rem;
     font-weight: 900;
     font-style: italic;
     letter-spacing: 0;
+    font-size: 2rem;
+
+    @media (min-width: 600px) {
+      font-size: 3rem;
+    }
   }
 
   h3 {
     font-family: 'Exo', sans-serif;
     padding: 1rem 0 2rem;
-    font-size: 1.8rem;
     font-weight: 500;
+    font-size: 1rem;
+
+    @media (min-width: 600px) {
+      font-size: 1.8rem;
+    }
   }
 
   p {
     margin-top: 0.5rem;
     font-weight: 700;
     color: #999;
+
+    em {
+      font-size: 0.8rem;
+
+      @media (min-width: 600px) {
+        font-size: 1.2rem;
+      }
+    }
   }
 `;
 
@@ -65,12 +81,20 @@ const PopcornWrapper = styled.div`
 
   figure {
     width: 100%;
-    max-width: 250px;
+    max-width: 100px;
+
+    @media (min-width: 600px) {
+      max-width: 250px;
+    }
   }
 
   svg {
     width: 100%;
-    max-width: 160px;
+    max-width: 80px;
+
+    @media (min-width: 600px) {
+      max-width: 160px;
+    }
   }
 `;
 

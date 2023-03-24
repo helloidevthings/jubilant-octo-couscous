@@ -4,7 +4,12 @@ import { useState } from 'react';
 const PopcornWrapper = styled.figure`
   position: relative;
   z-index: 1;
-  border: 1rem solid #f56600;
+  border: 0.5rem solid #f56600;
+
+  @media (min-width: 600px) {
+    border: 1rem solid #f56600;
+  }
+
   border-radius: 50%;
   box-shadow: 0px 9px 9px #f5660061;
   margin-bottom: 4rem;
@@ -19,6 +24,7 @@ const PopcornWrapper = styled.figure`
     height: 20%;
     border-radius: 50%;
     background: linear-gradient(90deg, #00000080 0%, #22212421 100%);
+    filter: blur(4px);
     z-index: -1;
     animation: popcorn-box-shadow 2s infinite alternate;
 
@@ -51,7 +57,12 @@ const PopcornContainer = styled.img`
 `;
 
 const Kernal = styled.img`
-  max-width: 30px;
+  max-width: 10px;
+
+  @media (min-width: 600px) {
+    max-width: 30px;
+  }
+
   position: absolute;
   top: 0;
   left: 0;
