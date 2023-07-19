@@ -22,6 +22,11 @@ const IconWrap = styled.figure`
   );
 `;
 
+const WrapConfetti = styled.div`
+  position: relative;
+  padding: 2rem;
+`;
+
 const Icon = styled.svg`
   width: 100%;
   height: 100%;
@@ -29,26 +34,36 @@ const Icon = styled.svg`
 `;
 
 const RegalConfetti = () => {
-  const [count, setCount] = useState(0);
+  const [confettiState, playConfetti] = useState(false);
+
+  const handleConfetti = () => {
+    playConfetti(true);
+    setTimeout(() => {
+      playConfetti(false);
+    }, 1000);
+  };
 
   return (
     <MainWrap>
-      <Confetti />
-      <IconWrap>
-        <Icon
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 27 21"
-          width="50px"
-          height="50px"
-        >
-          <path
-            d="M23.82 10.5c0-1.33 1.161-2.419 2.58-2.419V3.244c0-1.33-1.161-2.419-2.58-2.419H3.18C1.761.825.613 1.913.613 3.244V8.08c1.419 0 2.567 1.089 2.567 2.419S2.032 12.919.6 12.919v4.837c0 1.33 1.161 2.419 2.58 2.419h20.64c1.419 0 2.58-1.088 2.58-2.419V12.92c-1.419 0-2.58-1.089-2.58-2.419Zm-5.702 5.805L13.5 13.523l-4.618 2.782 1.393-4.983L6.031 8.07l5.47-.302L13.5 3.002l1.987 4.777 5.47.302-4.245 3.254 1.406 4.97Z"
-            fill="#fff"
-          />
-        </Icon>
-      </IconWrap>
+      <WrapConfetti>
+        <Confetti startAnimation={confettiState} />
+        <IconWrap>
+          <Icon
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 27 21"
+            width="50px"
+            height="50px"
+          >
+            <path
+              d="M23.82 10.5c0-1.33 1.161-2.419 2.58-2.419V3.244c0-1.33-1.161-2.419-2.58-2.419H3.18C1.761.825.613 1.913.613 3.244V8.08c1.419 0 2.567 1.089 2.567 2.419S2.032 12.919.6 12.919v4.837c0 1.33 1.161 2.419 2.58 2.419h20.64c1.419 0 2.58-1.088 2.58-2.419V12.92c-1.419 0-2.58-1.089-2.58-2.419Zm-5.702 5.805L13.5 13.523l-4.618 2.782 1.393-4.983L6.031 8.07l5.47-.302L13.5 3.002l1.987 4.777 5.47.302-4.245 3.254 1.406 4.97Z"
+              fill="#fff"
+            />
+          </Icon>
+        </IconWrap>
+      </WrapConfetti>
       <h1>Regal Confetti</h1>
+      <button onClick={() => handleConfetti(true)}>Click Me</button>
     </MainWrap>
   );
 };
