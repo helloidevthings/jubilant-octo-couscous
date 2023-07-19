@@ -63,7 +63,8 @@ const RegalConfetti = () => {
         </IconWrap>
       </WrapConfetti>
       <h1>Regal Confetti</h1>
-      <button onClick={() => handleConfetti(true)}>Click Me</button>
+      <br />
+      <button onClick={() => handleConfetti(true)}>Test Animation</button>
     </MainWrap>
   );
 };
