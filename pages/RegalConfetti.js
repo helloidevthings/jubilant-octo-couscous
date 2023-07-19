@@ -34,7 +34,7 @@ const Icon = styled.svg`
 `;
 
 const RegalConfetti = () => {
-  const [confettiState, playConfetti] = useState(false);
+  const [confettiState, playConfetti] = useState(true);
 
   const handleConfetti = () => {
     playConfetti(true);
