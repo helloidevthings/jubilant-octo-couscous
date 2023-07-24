@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 const SVGWrap = styled.svg`
   position: absolute;
+  width: 100%;
   top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);

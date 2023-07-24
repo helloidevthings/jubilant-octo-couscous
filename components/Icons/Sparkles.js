@@ -1,35 +1,36 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+const SVG = styled.svg`
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const Sparkle = styled.path`
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: ${(props) =>
+    props.play ? 'sparkle .4s ease-in-out forwards' : 'none'};
+
+  @keyframes sparkle {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    30% {
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+`;
+
 const SvgComponent = ({ startAnimation }) => {
   const [play, playSparkle] = useState(false);
-
-  const SVG = styled.svg`
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  `;
-
-  const Sparkle = styled.path`
-    transform-box: fill-box;
-    transform-origin: center;
-    opacity: 0;
-    animation: ${(props) => (props.play ? 'sparkle .8s ease-in-out' : 'none')};
-
-    @keyframes sparkle {
-      0% {
-        opacity: 1;
-        transform: scale(0);
-      }
-      30% {
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  `;
 
   return (
     <SVG

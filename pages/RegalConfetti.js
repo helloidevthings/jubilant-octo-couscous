@@ -4,6 +4,7 @@ import Confetti from '../components/Icons/Confetti';
 import Gem from '../components/Icons/Gem';
 import Sparkles from '../components/Icons/Sparkles';
 import Crown from '../components/Icons/Crown';
+import Stars from '../components/Icons/Stars';
 
 const MainWrap = styled.main`
   display: flex;
@@ -35,7 +36,7 @@ const IconWrap = styled.div`
   height: 80px;
   padding: 1.5rem;
   position: relative;
-  border-radius: 100%;
+  border-radius: 5rem;
   border: 3px solid #7332d3;
   background: var(
     --tertiary-gradient-90,
@@ -45,7 +46,6 @@ const IconWrap = styled.div`
   svg {
     width: 100%;
     height: 100%;
-    max-height: 120px;
   }
 `;
 
@@ -55,7 +55,7 @@ const IconWrapGem = styled(IconWrap)`
 `;
 
 const IconWrapCrown = styled(IconWrap)`
-  border: 1px solid var(--primary-lightest, #ff9246);
+  border: 3px solid var(--primary-lightest, #ff9246);
   background: var(
     --primary-light-90,
     linear-gradient(90deg, #f56600 0%, #ff9246 100%)
@@ -78,7 +78,7 @@ const RegalConfetti = () => {
     setPlaySparkle(true);
     setTimeout(() => {
       setPlaySparkle(false);
-    }, 1500);
+    }, 1000);
   };
 
   const handleCrown = () => {
@@ -122,7 +122,8 @@ const RegalConfetti = () => {
       <br />
       <br />
       <IconWrapCrown>
-        <Crown startAnimation={playCrown} />
+        <Stars startAnimation={playCrown} />
+        <Crown />
       </IconWrapCrown>
       <br />
       <h1>Regal Crown</h1>
