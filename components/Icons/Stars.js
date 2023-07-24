@@ -21,7 +21,7 @@ const Star = styled.path`
       transform: scale(0);
     }
     50% {
-      transform: scale(1) rotate(180deg);
+      transform: scale(1) rotate(275deg);
     }
     100% {
       transform: scale(0);

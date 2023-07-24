@@ -89,7 +89,7 @@ const RegalConfetti = () => {
     setPlayCrown(true);
     setTimeout(() => {
       setPlayCrown(false);
-    }, 1500);
+    }, 1000);
   };
 
   return (
