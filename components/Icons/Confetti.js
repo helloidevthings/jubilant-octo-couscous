@@ -43,21 +43,21 @@ const ConfettiCircle = styled.circle`
 const Confetti = ({ startAnimation }) => {
   const [start, playConfetti] = useState(false);
 
-  const [randoFetti, setRandoFetti] = useState([]);
+  // const [randoFetti, setRandoFetti] = useState([]);
 
-  useEffect(() => {
-    playConfetti(true);
-    setTimeout(() => {
-      playConfetti(false);
-    }, 1500);
+  // useEffect(() => {
+  //   playConfetti(true);
+  //   setTimeout(() => {
+  //     playConfetti(false);
+  //   }, 1500);
 
-    setRandoFetti({
-      Y: `-${Math.random() * 30}%`,
-      X: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 1}s`,
-      duration: `${Math.floor(Math.random() * 5) * 3}s`,
-    });
-  }, []);
+  //   setRandoFetti({
+  //     Y: `-${Math.random() * 30}%`,
+  //     X: `${Math.random() * 100}%`,
+  //     delay: `${Math.random() * 1}s`,
+  //     duration: `${Math.floor(Math.random() * 5) * 3}s`,
+  //   });
+  // }, []);
 
   return (
     <SVGWrap
