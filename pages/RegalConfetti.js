@@ -127,7 +127,7 @@ const RegalConfetti = () => {
       <br />
       <br />
       <IconWrapCrown>
-        <Stars startAnimation={playCrown} />
+        <Sparkles startAnimation={playCrown} />
         <Crown />
       </IconWrapCrown>
       <br />
