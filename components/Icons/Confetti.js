@@ -24,7 +24,7 @@ const SVGWrap = styled.svg`
 const ConfettiPiece = styled.path`
   animation: ${(props) =>
     props.play
-      ? 'confetti 1.5s cubic-bezier(0.65, 0, 0.32, 1.03) forwards'
+      ? 'confetti 1.3s cubic-bezier(0.65, 0, 0.32, 1.03) forwards'
       : 'none'};
   transform-origin: center;
   transform-box: fill-box;
@@ -37,7 +37,7 @@ const ConfettiCircle = styled.circle`
   transform: scale(0);
   animation: ${(props) =>
     props.play
-      ? 'confetti 1.5s cubic-bezier(0.65, 0, 0.32, 1.03) forwards'
+      ? 'confetti 1.3s cubic-bezier(0.65, 0, 0.32, 1.03) forwards'
       : 'none'};
 `;
 
@@ -70,11 +70,13 @@ const Confetti = ({ startAnimation }) => {
     >
       <ConfettiPiece
         play={startAnimation ? startAnimation : start}
+        style={{ animationDelay: '.3s' }}
         fill="#EDA541"
         d="m23.136 28.776 5.923 8.614 4.992-9.185-1 10.406 9.73-3.827-7.456 7.329 9.913 3.321-10.422.823 5.458 8.916-8.512-6.07-1.55 10.34-2.62-10.121-7.832 6.923 4.499-9.436-10.451.269 9.512-4.337-8.179-6.512 10.075 2.792-2.08-10.245Z"
       />
       <ConfettiCircle
         play={startAnimation ? startAnimation : start}
+        style={{ animationDelay: '.2s' }}
         cx={72.972}
         cy={39.513}
         r={8.675}
@@ -95,6 +97,7 @@ const Confetti = ({ startAnimation }) => {
       />
       <ConfettiPiece
         play={startAnimation ? startAnimation : start}
+        style={{ animationDelay: '.03s' }}
         fill="#EDA541"
         d="m168.159 27.03-6.32 8.328 10.288 1.857-10.194 2.317 6.687 8.036-9.298-4.778-.043 10.454-4.052-9.637-6.752 7.98 3.091-9.986-10.303 1.773 8.787-5.663-9.032-5.264 10.372 1.31-3.536-9.839 7.104 7.67 3.615-9.809.512 10.442 9.074-5.19Z"
       />
@@ -109,11 +112,13 @@ const Confetti = ({ startAnimation }) => {
       />
       <ConfettiPiece
         play={startAnimation ? startAnimation : start}
+        style={{ animationDelay: '.25s' }}
         fill="#7332D3"
         d="m206.48 32.548 4.52 5.146-10.292 9.036-4.519-5.145z"
       />
       <ConfettiPiece
         play={startAnimation ? startAnimation : start}
+        style={{ animationDelay: '.5s' }}
         stroke="#D9D9D9"
         strokeWidth={0.912}
         d="M118.991 2.506c3.325 1.856 9.374 6.757 6.974 11.511-3.001 5.944-11.046-3.445-14.261 2.923s8.474 8.54 5.259 14.908c-2.571 5.095-10.007 2.94-13.403 1.224"
