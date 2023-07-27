@@ -32,9 +32,9 @@ const MainWrap = styled.main`
 `;
 
 const IconWrap = styled.div`
-  width: 80px;
-  height: 80px;
-  padding: 1.5rem;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
   position: relative;
   border-radius: 5rem;
   border: 3px solid #7332d3;
