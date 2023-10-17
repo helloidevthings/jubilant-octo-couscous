@@ -5,6 +5,7 @@ import Gem from '../components/Icons/Gem';
 import Sparkles from '../components/Icons/Sparkles';
 import Crown from '../components/Icons/Crown';
 import Stars from '../components/Icons/Stars';
+import PopcornBurst from '../components/Icons/PopcornBurst';
 
 const MainWrap = styled.main`
   display: flex;
@@ -128,6 +129,7 @@ const RegalConfetti = () => {
       <br />
       <IconWrapCrown>
         <Sparkles startAnimation={playCrown} />
+        <PopcornBurst startAnimation={playCrown} />
         <Crown />
       </IconWrapCrown>
       <br />
