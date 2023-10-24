@@ -2,42 +2,43 @@ import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import { CldImage } from 'next-cloudinary';
 
-const Wrapper = styled(PortfolioPageTemplate)`
-  background: #f5f5f5;
-`;
+const Wrapper = styled(PortfolioPageTemplate)``;
 
 const SeatsFirst = () => {
   return (
     <Wrapper>
       <section>
         <h1>SeatsFirst</h1>
+        <hr />
         <h2>Problem:</h2>
-        <p>
-          Our ticketing system makes you select your ticket type before
-          selecting a seat. It makes the process longer and can be confusing.
-        </p>
+        <h3>The current flow for buying tickets is too long and confusing.</h3>
+        <br />
         <h2>Solution:</h2>
-        <p>
-          By moving the flow into accordions we can make the process seem
-          shorter. Also, by showing the user the seat map first we can help the
-          user determine what show they want to see.
-        </p>
+        <h3>
+          Create a new flow that allows users to buy tickets in 3 steps or less.
+        </h3>
       </section>
       <section>
-        <h2>We performed 2 User Tests</h2>
         <p>
-          The first test was an un-branded version without users that knew the
-          product.
+          hello Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <p>The second test was a branded version we sent to our own users.</p>
       </section>
-      <section>
-        <img
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1690849624/Screen_Shot_2023-07-31_at_8.26.42_PM_ml2fc1.png"
-          alt="Image of SeatsFirst"
-        />
-        <CldImage width="600" height="600" src="MVIMG_20200319_114136_ogoior" />
-      </section>
+      <CldImage
+        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698173907/Portfolio_Images/Screen_Shot_2023-10-24_at_2.57.55_PM_znddkb.png"
+        alt="Seat map and selection screens"
+        width={2690}
+        height={1694}
+        // 2690 × 1694
+      />
+      <div className="twoCol">
+        <figure></figure>
+      </div>
     </Wrapper>
   );
 };

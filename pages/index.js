@@ -3,6 +3,17 @@ import styled from 'styled-components';
 import ProjectShelf from '../components/ProjectShelf';
 import { useState } from 'react';
 
+const UserTesting = [
+  {
+    title: 'Seats First Booking Test',
+    description: 'User Test showing that seats first is the best option',
+    date: '2023',
+    alt: 'alt',
+    tag: ['App', 'Testing', 'Research'],
+    path: '/portfolio/SeatsFirst',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263615/Portfolio_Images/usertesting2_xd5fao.png',
+  },
+];
 const ProductDesign = [
   // {
   //   title: 'Membership Calculator',
@@ -13,15 +24,6 @@ const ProductDesign = [
   //   path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
   //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985956/Portfolio_Images/Screen_Shot_2023-03-16_at_12.59.02_PM_bte7b0.png',
   // },
-  {
-    title: 'Seats First Booking Test',
-    description: 'User Test showing that seats first is the best option',
-    date: '2023',
-    alt: 'alt',
-    tag: ['App', 'Testing', 'Research'],
-    path: '/portfolio/SeatsFirst',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263615/Portfolio_Images/usertesting2_xd5fao.png',
-  },
   // {
   //   title: 'Regal Theatre Pages',
   //   description: 'Adding meaningful information to the Theatre Pages',
@@ -345,6 +347,10 @@ export default function Home() {
         >
           Pink
         </ColorButton>
+        <PortfolioSection>
+          <h2>User Testing</h2>
+          <ProjectShelf imgs={UserTesting} />
+        </PortfolioSection>
         <PortfolioSection>
           <h2>Product Design</h2>
           <ProjectShelf imgs={ProductDesign} />
