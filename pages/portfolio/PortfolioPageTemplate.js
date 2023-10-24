@@ -10,8 +10,13 @@ const Wrapper = styled.div`
   max-height: 100vh;
 
   section {
-    padding: 0.5rem 0.5rem 2rem;
+    padding: 0.5rem 0.5rem 1rem;
     max-width: 60ch;
+  }
+
+  hr {
+    margin: 1rem 0 1.5rem;
+    border: 2px solid #f5f5f5;
   }
 
   .twoCol {
@@ -25,10 +30,26 @@ const Wrapper = styled.div`
   }
 
   figure {
-    flex: 1 0 100%;
+    width: 98vw;
+    margin-bottom: 2rem;
+    max-width: 1600px;
 
     img {
-      object-fit: cover;
+      width: auto;
+      height: auto;
+      margin: auto;
+      box-shadow: 1px 1px 13px 3px rgb(0 0 0 / 9%);
+      border-radius: 20px;
+    }
+
+    figcaption {
+      max-width: 70ch;
+      font-size: 1rem;
+      margin: 0.5rem auto 0.5rem;
+      background: #f5f5f5;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 700;
     }
   }
 `;

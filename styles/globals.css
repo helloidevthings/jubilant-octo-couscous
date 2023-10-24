@@ -116,7 +116,7 @@ h2 {
 }
 
 h3 {
-  font-size: calc(16px + (32 - 16) * ((100vw - 320px) / (2100 - 320)));
+  font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (2100 - 320)));
 }
 
 @media screen and (min-width: 1440px) {
@@ -132,7 +132,7 @@ h3 {
 }
 
 h4 {
-  font-size: calc(14px + (28 - 14) * ((100vw - 320px) / (2100 - 320)));
+  font-size: calc(14px + (23 - 14) * ((100vw - 320px) / (2100 - 320)));
 }
 
 @media screen and (min-width: 1440px) {
