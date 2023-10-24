@@ -36,7 +36,9 @@ const ImgWrap = styled.button`
     opacity: ${(props) => (props.selected === false ? '0' : '1')};
     stroke-dashoffset: ${(props) => (props.selected === false ? '50' : '0')};
     transform-origin: center;
-    transition: all 0.4s ease-in-out, opacity 0.8s ease-in-out;
+    transition:
+      all 0.4s ease-in-out,
+      opacity 0.8s ease-in-out;
   }
 
   @keyframes draw {
@@ -60,7 +62,7 @@ const MoviePoster = ({ poster, title, isSelected, selected, handleClick }) => {
 
   return (
     <ImgWrap selected={selected} onClick={handleClick}>
-      <img src={poster} alt={title} />
+      {/* <img src={poster} alt={title} /> */}
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 18">
         <path
           stroke="#fff"

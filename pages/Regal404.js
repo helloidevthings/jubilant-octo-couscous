@@ -115,10 +115,10 @@ const Regal404 = () => {
           It looks like this page has popped out for a bit, but we can usher you
           to a new seat.
         </h3>
-        <img
+        {/* <img
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1679603199/Group_1114_mwvyye.png"
           alt="thing"
-        />
+        /> */}
         <p>
           <em>
             (Seriously, though, thanks for giving us concessions on those puns.)
