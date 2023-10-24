@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 const Shelf = styled.section`
   display: grid;
@@ -120,7 +121,7 @@ const ProjectShelf = ({ imgs }) => {
           style={{ animationDelay: `.${i * 1}s` }}
         >
           <ProjectFig>
-            <img src={src} alt={alt} />
+            <Image src={src} alt={alt} width={500} height={500} />
             <figcaption>
               <TagWrapper>
                 {tag.map((tag, i) => (
