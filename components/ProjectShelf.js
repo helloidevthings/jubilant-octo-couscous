@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
 
 const Shelf = styled.section`
   display: grid;
@@ -44,8 +44,6 @@ const TagWrapper = styled.ul`
     text-transform: uppercase;
     padding: 3px 10px;
     border: 2px solid var(--secondary);
-    /* background: var(--primaryBG); */
-    /* opacity: 0.8; */
     border-radius: 15px;
   }
 
@@ -104,7 +102,7 @@ const ProjectFig = styled.figure`
 
     p {
       height: 0;
-      padding: 0.2rem 0.8rem 1rem;
+      padding: 0 0.8rem 1rem;
       transform: translateY(100%) scaleY(0);
       transition: transform 0.4s ease-in-out;
     }
@@ -121,7 +119,7 @@ const ProjectShelf = ({ imgs }) => {
           style={{ animationDelay: `.${i * 1}s` }}
         >
           <ProjectFig>
-            <Image src={src} alt={alt} width={500} height={500} />
+            <CldImage src={src} alt={alt} width={500} height={500} />
             <figcaption>
               <TagWrapper>
                 {tag.map((tag, i) => (

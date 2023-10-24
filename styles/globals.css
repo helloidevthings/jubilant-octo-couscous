@@ -43,7 +43,7 @@ body {
   /* Global RESET ONLY scroll down for Global Styles */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 img,
@@ -64,6 +64,119 @@ h5,
 h6 {
   overflow-wrap: break-word;
   margin: 0;
+}
+
+h1 {
+  font-size: calc(25px + (62 - 25) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+h2 {
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (min-width: 1440px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-size: calc(16px + (32 - 16) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (min-width: 1440px) {
+  h3 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+h4 {
+  font-size: calc(14px + (28 - 14) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (min-width: 1440px) {
+  h4 {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h4 {
+    font-size: 16px;
+  }
+}
+
+h5 {
+  font-size: calc(12px + (24 - 12) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (min-width: 1440px) {
+  h5 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h5 {
+    font-size: 15px;
+  }
+}
+
+h6 {
+  font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (min-width: 1440px) {
+  h6 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h6 {
+    font-size: 14px;
+  }
+}
+
+p {
+  margin-bottom: 1em;
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (2100 - 320)));
+}
+
+@media screen and (min-width: 1440px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  p {
+    font-size: 14px;
+  }
 }
 
 input,

@@ -20,26 +20,26 @@ const ProductDesign = [
     alt: 'alt',
     tag: ['App', 'Testing', 'Research'],
     path: '/portfolio/SeatsFirst',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263617/usertest_pyqtwr.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263615/Portfolio_Images/usertesting2_xd5fao.png',
   },
-  {
-    title: 'Regal Theatre Pages',
-    description: 'Adding meaningful information to the Theatre Pages',
-    date: '2023',
-    alt: 'alt',
-    tag: ['Website', 'Development'],
-    path: '/portfolio/RegalTheatrePages',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985861/Portfolio_Images/Screen_Shot_2023-03-16_at_12.57.26_PM_q6my6b.png',
-  },
-  {
-    title: 'Regal Movie Pages',
-    description: 'Removing the scroll time from the movie pages',
-    date: '2022',
-    alt: 'alt',
-    tag: ['Website', 'Development'],
-    path: '/portfolio/RegalMoviePages',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985500/Portfolio_Images/Screen_Shot_2023-03-16_at_12.51.29_PM_rpfrx2.png',
-  },
+  // {
+  //   title: 'Regal Theatre Pages',
+  //   description: 'Adding meaningful information to the Theatre Pages',
+  //   date: '2023',
+  //   alt: 'alt',
+  //   tag: ['Website', 'Development'],
+  //   path: '/portfolio/RegalTheatrePages',
+  //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985861/Portfolio_Images/Screen_Shot_2023-03-16_at_12.57.26_PM_q6my6b.png',
+  // },
+  // {
+  //   title: 'Regal Movie Pages',
+  //   description: 'Removing the scroll time from the movie pages',
+  //   date: '2022',
+  //   alt: 'alt',
+  //   tag: ['Website', 'Development'],
+  //   path: '/portfolio/RegalMoviePages',
+  //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678985500/Portfolio_Images/Screen_Shot_2023-03-16_at_12.51.29_PM_rpfrx2.png',
+  // },
   // {
   //   title: 'UI Theme',
   //   description: 'Branding for a gym in Mexico near the beach',
@@ -49,50 +49,50 @@ const ProductDesign = [
   //   path: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1668615393/20210409_194223_wmcoo3.jpg',
   //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678986478/Portfolio_Images/Screen_Shot_2023-03-16_at_1.07.46_PM_hqfs6g.png',
   // },
-  {
-    title: 'Competative Analysis & Assesment',
-    description: 'Comparing the Regal App to the Competators',
-    date: '2021',
-    alt: 'alt',
-    tag: ['App', 'Research'],
-    path: 'portfolio/CompetativeAnalysis',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678986805/Portfolio_Images/Screen_Shot_2023-03-16_at_1.10.43_PM_vjp7qw.png',
-  },
+  // {
+  //   title: 'Competative Analysis & Assesment',
+  //   description: 'Comparing the Regal App to the Competators',
+  //   date: '2021',
+  //   alt: 'alt',
+  //   tag: ['App', 'Research'],
+  //   path: 'portfolio/CompetativeAnalysis',
+  //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678986805/Portfolio_Images/Screen_Shot_2023-03-16_at_1.10.43_PM_vjp7qw.png',
+  // },
   {
     title: 'Cadre5 Website',
-    description: 'Branding for a gym in Mexico near the beach',
+    description: 'Website for a B2B company in the tech industry',
     date: '2021',
     alt: 'alt',
     tag: ['Website', 'Development'],
     path: '/portfolio/Cadre5',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678820158/Portfolio_Images/Screen_Shot_2022-02-22_at_9.22.13_AM_zszmji.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5home_kwsufj.png',
   },
-  {
-    title: 'Seat Maps',
-    description: 'Branding for a gym in Mexico near the beach',
-    date: '2020',
-    alt: 'alt',
-    tag: ['Website', 'UI/UX'],
-    path: '/portfolio/SeatMaps',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295122/Portfolio_Images/Screen_Shot_2020-03-23_at_11.21.55_AM_rcbflw.png',
-  },
+  // {
+  //   title: 'Seat Maps',
+  //   description: 'Branding for a gym in Mexico near the beach',
+  //   date: '2020',
+  //   alt: 'alt',
+  //   tag: ['Website', 'UI/UX'],
+  //   path: '/portfolio/SeatMaps',
+  //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295122/Portfolio_Images/Screen_Shot_2020-03-23_at_11.21.55_AM_rcbflw.png',
+  // },
   {
     title: 'Marketing Consent',
-    description: 'Branding for a gym in Mexico near the beach',
+    description: 'Checkbox for Marketing Consents on the Cineworld Website',
     date: '2019',
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/MarketingConsent',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295125/Portfolio_Images/Screen_Shot_2020-03-19_at_4.54.33_PM_vfn9qv.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263605/Portfolio_Images/booking2_zhipb9.png',
   },
   {
     title: 'Fillauer',
-    description: 'Branding for a gym in Mexico near the beach',
+    description: 'Website Design for a Prosthetic Company',
     date: '2018',
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/Fillauer',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295133/Portfolio_Images/Artboard_fqh6kw.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263617/Portfolio_Images/fillauerlogo_hmmm7c.png',
   },
 ];
 
@@ -104,16 +104,25 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['branding', 'print'],
     path: '/portfolio/Barbell',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295149/Portfolio_Images/Screen_Shot_2018-12-27_at_8.38.31_PM_dgf8lv.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/barbellplaya4_qszh6q.png',
   },
   {
     title: 'Bourbon & Bird',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Branded Experience for a play, with installation, print and digital media',
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/BourbonBird',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295140/Portfolio_Images/bourbonbird2_bfdkhx.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263627/Portfolio_Images/everybrilliantthinggroup_v47zb3.png',
+  },
+  {
+    title: 'Bourbon & Bird',
+    description:
+      'Brand for a restaurant speacializing in bourbon and chicken wings.',
+    alt: 'alt',
+    tag: ['Branding', 'Print'],
+    path: '/portfolio/BourbonBird',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263603/Portfolio_Images/bourbonbird2_na8l4c.png',
   },
   {
     title: 'Level Up Buttercup',
@@ -123,7 +132,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Web', 'Print'],
     path: '/portfolio/LevelUpButtercup',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295127/Portfolio_Images/buttercups3_de6mky.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263603/Portfolio_Images/buttercuplogo_viqyda.png',
   },
   {
     title: 'Curious Dog',
@@ -133,7 +142,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/CuriousDog',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295117/Portfolio_Images/b11afe19780187.562e0241bc368_nwjflq.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263605/Portfolio_Images/curiousdoglogo_zjy5yh.png',
   },
   {
     title: 'Old City Wine Bar',
@@ -143,7 +152,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/OldCityWineBar',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295116/Portfolio_Images/Screenshot_2019-11-11_15.02.28_qbiwdt.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263618/Portfolio_Images/oldcitywinebar_dxg6zi.png',
   },
   {
     title: 'Brochure for a College',
@@ -153,58 +162,57 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Brochure', 'Print'],
     path: '/portfolio/Brochure',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295151/Portfolio_Images/e34f4a7857029.560b2d7a4957b_ewhusg.jpg',
+    src: 'https://https://res.cloudinary.com/labofthingsimages/image/upload/v1691263602/Portfolio_Images/brochurch6_qu4cwb.jpg',
   },
 ];
 
 const ProjectsIllustration = [
   {
     title: 'Data Visualization',
-    description: 'Branding for a gym in Mexico near the beach',
+    description: 'Data Visualization for a B2B company in the tech industry',
     date: '2018',
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/DataVisualization',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678820159/Portfolio_Images/Screen_Shot_2022-02-22_at_9.29.30_AM_i59hei.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263617/Portfolio_Images/cadre5illustrators_jydm1q.png',
   },
   {
     title: 'Cadre5 404 Page',
-    description: 'Branding for a gym in Mexico near the beach',
+    description: 'Custom Illustration for a 404 Page',
     date: '2018',
     alt: 'alt',
     tag: ['Website', 'Illustration'],
     path: '/portfolio/Cadre5404',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1678908929/Portfolio_Images/Screen_Shot_2023-03-15_at_3.34.41_PM_kp1c2t.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263620/Portfolio_Images/cadre5404_i1v8b9.png',
   },
   {
     title: 'Branding Study Poster',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Custom illustration (using food) for a poster about brand perceptions',
     alt: 'alt',
     date: '2016',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/FoodPoster',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295198/Portfolio_Images/image-asset_10_ilhexk.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263626/Portfolio_Images/foodgirl3_mw5gnm.png',
   },
   {
     title: 'Heartmenders',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: "Illustration for a children's book",
     alt: 'alt',
     date: '2017',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/Heartmenders',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295148/Portfolio_Images/image-asset_3_g4riz1.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/heartmenders2_cplcxd.jpg',
   },
   {
     title: 'Playbook',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Custom illustration of the Author to help explain the book to the reader',
     date: '2017',
     alt: 'alt',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/Playbook',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1670295128/Portfolio_Images/7aaf8a29953483.5629003774ab7_wieelt.jpg',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263603/Portfolio_Images/elainedrawing3_fci2rk.jpg',
   },
 ];
 
@@ -298,6 +306,10 @@ const ColorButton = styled.button`
 const PortfolioSection = styled.section`
   padding: 1rem 0.5rem;
   background: var(--primaryGradient180);
+
+  @media (min-width: 768px) {
+    padding: 2rem 3rem;
+  }
 
   h2 {
     font-size: 3rem;
