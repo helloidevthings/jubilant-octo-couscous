@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CldImage } from 'next-cloudinary';
+// import { CldImage } from 'next-cloudinary';
 // import Image from 'next/image';
 
 const Shelf = styled.section`
@@ -120,13 +120,15 @@ const ProjectShelf = ({ imgs }) => {
           style={{ animationDelay: `.${i * 1}s` }}
         >
           <ProjectFig>
-            <CldImage
+            {/* <CldImage
               cloudName="labofthingsimages"
               src={src}
               alt={alt}
               width={500}
               height={500}
-            />
+            /> */}
+            {src}
+            {alt}
             <figcaption>
               <TagWrapper>
                 {tag.map((tag, i) => (
