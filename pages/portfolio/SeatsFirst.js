@@ -9,6 +9,7 @@ const SeatsFirst = () => {
     <Wrapper>
       <section>
         <h1>SeatsFirst</h1>
+
         <hr />
         <h2>Problem:</h2>
         <h3>The current flow for buying tickets is too long and confusing.</h3>
