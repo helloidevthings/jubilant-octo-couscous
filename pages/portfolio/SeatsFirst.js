@@ -14,26 +14,24 @@ const SeatsFirst = () => {
         <hr />
         <h2>Problem:</h2>
         <h3>The current flow for buying tickets is too long and confusing.</h3>
-        <br />
+        <p>
+          Our marketing team found that we were losing a lot of customers during
+          our booking flow on our app. This was due to the fact that our flow
+          was too long and confusing.
+        </p>
+        <p>
+          We also found that a lot of our users were leaving because of crowded
+          theatres.
+        </p>
         <h2>Solution:</h2>
         <h3>
-          Create a new flow that allows users to buy tickets in 3 steps or less.
+          Create a new flow that shows the seatmap first and combines to screens
+          to make the process faster.
         </h3>
-      </section>
-      <section>
-        <p>
-          hello Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
       </section>
       <figure>
         <Image
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/new-flow-wires-3_h9ey9w"
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698253361/Portfolio_Images/wireframe-for-new-flow_dvqjnr.png"
           alt="Seat map and selection screens"
           width={1796}
           height={1218}
