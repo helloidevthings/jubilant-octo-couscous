@@ -33,7 +33,7 @@ const SeatsFirst = () => {
       </section>
       <figure>
         <CldImage
-          src="/Portfolio_Images/new-flow-wires-3_h9ey9w.png"
+          src="new-flow-wires-3_h9ey9w"
           alt="Seat map and selection screens"
           width={1796}
           height={1218}
@@ -54,13 +54,13 @@ const SeatsFirst = () => {
         </p>
       </section>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178500/Portfolio_Images/current-flow_m85dur.png"
           alt="Current flow for buying tickets"
           width={3280}
           height={1246}
           // 3280 × 1246
-        />
+        /> */}
         <figcaption>
           Currently it takes a lot longer for users to complete the flow.
         </figcaption>
