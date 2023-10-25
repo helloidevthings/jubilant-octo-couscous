@@ -110,6 +110,7 @@ const SeatsFirst = () => {
           alt="current flow ui"
           width={1840}
           height={1416}
+          cloudName="labofthingsimages"
           // 1840 × 1416
         />
         <figcaption>
