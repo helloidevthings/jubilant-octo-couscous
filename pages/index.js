@@ -12,7 +12,7 @@ const UserTesting = [
     alt: 'alt',
     tag: ['App', 'Testing', 'Research'],
     path: '/portfolio/SeatsFirst',
-    src: 'usertesting2_xd5fao.png',
+    src: 'usertesting2_xd5fao',
   },
 ];
 const ProductDesign = [
