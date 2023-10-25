@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import { CldImage } from 'next-cloudinary';
+// import Image from 'next/image';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
@@ -31,13 +32,13 @@ const SeatsFirst = () => {
         </p>
       </section>
       <figure>
-        <CldImage
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698182054/Portfolio_Images/new-flow-wires-3_h9ey9w.png"
+        {/* <CldImage
+          src="new-flow-wires-3_h9ey9w"
           alt="Seat map and selection screens"
           width={1796}
           height={1218}
           // 1796 × 1218
-        />
+        /> */}
         <figcaption>
           Wireframes of a proposed flow that would show users the seat map for
           each showtime first.
@@ -53,13 +54,13 @@ const SeatsFirst = () => {
         </p>
       </section>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178500/Portfolio_Images/current-flow_m85dur.png"
           alt="Current flow for buying tickets"
           width={3280}
           height={1246}
           // 3280 × 1246
-        />
+        /> */}
         <figcaption>
           Currently it takes a lot longer for users to complete the flow.
         </figcaption>
@@ -74,13 +75,13 @@ const SeatsFirst = () => {
         </p>
       </section>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698177811/Portfolio_Images/newflow_gb1off.png"
           alt="New flow for buying tickets"
           width={2690}
           height={1694}
           // 2536 × 864
-        />
+        /> */}
         <figcaption>
           The idea is to combine two of the screens, hopefully making the
           process more conscise.
@@ -105,7 +106,8 @@ const SeatsFirst = () => {
       </section>
       <figure>
         <CldImage
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178212/Portfolio_Images/current-flow-ui_e0kpio.png"
+          cloudName="labofthingsimages"
+          src="current-flow-ui_e0kpio.png"
           alt="current flow ui"
           width={1840}
           height={1416}
@@ -117,26 +119,26 @@ const SeatsFirst = () => {
         </figcaption>
       </figure>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178210/Portfolio_Images/new-flow_dr7pkf.png"
           alt="current flow ui"
           width={1840}
           height={1416}
           // 1840 × 1416
-        />
+        /> */}
         <figcaption>
           This is the seats first flow, the user chooses their seat, then their
           ticket type and pays for their tickets.
         </figcaption>
       </figure>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178211/Portfolio_Images/new-flow-accordion_cyjxhv.png"
           alt="seats first accordion flow ui"
           width={1840}
           height={1416}
           // 1840 × 1416
-        />
+        /> */}
         <figcaption>
           This is the seats first accordion flow, it's the same flow, however we
           are using an accordin. The idea was to see if the accordion would
@@ -154,22 +156,22 @@ const SeatsFirst = () => {
         </p>
       </section>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178420/Portfolio_Images/summary-responses_tpeklk.png"
           alt="Results leaning towards the new flow"
           width={1840}
           height={1416}
           // 1840 × 1416
-        />
+        /> */}
       </figure>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178373/Portfolio_Images/preferred-flows_i7y2md.png"
           alt="Results leaning towards the new flow"
           width={2158}
           height={1336}
           // 2158 × 1336
-        />
+        /> */}
       </figure>
     </Wrapper>
   );
