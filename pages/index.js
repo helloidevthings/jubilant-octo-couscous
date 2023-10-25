@@ -12,7 +12,7 @@ const UserTesting = [
     alt: 'alt',
     tag: ['App', 'Testing', 'Research'],
     path: '/portfolio/SeatsFirst',
-    src: 'usertesting2_xd5fao',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/usertesting2_xd5fao',
   },
 ];
 const ProductDesign = [
@@ -68,7 +68,7 @@ const ProductDesign = [
     alt: 'alt',
     tag: ['Website', 'Development'],
     path: '/portfolio/Cadre5',
-    src: 'cadre5home_kwsufj.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5home_kwsufj.png',
   },
   // {
   //   title: 'Seat Maps',
@@ -86,7 +86,7 @@ const ProductDesign = [
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/MarketingConsent',
-    src: 'booking2_zhipb9.png',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/booking2_zhipb9.png',
   },
   {
     title: 'Fillauer',
@@ -95,7 +95,7 @@ const ProductDesign = [
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/Fillauer',
-    src: 'fillauerlogo_hmmm7c',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/fillauerlogo_hmmm7c',
   },
 ];
 
@@ -107,7 +107,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['branding', 'print'],
     path: '/portfolio/Barbell',
-    src: 'barbellplaya4_qszh6q',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/barbellplaya4_qszh6q',
   },
   {
     title: 'Bourbon & Bird',
@@ -116,7 +116,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/BourbonBird',
-    src: 'everybrilliantthinggroup_v47zb3',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/everybrilliantthinggroup_v47zb3',
   },
   {
     title: 'Bourbon & Bird',
@@ -135,7 +135,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Web', 'Print'],
     path: '/portfolio/LevelUpButtercup',
-    src: 'buttercuplogo_viqyda',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/buttercuplogo_viqyda',
   },
   {
     title: 'Curious Dog',
@@ -145,7 +145,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/CuriousDog',
-    src: 'curiousdoglogo_zjy5yh',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/curiousdoglogo_zjy5yh',
   },
   {
     title: 'Old City Wine Bar',
@@ -155,7 +155,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/OldCityWineBar',
-    src: 'oldcitywinebar_dxg6zi',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/oldcitywinebar_dxg6zi',
   },
   {
     title: 'Brochure for a College',
@@ -165,7 +165,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Brochure', 'Print'],
     path: '/portfolio/Brochure',
-    src: 'brochurch6_qu4cwb',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/brochurch6_qu4cwb',
   },
 ];
 
@@ -177,7 +177,7 @@ const ProjectsIllustration = [
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/DataVisualization',
-    src: 'cadre5illustrators_jydm1q',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5illustrators_jydm1q',
   },
   {
     title: 'Cadre5 404 Page',
@@ -186,7 +186,7 @@ const ProjectsIllustration = [
     alt: 'alt',
     tag: ['Website', 'Illustration'],
     path: '/portfolio/Cadre5404',
-    src: 'cadre5404_i1v8b9',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5404_i1v8b9',
   },
   {
     title: 'Branding Study Poster',
@@ -196,7 +196,7 @@ const ProjectsIllustration = [
     date: '2016',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/FoodPoster',
-    src: 'foodgirl3_mw5gnm',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/foodgirl3_mw5gnm',
   },
   {
     title: 'Heartmenders',
@@ -205,7 +205,7 @@ const ProjectsIllustration = [
     date: '2017',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/Heartmenders',
-    src: 'heartmenders2_cplcxd',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/heartmenders2_cplcxd',
   },
   {
     title: 'Playbook',
@@ -215,7 +215,7 @@ const ProjectsIllustration = [
     alt: 'alt',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/Playbook',
-    src: 'elainedrawing3_fci2rk',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/elainedrawing3_fci2rk',
   },
 ];
 
