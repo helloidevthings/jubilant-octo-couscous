@@ -106,11 +106,11 @@ const SeatsFirst = () => {
       </section>
       <figure>
         <CldImage
+          cloudName="labofthingsimages"
           src="current-flow-ui_e0kpio.png"
           alt="current flow ui"
-          // width={1840}
-          // height={1416}
-          // cloudName="labofthingsimages"
+          width={1840}
+          height={1416}
           // 1840 × 1416
         />
         <figcaption>
