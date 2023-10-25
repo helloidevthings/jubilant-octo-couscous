@@ -28,6 +28,14 @@ const SeatsFirst = () => {
           Create a new flow that shows the seatmap first and combines to screens
           to make the process faster.
         </h3>
+        <p>
+          I created a user test with three different flows to see which flow
+          users preferred.
+        </p>
+        <p>
+          I used a non-branded approach to try to stay away from any brand
+          loyalty biases.
+        </p>
       </section>
       <figure>
         <Image

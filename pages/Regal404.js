@@ -37,6 +37,7 @@ const TextWrap = styled.section`
     font-style: italic;
     letter-spacing: 0;
     font-size: 2rem;
+    color: #fff;
 
     @media (min-width: 600px) {
       font-size: 3rem;
@@ -48,6 +49,7 @@ const TextWrap = styled.section`
     padding: 1rem 0 2rem;
     font-weight: 500;
     font-size: 1rem;
+    color: #fff;
 
     @media (min-width: 600px) {
       font-size: 1.8rem;

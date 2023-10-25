@@ -110,12 +110,12 @@ const ProjectBranding = [
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/barbellplaya4_qszh6q',
   },
   {
-    title: 'Bourbon & Bird',
+    title: 'Every Brilliant Thing',
     description:
       'Branded Experience for a play, with installation, print and digital media',
     alt: 'alt',
     tag: ['Branding', 'Print'],
-    path: '/portfolio/BourbonBird',
+    path: '/portfolio/EveryBrilliantThing',
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/everybrilliantthinggroup_v47zb3',
   },
   {
@@ -343,11 +343,13 @@ export default function Home() {
           <ColorButton
             currentColor={currentColor}
             onClick={() => updateColor('light')}
+            aria-label="light"
           >
             Light
           </ColorButton>
           <ColorButton
             currentColor={currentColor}
+            aria-label="dark"
             onClick={() => updateColor('dark')}
           >
             Dark
@@ -355,6 +357,7 @@ export default function Home() {
           <ColorButton
             currentColor={currentColor}
             onClick={() => updateColor('pink')}
+            aria-label="pink"
           >
             Pink
           </ColorButton>
