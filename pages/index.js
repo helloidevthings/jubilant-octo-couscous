@@ -272,6 +272,15 @@ const Wrapper = styled.div`
   --pinkGradient30: linear-gradient(30deg, #fff0fea8, #ffffffbf);
 `;
 
+const Intro = styled.header`
+  padding: 1rem 0.5rem 2rem;
+  text-align: center;
+`;
+
+const ButtonGroup = styled.div`
+  text-align: right;
+`;
+
 const ColorButton = styled.button`
   border: none;
   margin: 0.3rem;
@@ -330,24 +339,35 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ColorButton
-          currentColor={currentColor}
-          onClick={() => updateColor('light')}
-        >
-          Light
-        </ColorButton>
-        <ColorButton
-          currentColor={currentColor}
-          onClick={() => updateColor('dark')}
-        >
-          Dark
-        </ColorButton>
-        <ColorButton
-          currentColor={currentColor}
-          onClick={() => updateColor('pink')}
-        >
-          Pink
-        </ColorButton>
+        <ButtonGroup>
+          <ColorButton
+            currentColor={currentColor}
+            onClick={() => updateColor('light')}
+          >
+            Light
+          </ColorButton>
+          <ColorButton
+            currentColor={currentColor}
+            onClick={() => updateColor('dark')}
+          >
+            Dark
+          </ColorButton>
+          <ColorButton
+            currentColor={currentColor}
+            onClick={() => updateColor('pink')}
+          >
+            Pink
+          </ColorButton>
+        </ButtonGroup>
+        <Intro>
+          <h1>Joyanna's Portfolio</h1>
+          <h2>Everything is in progress...</h2>
+          <p>
+            Taking this opportunity to play around with Next.js.
+            <br />
+            Every page is a draft that I'm currently working on. ☠️
+          </p>
+        </Intro>
         <PortfolioSection>
           <h2>User Testing</h2>
           <ProjectShelf imgs={UserTesting} />
