@@ -119,7 +119,13 @@ const ProjectShelf = ({ imgs }) => {
           style={{ animationDelay: `.${i * 1}s` }}
         >
           <ProjectFig>
-            <CldImage src={src} alt={alt} width={500} height={500} />
+            <CldImage
+              src={src}
+              alt={alt}
+              width={500}
+              height={500}
+              cloudName="labofthingsimages"
+            />
             <figcaption>
               <TagWrapper>
                 {tag.map((tag, i) => (
