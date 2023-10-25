@@ -1,3 +1,4 @@
+'use client';
 import Head from 'next/head';
 import styled from 'styled-components';
 import ProjectShelf from '../components/ProjectShelf';
@@ -94,7 +95,7 @@ const ProductDesign = [
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/Fillauer',
-    src: 'fillauerlogo_hmmm7c.png',
+    src: 'fillauerlogo_hmmm7c',
   },
 ];
 
@@ -106,7 +107,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['branding', 'print'],
     path: '/portfolio/Barbell',
-    src: 'barbellplaya4_qszh6q.png',
+    src: 'barbellplaya4_qszh6q',
   },
   {
     title: 'Bourbon & Bird',
@@ -115,7 +116,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/BourbonBird',
-    src: 'everybrilliantthinggroup_v47zb3.png',
+    src: 'everybrilliantthinggroup_v47zb3',
   },
   {
     title: 'Bourbon & Bird',
@@ -134,7 +135,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Web', 'Print'],
     path: '/portfolio/LevelUpButtercup',
-    src: 'buttercuplogo_viqyda.png',
+    src: 'buttercuplogo_viqyda',
   },
   {
     title: 'Curious Dog',
@@ -144,7 +145,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/CuriousDog',
-    src: 'curiousdoglogo_zjy5yh.png',
+    src: 'curiousdoglogo_zjy5yh',
   },
   {
     title: 'Old City Wine Bar',
@@ -154,7 +155,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Branding', 'Print'],
     path: '/portfolio/OldCityWineBar',
-    src: 'oldcitywinebar_dxg6zi.png',
+    src: 'oldcitywinebar_dxg6zi',
   },
   {
     title: 'Brochure for a College',
@@ -164,7 +165,7 @@ const ProjectBranding = [
     alt: 'alt',
     tag: ['Brochure', 'Print'],
     path: '/portfolio/Brochure',
-    src: 'brochurch6_qu4cwb.jpg',
+    src: 'brochurch6_qu4cwb',
   },
 ];
 
@@ -176,7 +177,7 @@ const ProjectsIllustration = [
     alt: 'alt',
     tag: ['Website', 'UI/UX'],
     path: '/portfolio/DataVisualization',
-    src: 'cadre5illustrators_jydm1q.png',
+    src: 'cadre5illustrators_jydm1q',
   },
   {
     title: 'Cadre5 404 Page',
@@ -185,7 +186,7 @@ const ProjectsIllustration = [
     alt: 'alt',
     tag: ['Website', 'Illustration'],
     path: '/portfolio/Cadre5404',
-    src: 'cadre5404_i1v8b9.png',
+    src: 'cadre5404_i1v8b9',
   },
   {
     title: 'Branding Study Poster',
@@ -195,7 +196,7 @@ const ProjectsIllustration = [
     date: '2016',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/FoodPoster',
-    src: 'foodgirl3_mw5gnm.png',
+    src: 'foodgirl3_mw5gnm',
   },
   {
     title: 'Heartmenders',
@@ -204,7 +205,7 @@ const ProjectsIllustration = [
     date: '2017',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/Heartmenders',
-    src: 'heartmenders2_cplcxd.jpg',
+    src: 'heartmenders2_cplcxd',
   },
   {
     title: 'Playbook',
@@ -214,7 +215,7 @@ const ProjectsIllustration = [
     alt: 'alt',
     tag: ['Illustration', 'Print'],
     path: '/portfolio/Playbook',
-    src: 'elainedrawing3_fci2rk.jpg',
+    src: 'elainedrawing3_fci2rk',
   },
 ];
 

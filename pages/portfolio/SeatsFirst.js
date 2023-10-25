@@ -107,7 +107,7 @@ const SeatsFirst = () => {
       <figure>
         <CldImage
           cloudName="labofthingsimages"
-          src="current-flow-ui_e0kpio.png"
+          src="new-flow-wires-3_h9ey9w"
           alt="current flow ui"
           width={1840}
           height={1416}
