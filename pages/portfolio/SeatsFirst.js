@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
-// import { CldImage } from 'next-cloudinary';
-import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
+// import Image from 'next/image';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
@@ -105,8 +105,8 @@ const SeatsFirst = () => {
         </ul>
       </section>
       <figure>
-        <img
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178212/Portfolio_Images/current-flow-ui_e0kpio.png"
+        <CldImage
+          src="current-flow-ui_e0kpio.png"
           alt="current flow ui"
           // width={1840}
           // height={1416}
