@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
-import { CldImage } from 'next-cloudinary';
+// import { CldImage } from 'next-cloudinary';
 import Image from 'next/image';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
@@ -32,13 +32,13 @@ const SeatsFirst = () => {
         </p>
       </section>
       <figure>
-        <CldImage
+        {/* <CldImage
           src="new-flow-wires-3_h9ey9w"
           alt="Seat map and selection screens"
           width={1796}
           height={1218}
           // 1796 × 1218
-        />
+        /> */}
         <figcaption>
           Wireframes of a proposed flow that would show users the seat map for
           each showtime first.
