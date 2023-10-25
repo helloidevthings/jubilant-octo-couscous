@@ -105,12 +105,12 @@ const SeatsFirst = () => {
         </ul>
       </section>
       <figure>
-        <Image
+        <img
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178212/Portfolio_Images/current-flow-ui_e0kpio.png"
           alt="current flow ui"
-          width={1840}
-          height={1416}
-          cloudName="labofthingsimages"
+          // width={1840}
+          // height={1416}
+          // cloudName="labofthingsimages"
           // 1840 × 1416
         />
         <figcaption>
