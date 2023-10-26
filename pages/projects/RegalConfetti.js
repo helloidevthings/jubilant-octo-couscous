@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Confetti from '../components/Icons/Confetti';
-import Gem from '../components/Icons/Gem';
-import Sparkles from '../components/Icons/Sparkles';
-import Crown from '../components/Icons/Crown';
-import Stars from '../components/Icons/Stars';
-import PopcornBurst from '../components/Icons/PopcornBurst';
+import Confetti from '../../components/Icons/Confetti';
+import Gem from '../../components/Icons/Gem';
+import Sparkles from '../../components/Icons/Sparkles';
+import Crown from '../../components/Icons/Crown';
+import Stars from '../../components/Icons/Stars';
+import PopcornBurst from '../../components/Icons/PopcornBurst';
 
 const MainWrap = styled.main`
   display: flex;
@@ -14,6 +14,8 @@ const MainWrap = styled.main`
   justify-content: center;
   height: 100vh;
   padding: 5rem 0.25rem;
+  color: #fff;
+  background: #000;
 
   button {
     padding: 1rem 1.5rem 1rem;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const PopcornWrapper = styled.figure`
   position: relative;
@@ -60,28 +61,28 @@ const PopcornContainer = styled.img`
   }
 `;
 
-const Kernal = styled.img`
-  max-width: 10px;
+const Kernal = styled(Image)`
+  max-width: 30px;
+  max-height: 30px;
 
-  @media (min-width: 600px) {
-    max-width: 30px;
+  @media (max-width: 600px) {
+    max-width: 20px;
+    max-height: 20px;
   }
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: center bottom;
+  object-fit: contain;
+  transform-origin: center top;
   animation: popcorn 4s infinite alternate ease-in-out;
 
   @keyframes popcorn {
     0% {
       transform: translate3d(0, 0, 0);
     }
-    100% {
-      /* transform: translate(0, 10px); */
-      /* transform: perspective(200px) translate3d(-30px, 15px, 40px); */
-      /* transform: translate3d(-10px, 15px, 0); */
-      transform: perspective(300px) translate3d(-10px, 15px, 40px);
+    50% {
+      transform: translate3d(-5px, 10px, 20px) scale(1.1);
+    }
+    0% {
+      transform: translate3d(0, 0, 10px);
     }
   }
 `;
@@ -118,11 +119,25 @@ const PopcornPieces = [
 ];
 
 const Popcorn = () => {
-  const [topKern, leftKern] = useState(false);
+  const [positions, updatePos] = useState([]);
+
+  useEffect(() => {
+    updatePos(
+      PopcornPieces.map(() => ({
+        Y: `-${Math.random() * 30}%`,
+        X: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 1}s`,
+        duration: `${Math.floor(Math.random() * 5) * 3}s`,
+      }))
+    );
+  }, []);
 
   return (
     <PopcornWrapper>
       <PopcornContainer
+        fill="true"
+        sizes="(max-width: 600px) 500px,
+                  200px"
         src="https://res.cloudinary.com/labofthingsimages/image/upload/v1679426184/popcornfull_rfousl.png"
         alt="popcorn"
       />
@@ -130,13 +145,15 @@ const Popcorn = () => {
         <Kernal
           src={src}
           alt={alt}
+          fill="true"
+          sizes="(max-width: 600px) 10px,
+          30px"
           key={alt + i}
           style={{
-            top: `-${Math.random() * 10}%`,
-            left: `${Math.random() * 100}%`,
-            // transform: `translate3D(0, 0, ${Math.random() * 100})`,
-            animationDelay: `${Math.random() * 2}s`,
-            animationDuration: `${Math.random() * 2 + 2}s`,
+            top: positions[i]?.Y,
+            left: positions[i]?.X,
+            animationDelay: positions[i]?.delay,
+            animationDuration: positions[i]?.duration,
           }}
         />
       ))}

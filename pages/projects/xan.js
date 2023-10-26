@@ -545,8 +545,10 @@ const Xan = () => {
       <CharacterName>
         <figure>
           <Image
-            src="https://64.media.tumblr.com/24def3722a5881aee1557c5d8a4e0dbe/402420ff79db394a-9a/s1280x1920/77dd9a8533148d37d72ec1642d527709410aac65.jpg"
-            alt=""
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698341833/dndcharacterxan_tre2o8.png"
+            alt="picture of my character"
+            width="140"
+            height="140"
           />
           <figcaption>
             <a

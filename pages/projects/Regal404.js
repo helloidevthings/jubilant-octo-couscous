@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Popcorn from '../components/Popcorn';
-import Four from '../components/Four';
+import Popcorn from '../../components/Popcorn';
+import Four from '../../components/Four';
 
 const Container = styled.section`
   display: flex;
@@ -9,9 +9,7 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #1a191d
-    url(https://res.cloudinary.com/labofthingsimages/image/upload/v1679599870/crownimage1_ejqcoh.png)
-    no-repeat center center;
+  background: #1a191d;
   background-size: cover;
   padding: 1rem;
   overflow: hidden;
@@ -38,6 +36,7 @@ const TextWrap = styled.section`
     letter-spacing: 0;
     font-size: 2rem;
     color: #fff;
+    text-wrap: balance;
 
     @media (min-width: 600px) {
       font-size: 3rem;
@@ -108,19 +107,12 @@ const Regal404 = () => {
         <Popcorn />
         <Four />
       </PopcornWrapper>
-      {/* <h1>
-        <span>404</span>
-      </h1> */}
       <TextWrap>
         <h1>Well this is a reel problem.</h1>
         <h3>
           It looks like this page has popped out for a bit, but we can usher you
           to a new seat.
         </h3>
-        {/* <img
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1679603199/Group_1114_mwvyye.png"
-          alt="thing"
-        /> */}
         <p>
           <em>
             (Seriously, though, thanks for giving us concessions on those puns.)

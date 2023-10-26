@@ -6,9 +6,6 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #1a191d
-    url(https://res.cloudinary.com/labofthingsimages/image/upload/v1679599870/crownimage1_ejqcoh.png)
-    no-repeat center center;
   background-size: cover;
   padding: 1rem;
   overflow: hidden;
