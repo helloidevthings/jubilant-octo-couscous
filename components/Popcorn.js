@@ -146,7 +146,7 @@ const Popcorn = () => {
           src={src}
           alt={alt}
           fill="true"
-          sizes="(max-width: 600px) 10px,
+          sizes="(min-width: 600px) 10px,
           30px"
           key={alt + i}
           style={{
