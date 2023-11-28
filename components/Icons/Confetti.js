@@ -41,7 +41,7 @@ const ConfettiCircle = styled.circle`
       : 'none'};
 `;
 
-const Confetti = ({ startAnimation }) => {
+const Confetti = ({ startAnimation, isInView }) => {
   const [start, playConfetti] = useState(false);
 
   // const [randoFetti, setRandoFetti] = useState([]);
@@ -67,6 +67,7 @@ const Confetti = ({ startAnimation }) => {
       viewBox="0 0 211 101"
       width="13em"
       height="13em"
+      isInView={isInView}
     >
       <ConfettiPiece
         play={startAnimation ? startAnimation : start}
