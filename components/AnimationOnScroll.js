@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const AnimateWrap = styled.div`
   display: block;
-  opacity: ${(props) => (props.isinview === 'true' ? '1' : '0')};
-  transition: opacity 0.5s ease-in-out;
-  color: pink;
+  /* opacity: ${(props) => (props.isinview === 'true' ? '1' : '0')}; */
+  /* transition: opacity 0.5s ease-in-out; */
+  /* color: pink; */
 `;
 
 const AnimationOnScroll = ({ children }) => {
@@ -16,7 +16,7 @@ const AnimationOnScroll = ({ children }) => {
   });
 
   return (
-    <AnimateWrap ref={ref} isinview={inView.toString()}>
+    <AnimateWrap ref={ref} className={inView ? 'inView' : null}>
       {children}
     </AnimateWrap>
   );
