@@ -12,8 +12,15 @@ const AnimateWrap = styled.div`
 
   .zoomUp {
     opacity: 0;
-    transform: translateY(20px) scale(0.75);
-    transition: all 0.5s ease-in-out;
+    transform: translateY(10px) scale(0.95);
+    transition:
+      transform 0.4s ease-in-out,
+      opacity 0.5s ease-in-out;
+  }
+
+  .colorFade {
+    filter: saturate(0) contrast(1);
+    transition: filter 0.3s ease-in-out;
   }
 
   .bounce2 {
@@ -37,6 +44,17 @@ const AnimateWrap = styled.div`
     }
   }
 
+  .typeIt {
+    width: 18ch;
+    animation:
+      2s steps(15) 0s 1 normal none running typing,
+      0.5s step-end 0s infinite alternate none running effect;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.5;
+    border-right: 3px solid var(--tertiary);
+  }
+
   .isAlive {
     .fadeUp {
       opacity: 1;
@@ -46,6 +64,16 @@ const AnimateWrap = styled.div`
     .zoomUp {
       opacity: 1;
       transform: translateY(0px) scale(1);
+    }
+
+    .colorFade {
+      filter: none;
+    }
+
+    .scaleAfter {
+      &:after {
+        transform: scaleX(1);
+      }
     }
 
     .bounce2 {
