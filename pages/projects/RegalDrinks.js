@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Curve from '../../components/Icons/Curve';
-import AnimationOnScroll from '../../components/AnimationOnScroll';
-import { useEffect, useRef, useState } from 'react';
+import AnimateOnScroll from '../../components/AnimationOnScroll';
 
 const Wrapper = styled.div`
   background: linear-gradient(180deg, #1d1d1d 0%, rgba(29, 29, 29, 0) 100%);
@@ -49,7 +48,7 @@ const Content = styled.div`
 `;
 
 const TitleImage = styled(Image)`
-  animation: fadeUp ease 1.3s;
+  /* animation: fadeUp ease 1.3s;
 
   @keyframes fadeUp {
     from {
@@ -60,26 +59,10 @@ const TitleImage = styled(Image)`
       opacity: 1;
       transform: translateY(0px);
     }
-  }
+  } */
 `;
 
-const DrinkImage = styled(Image)`
-  animation: bounce3 ease 10s infinite alternate;
-  grid-column-start: span 2;
-  grid-column-end: span 2;
-
-  @keyframes bounce3 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translate3D(30px, 20px, 5px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-`;
+const DrinkImage = styled(Image)``;
 
 const AnimateCurve = styled(Curve)`
   transform: translateX(-100%);
@@ -103,64 +86,72 @@ const PageTitle = styled.h1`
 `;
 
 const RegalDrinks = () => {
-  const [isAlive, setIsAlive] = useState(true);
-  const myRef = useRef();
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const [entry] = entries;
-      console.log(entry);
-    });
-    observer.observe(myRef.current);
-  }, []);
-
   return (
     <Wrapper>
       {/* <PageTitle>Regal Drinks</PageTitle> */}
-      <Slide>
-        <Content>
-          <TitleImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
+      <AnimateOnScroll>
+        <Slide>
+          <Content>
+            <TitleImage
+              className="fadeUp"
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+            />
+            <p className="fadeUp">
+              Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
+              nectar.
+              <br />
+              <em>(280 - 460 Cal) 12.5</em>
+            </p>
+          </Content>
+          <DrinkImage
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
             alt="Regal Drinks"
             width={500}
             height={500}
+            className="zoomUp"
           />
-          <p>
-            Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
-            nectar.
-            <br />
-            <em>(280 - 460 Cal) 12.5</em>
-          </p>
-        </Content>
-        <DrinkImage
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-          alt="Regal Drinks"
-          width={500}
-          height={500}
-        />
-      </Slide>
+        </Slide>
+      </AnimateOnScroll>
       <AnimateCurve />
-      <Slide>
-        <Content>
-          <TitleImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
-            alt="Regal Drinks"
-            width={500}
-            height={500}
-          />
-          <p ref={myRef}>
-            Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
-            nectar.
-            <br />
-            <em>(280 - 460 Cal) 12.5</em>
-          </p>
-        </Content>
-        <DrinkImage
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-          alt="Regal Drinks"
-          width={500}
-          height={500}
-        />
-      </Slide>
+      <AnimateOnScroll>
+        <Slide>
+          <Content>
+            <TitleImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+            />
+            <p className="fadeUp">
+              Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
+              nectar.
+              <br />
+              <em>(280 - 460 Cal) 12.5</em>
+            </p>
+          </Content>
+          <div className="zoomUp">
+            <DrinkImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+              className="bounce3"
+            />
+          </div>
+          <div className="zoomUp" style={{ transitionDelay: '.25s' }}>
+            <DrinkImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+              className="bounce2"
+            />
+          </div>
+        </Slide>
+      </AnimateOnScroll>
     </Wrapper>
   );
 };
