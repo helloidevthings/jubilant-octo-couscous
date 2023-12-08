@@ -218,7 +218,6 @@ const SeatsFirst = () => {
           reduce the time it takes to complete screens.
         </figcaption>
       </figure>
-
       <section>
         <AnimationOnScroll>
           <Heading2 className="scaleAfter">Results</Heading2>
@@ -245,9 +244,56 @@ const SeatsFirst = () => {
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1698178373/Portfolio_Images/preferred-flows_i7y2md.png"
           alt="Results leaning towards the new flow"
-          width={2158}
+          width={1500}
           height={1336}
           // 2158 × 1336
+        />
+      </figure>
+      <hr />
+      <section>
+        <AnimationOnScroll>
+          <Heading2 className="scaleAfter">New Problems</Heading2>
+        </AnimationOnScroll>
+        <h3>Users don't distinguish between "seats" and "tickets"</h3>
+        <p>
+          The next test would be to see if users will be confused by changing
+          out ticket types.
+        </p>
+      </section>
+      <figure>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1702002316/Screenshot_2023-12-07_at_9.24.13_PM_csball.png"
+          alt="Results leaning towards the new flow"
+          width={900}
+          height={900}
+          // 1840 × 1416
+        />
+      </figure>
+      <figure>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1702002748/Screenshot_2023-12-07_at_9.32.19_PM_hzvbln.png"
+          alt="Results leaning towards the new flow"
+          width={900}
+          height={900}
+          // 1840 × 1416
+        />
+      </figure>
+      <figure>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1702003201/Screenshot_2023-12-07_at_9.39.07_PM_e5kerj.png"
+          alt="Results leaning towards the new flow"
+          width={1300}
+          height={900}
+          // 1840 × 1416
+        />
+      </figure>
+      <figure>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1702003870/Screenshot_2023-12-07_at_9.50.49_PM_u0hkh0.png"
+          alt="Results leaning towards the new flow"
+          width={1300}
+          height={900}
+          // 1840 × 1416
         />
       </figure>
     </Wrapper>
