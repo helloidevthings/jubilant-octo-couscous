@@ -20,10 +20,10 @@ const AnimateWrap = styled.div`
 
   .colorFade {
     filter: saturate(0) contrast(1);
-    transition: filter 0.3s ease-in-out;
+    transition: filter 0.8s ease-in-out;
   }
 
-  .bounce2 {
+  .parallaxY {
   }
 
   .bounce3 {
@@ -98,10 +98,10 @@ const AnimateWrap = styled.div`
   }
 `;
 
-const AnimationOnScroll = ({ children }) => {
+const AnimationOnScroll = ({ children, threshold }) => {
   const { ref, inView, entry } = useInView({
     // rootMargin: '0px 0px -100px 0px',
-    threshold: 0.5,
+    threshold: threshold || 0.5,
     // trackVisibility: true,
     // delay: 100,
   });

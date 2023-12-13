@@ -17,7 +17,7 @@ const Slide = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-rows: 1fr;
-  min-height: 500px;
+  min-height: 80vh;
   width: 100%;
   max-width: 100vw;
   overflow: hidden;
@@ -152,6 +152,53 @@ const RegalDrinks = () => {
           </div>
         </Slide>
       </AnimateOnScroll>
+      <AnimateCurve />
+      <AnimateOnScroll>
+        <Slide>
+          <Content>
+            <TitleImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+            />
+            <p className="fadeUp">
+              Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
+              nectar.
+              <br />
+              <em>(280 - 460 Cal) 12.5</em>
+            </p>
+          </Content>
+          <div className="zoomUp">
+            <DrinkImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+              className="bounce3"
+            />
+          </div>
+          <div className="zoomUp" style={{ transitionDelay: '.25s' }}>
+            <DrinkImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+              className="bounce2"
+            />
+          </div>
+          <div className="zoomUp" style={{ transitionDelay: '.5s' }}>
+            <DrinkImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
+              alt="Regal Drinks"
+              width={500}
+              height={500}
+              className="bounce2"
+            />
+          </div>
+        </Slide>
+      </AnimateOnScroll>
+      <AnimateCurve />
     </Wrapper>
   );
 };
