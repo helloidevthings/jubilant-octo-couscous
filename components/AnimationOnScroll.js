@@ -98,10 +98,10 @@ const AnimateWrap = styled.div`
   }
 `;
 
-const AnimationOnScroll = ({ children, threshold }) => {
+const AnimationOnScroll = ({ children, threshold, rootMargin }) => {
   const { ref, inView, entry } = useInView({
-    // rootMargin: '0px 0px -100px 0px',
     threshold: threshold || 0.5,
+    // rootMargin: '0px 0px -100px 0px',
     // trackVisibility: true,
     // delay: 100,
   });

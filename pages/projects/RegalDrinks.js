@@ -20,6 +20,7 @@ const Slide = styled.section`
   min-height: 80vh;
   width: 100%;
   max-width: 100vw;
+  background: linear-gradient(180deg, #1d1d1d 0%, rgba(29, 29, 29, 0) 100%);
   overflow: hidden;
 
   @media (min-width: 600px) {
@@ -64,19 +65,8 @@ const TitleImage = styled(Image)`
 
 const DrinkImage = styled(Image)``;
 
-const AnimateCurve = styled(Curve)`
-  transform: translateX(-100%);
-  animation: curve ease 1.3s;
-  width: 300px;
-
-  @keyframes curve {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
+const DrinkTitle = styled.h2`
+  font-size: 24px;
 `;
 
 const PageTitle = styled.h1`
@@ -92,14 +82,15 @@ const RegalDrinks = () => {
       <AnimateOnScroll>
         <Slide>
           <Content>
-            <TitleImage
+            <DrinkTitle className="fadeUp">Margaritas</DrinkTitle>
+            {/* <TitleImage
               className="fadeUp"
               src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
               alt="Regal Drinks"
               width={500}
               height={500}
-            />
-            <p className="fadeUp">
+            /> */}
+            <p className="fadeUp" style={{ transitionDelay: '.1s' }}>
               Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
               nectar.
               <br />
@@ -107,7 +98,7 @@ const RegalDrinks = () => {
             </p>
           </Content>
           <DrinkImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703008878/marg_nr5snq.png"
             alt="Regal Drinks"
             width={500}
             height={500}
@@ -115,90 +106,70 @@ const RegalDrinks = () => {
           />
         </Slide>
       </AnimateOnScroll>
-      <AnimateCurve />
+      <Curve />
       <AnimateOnScroll>
         <Slide>
           <Content>
-            <TitleImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-            />
-            <p className="fadeUp">
+            <DrinkTitle className="fadeUp">Wine</DrinkTitle>
+            <p className="fadeUp" style={{ transitionDelay: '.1s' }}>
               Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
               nectar.
               <br />
               <em>(280 - 460 Cal) 12.5</em>
             </p>
           </Content>
-          <div className="zoomUp">
-            <DrinkImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-              className="bounce3"
-            />
-          </div>
-          <div className="zoomUp" style={{ transitionDelay: '.25s' }}>
-            <DrinkImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-              className="bounce2"
-            />
-          </div>
+          <DrinkImage
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703023724/old-fashioned_u9ybtq.png"
+            alt="Regal Drinks"
+            width={500}
+            height={500}
+            className="zoomUp"
+          />
         </Slide>
       </AnimateOnScroll>
-      <AnimateCurve />
+      <Curve />
       <AnimateOnScroll>
         <Slide>
           <Content>
-            <TitleImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701358840/Margaritas_ibk5rl.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-            />
-            <p className="fadeUp">
+            <DrinkTitle className="fadeUp">Beer</DrinkTitle>
+            <p className="fadeUp" style={{ transitionDelay: '.1s' }}>
               Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
               nectar.
               <br />
               <em>(280 - 460 Cal) 12.5</em>
             </p>
           </Content>
-          <div className="zoomUp">
-            <DrinkImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-              className="bounce3"
-            />
-          </div>
-          <div className="zoomUp" style={{ transitionDelay: '.25s' }}>
-            <DrinkImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-              className="bounce2"
-            />
-          </div>
-          <div className="zoomUp" style={{ transitionDelay: '.5s' }}>
-            <DrinkImage
-              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1701359221/margarita_rutjfs.png"
-              alt="Regal Drinks"
-              width={500}
-              height={500}
-              className="bounce2"
-            />
-          </div>
+          <DrinkImage
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703023912/bluemoon-bottle_oqand6.png"
+            alt="Regal Drinks"
+            width={500}
+            height={500}
+            className="zoomUp"
+          />
         </Slide>
       </AnimateOnScroll>
-      <AnimateCurve />
+      <Curve />
+      <AnimateOnScroll>
+        <Slide>
+          <Content>
+            <DrinkTitle className="fadeUp">Mixed Drinks</DrinkTitle>
+            <p className="fadeUp" style={{ transitionDelay: '.1s' }}>
+              Camarena Silver Tequila, DeKuyper Triple Sec, lime juice and agave
+              nectar.
+              <br />
+              <em>(280 - 460 Cal) 12.5</em>
+            </p>
+          </Content>
+          <DrinkImage
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703023732/RumPunch_s2sf38.png"
+            alt="Regal Drinks"
+            width={500}
+            height={500}
+            className="zoomUp"
+          />
+        </Slide>
+      </AnimateOnScroll>
+      <Curve />
     </Wrapper>
   );
 };
