@@ -22,6 +22,18 @@ const Slide = styled.section`
   width: 100%;
   max-width: 100vw;
   background: linear-gradient(180deg, #1d1d1d 0%, rgba(29, 29, 29, 0) 100%);
+  background: #3ca55c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b5ac49,
+    #3ca55c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b5ac49,
+    #3ca55c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   overflow: hidden;
 
   @media (min-width: 600px) {
@@ -68,6 +80,8 @@ const DrinkImage = styled(Image)``;
 
 const FruitImage = styled(Image)`
   position: absolute;
+  top: 20%;
+  left: 10%;
 `;
 
 const DrinkProducts = styled.div`
@@ -85,8 +99,18 @@ const DrinkProducts = styled.div`
 const ProductWrap = styled.div`
   max-width: 200px;
   max-height: 200px;
-  background: pink;
   border-radius: 10px;
+  background: #56ab2f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #a8e063,
+    #56ab2f
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #a8e063,
+    #56ab2f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   img {
     /* width: 100%; */
