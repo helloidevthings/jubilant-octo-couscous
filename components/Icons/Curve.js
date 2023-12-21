@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 const SVGWrap = styled.svg`
+  width: 100%;
+  max-width: 140vw;
   transform: translateX(-100%);
   animation: curve ease-in-out 3s infinite alternate;
-  transform-origin: center center;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
 
   @keyframes curve {
     from {
@@ -15,6 +19,7 @@ const SVGWrap = styled.svg`
   }
 
   path {
+    transform-origin: center center;
     fill: #273036;
   }
 `;

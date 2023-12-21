@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const AnimateWrap = styled.div`
   display: block;
+  background: ${(props) =>
+    props.$isInView && props.$bgColor ? props.$bgColor : 'transparent'};
+  transition: all 0.5s ease-in-out;
 
   .fadeUp {
     opacity: 0;
@@ -98,7 +101,7 @@ const AnimateWrap = styled.div`
   }
 `;
 
-const AnimationOnScroll = ({ children, threshold, rootMargin }) => {
+const AnimationOnScroll = ({ children, threshold, backgroundColor }) => {
   const { ref, inView, entry } = useInView({
     threshold: threshold || 0.5,
     // rootMargin: '0px 0px -100px 0px',
@@ -107,7 +110,7 @@ const AnimationOnScroll = ({ children, threshold, rootMargin }) => {
   });
 
   return (
-    <AnimateWrap ref={ref}>
+    <AnimateWrap ref={ref} $bgColor={backgroundColor} $isInView={inView}>
       <div className={inView ? 'isAlive' : 'dead'}>{children}</div>
     </AnimateWrap>
   );

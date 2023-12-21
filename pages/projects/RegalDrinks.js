@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Slide = styled.section`
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-rows: 1fr;
@@ -65,6 +66,33 @@ const TitleImage = styled(Image)`
 
 const DrinkImage = styled(Image)``;
 
+const FruitImage = styled(Image)`
+  position: absolute;
+`;
+
+const DrinkProducts = styled.div`
+  width: 100vw;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-rows: 1fr; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 30px;
+`;
+
+const ProductWrap = styled.div`
+  max-width: 200px;
+  max-height: 200px;
+  background: pink;
+  border-radius: 10px;
+
+  img {
+    /* width: 100%; */
+  }
+`;
+
 const DrinkTitle = styled.h2`
   font-size: 24px;
 `;
@@ -75,11 +103,18 @@ const PageTitle = styled.h1`
   margin-bottom: 20px;
 `;
 
+const AnimatedCurve = styled(Curve)`
+  transform: translateX(-100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
 const RegalDrinks = () => {
   return (
     <Wrapper>
       {/* <PageTitle>Regal Drinks</PageTitle> */}
-      <AnimateOnScroll>
+      <AnimateOnScroll backgroundColor="#417f21">
         <Slide>
           <Content>
             <DrinkTitle className="fadeUp">Margaritas</DrinkTitle>
@@ -104,9 +139,54 @@ const RegalDrinks = () => {
             height={500}
             className="zoomUp"
           />
+          <FruitImage
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703182611/lime_h1e1fm.png"
+            alt="Regal Drinks"
+            width={200}
+            height={200}
+            className="zoomUp"
+          />
+          <DrinkProducts>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703182617/PineappleMangoMargartia_podw8c.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703182616/SaltyWatermelonMargarita_jqhohf.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703182615/SmokyPassionFruitMezgarita_olqxq9.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703182613/ItalianAperolMargarita_gapvt6.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+          </DrinkProducts>
+          <AnimatedCurve />
         </Slide>
       </AnimateOnScroll>
-      <Curve />
       <AnimateOnScroll>
         <Slide>
           <Content>
@@ -125,10 +205,10 @@ const RegalDrinks = () => {
             height={500}
             className="zoomUp"
           />
+          <AnimatedCurve />
         </Slide>
       </AnimateOnScroll>
-      <Curve />
-      <AnimateOnScroll>
+      <AnimateOnScroll backgroundColor={'pink'}>
         <Slide>
           <Content>
             <DrinkTitle className="fadeUp">Beer</DrinkTitle>
@@ -146,9 +226,9 @@ const RegalDrinks = () => {
             height={500}
             className="zoomUp"
           />
+          <AnimatedCurve />
         </Slide>
       </AnimateOnScroll>
-      <Curve />
       <AnimateOnScroll>
         <Slide>
           <Content>
@@ -161,15 +241,53 @@ const RegalDrinks = () => {
             </p>
           </Content>
           <DrinkImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703023732/RumPunch_s2sf38.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703088375/36_RumPunch_aqbu0o.png"
             alt="Regal Drinks"
             width={500}
             height={500}
             className="zoomUp"
           />
+          <DrinkProducts>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703099081/MaiTime_bvco0p.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703099081/BlueStormVodkaSoda_ekknhd.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703025169/37_TikiGodsNectar_tq1xkf.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+            <ProductWrap>
+              <DrinkImage
+                src="https://res.cloudinary.com/labofthingsimages/image/upload/v1703099083/monkeyshouldercolda_lxwwey.png"
+                alt="Regal Drinks"
+                width={150}
+                height={150}
+                className="zoomUp"
+              />
+            </ProductWrap>
+          </DrinkProducts>
+          <AnimatedCurve />
         </Slide>
       </AnimateOnScroll>
-      <Curve />
     </Wrapper>
   );
 };
