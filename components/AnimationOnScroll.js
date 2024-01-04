@@ -13,6 +13,11 @@ const AnimateWrap = styled.div`
     transition: all 0.5s ease-in-out;
   }
 
+  .slideUp {
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+  }
+
   .zoomUp {
     opacity: 0;
     transform: translateY(10px) scale(0.95);
@@ -69,6 +74,10 @@ const AnimateWrap = styled.div`
       transform: translateY(0px) scale(1);
     }
 
+    .slideUp {
+      transform: translateY(0px);
+    }
+
     .colorFade {
       filter: none;
     }
@@ -76,6 +85,39 @@ const AnimateWrap = styled.div`
     .scaleAfter {
       &:after {
         transform: scaleX(1);
+      }
+    }
+
+    .swingLeftRight {
+      transform-origin: top center;
+      animation: swing-left-right ease 4s infinite;
+
+      @keyframes swing-left-right {
+        0% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+        50% {
+          transform: translate(10px, 0px) rotate(10deg);
+        }
+        100% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+      }
+    }
+
+    .spin {
+      animation: spin ease 4s infinite;
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     }
 
