@@ -16,24 +16,12 @@ const Wrapper = styled.div`
 const Slide = styled.section`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-rows: auto;
   min-height: 80vh;
   width: 100%;
   max-width: 100vw;
-  background: linear-gradient(180deg, #1d1d1d 0%, rgba(29, 29, 29, 0) 100%);
-  background: #3ca55c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #b5ac49,
-    #3ca55c
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #b5ac49,
-    #3ca55c
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: linear-gradient(358deg, #1d1d1d 0%, rgb(29 29 29 / 40%) 100%);
   overflow: hidden;
 
   @media (min-width: 600px) {
@@ -89,28 +77,45 @@ const DrinkProducts = styled.div`
   /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-rows: 1fr; */
+  background: #273036;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   gap: 30px;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 5em;
+    top: -4em;
+    left: -4em;
+    background: url('https://res.cloudinary.com/labofthingsimages/image/upload/v1704381747/curve_dqmswm.svg')
+      no-repeat center center;
+    transform: translateX(0);
+    transform-origin: center;
+    z-index: -1;
+
+    animation: curve ease-in-out 3s infinite alternate;
+
+    @keyframes curve {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(4em);
+      }
+    }
+  }
 `;
 
 const ProductWrap = styled.div`
   max-width: 200px;
   max-height: 200px;
   border-radius: 10px;
-  background: #56ab2f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #a8e063,
-    #56ab2f
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #a8e063,
-    #56ab2f
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom, #404b52, #959595);
 
   img {
     /* width: 100%; */
@@ -138,7 +143,7 @@ const RegalDrinks = () => {
   return (
     <Wrapper>
       {/* <PageTitle>Regal Drinks</PageTitle> */}
-      <AnimateOnScroll backgroundColor="#417f21">
+      <AnimateOnScroll backgroundColor="#b6c954">
         <Slide>
           <Content>
             <DrinkTitle className="fadeUp">Margaritas</DrinkTitle>
@@ -170,6 +175,7 @@ const RegalDrinks = () => {
             height={200}
             className="zoomUp"
           />
+          {/* <AnimatedCurve /> */}
           <DrinkProducts>
             <ProductWrap>
               <DrinkImage
@@ -208,10 +214,9 @@ const RegalDrinks = () => {
               />
             </ProductWrap>
           </DrinkProducts>
-          <AnimatedCurve />
         </Slide>
       </AnimateOnScroll>
-      <AnimateOnScroll>
+      <AnimateOnScroll backgroundColor={'#c97c01'}>
         <Slide>
           <Content>
             <DrinkTitle className="fadeUp">Wine</DrinkTitle>
@@ -229,10 +234,10 @@ const RegalDrinks = () => {
             height={500}
             className="zoomUp"
           />
-          <AnimatedCurve />
+          {/* <AnimatedCurve /> */}
         </Slide>
       </AnimateOnScroll>
-      <AnimateOnScroll backgroundColor={'pink'}>
+      <AnimateOnScroll backgroundColor={'#4f95cb'}>
         <Slide>
           <Content>
             <DrinkTitle className="fadeUp">Beer</DrinkTitle>
@@ -250,10 +255,10 @@ const RegalDrinks = () => {
             height={500}
             className="zoomUp"
           />
-          <AnimatedCurve />
+          {/* <AnimatedCurve /> */}
         </Slide>
       </AnimateOnScroll>
-      <AnimateOnScroll>
+      <AnimateOnScroll backgroundColor="#bb4012">
         <Slide>
           <Content>
             <DrinkTitle className="fadeUp">Mixed Drinks</DrinkTitle>
@@ -309,7 +314,7 @@ const RegalDrinks = () => {
               />
             </ProductWrap>
           </DrinkProducts>
-          <AnimatedCurve />
+          {/* <AnimatedCurve /> */}
         </Slide>
       </AnimateOnScroll>
     </Wrapper>
