@@ -28,6 +28,10 @@ const Slide = styled.section`
     flex-direction: row;
     justify-content: space-between;
   }
+
+  h1 {
+    color: #fff;
+  }
 `;
 
 const Content = styled.div`
@@ -193,6 +197,9 @@ const beerProducts = [
 const RegalDrinks = () => {
   return (
     <Wrapper>
+      <Slide>
+        <h1>Drink Specials</h1>
+      </Slide>
       {/* <PageTitle>Regal Drinks</PageTitle> */}
       <AnimateOnScroll backgroundColor="#b6c954">
         <Slide>
