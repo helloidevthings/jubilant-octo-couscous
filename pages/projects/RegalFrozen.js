@@ -39,7 +39,12 @@ const ShatterMe = styled(ShatterStrokes)`
   mix-blend-mode: overlay;
 
   path {
-    stroke-width: 0.3px;
+    stroke-width: 0.5px;
+
+    @media (min-width: 768px) {
+      stroke-width: 0.3px;
+    }
+
     stroke-dasharray: 1000;
     stroke-dashoffset: 10;
     opacity: 0;
@@ -63,19 +68,14 @@ const ShatterMe = styled(ShatterStrokes)`
 `;
 
 const ShatterScatter = styled(ShatterPieces)`
-  /* position: absolute; */
-  mix-blend-mode: overlay;
-  z-index: 1000;
-  /* top: -50%; */
-  /* left: -50%; */
-  /* transform: translate(50%, 50%); */
-
-  .piece1,
-  .piece2,
-  .piece3,
-  .piece4 {
-    backdrop-filter: blur(3px);
-  }
+  position: absolute;
+  opacity: 0.5;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
 
   .piece1 {
     opacity: 0;
@@ -90,64 +90,7 @@ const ShatterScatter = styled(ShatterPieces)`
         opacity: 0.5;
       }
       to {
-        transform: translate(1000px, 1000px);
-        opacity: 0;
-      }
-    }
-  }
-
-  .piece2 {
-    opacity: 0;
-    transform-origin: top right;
-    transform: translate(0, 0);
-    animation: ${(props) =>
-      props.$isFrozen === 1 ? 'scatter2 3s linear 1s forwards' : 'none'};
-
-    @keyframes scatter2 {
-      from {
-        transform: translate(0, 0);
-        opacity: 1;
-      }
-      to {
-        transform: translate(1000px, -1000px);
-        opacity: 0;
-      }
-    }
-  }
-
-  .piece3 {
-    opacity: 0;
-    transform-origin: top left;
-    transform: translate(0, 0);
-    animation: ${(props) =>
-      props.$isFrozen === 1 ? 'scatter3 3s linear 1s forwards' : 'none'};
-
-    @keyframes scatter3 {
-      from {
-        transform: translate(0, 0);
-        opacity: 1;
-      }
-      to {
-        transform: translate(1000px, -1000px);
-        opacity: 0;
-      }
-    }
-  }
-
-  .piece4 {
-    opacity: 0;
-    transform-origin: top left;
-    transform: translate(0, 0);
-    animation: ${(props) =>
-      props.$isFrozen === 1 ? 'scatter4 3s linear 1s forwards' : 'none'};
-
-    @keyframes scatter4 {
-      from {
-        transform: translate(0, 0);
-        opacity: 1;
-      }
-      to {
-        transform: translate(-1000px, 1000px);
+        transform: translate(100%, 100%);
         opacity: 0;
       }
     }
@@ -182,7 +125,7 @@ const FrozenOverlay = styled.div`
   opacity: ${(props) => (props.$isFrozen === 2 ? 0 : 0.9)};
   transition: all 0.5s ease-in-out;
   transition: ${(props) =>
-    props.$isFrozen === 1 ? 'all ss ease-in-out' : 'all 0.5s ease-in-out'};
+    props.$isFrozen === 1 ? 'all 1s ease-in-out' : 'all 0.5s ease-in-out'};
 `;
 
 const FrozenImage = styled(Image)`
@@ -196,7 +139,7 @@ const FrozenImage = styled(Image)`
   z-index: 100;
   object-fit: cover;
   mix-blend-mode: overlay;
-  opacity: ${(props) => (props.$isFrozen === 2 ? 0 : 0.4)};
+  opacity: ${(props) => (props.$isFrozen === 2 ? 0 : 0.5)};
   /* opacity: 0; */
   /* transition: ${(props) =>
     props.$isFrozen === 2
@@ -209,7 +152,7 @@ const FrozenImage = styled(Image)`
       opacity: 0;
     }
     100% {
-      opacity: 0.4;
+      opacity: 0.5;
     }
   }
 `;
@@ -231,7 +174,7 @@ const RegalFrozen = () => {
   };
 
   const handleMouseMove = (e) => {
-    setMousePos({ x: e.clientX, y: e.clientY });
+    frozen === 1 && setMousePos({ x: e.clientX, y: e.clientY });
     console.log(mousePos);
   };
 
@@ -250,11 +193,9 @@ const RegalFrozen = () => {
         handleClick();
         console.log(frozen);
       }}
-      onMouseMove={(e) => handleMouseMove(e)}
+      onMouseDown={(e) => handleMouseMove(e)}
     >
       <ShatterWrap>
-        <ShatterScatter $isFrozen={frozen} />
-        <ShatterScatter $isFrozen={frozen} />
         <ShatterMe $isFrozen={frozen} $x={mousePos.x} $y={mousePos.y} />
       </ShatterWrap>
       <FrozenWrap>
@@ -266,6 +207,7 @@ const RegalFrozen = () => {
           width={1920}
           height={1080}
         />
+        <ShatterScatter $isFrozen={frozen} />
       </FrozenWrap>
       {/* <Shatter /> */}
       <Image
