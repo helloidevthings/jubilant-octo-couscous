@@ -35,14 +35,11 @@ const ShatterMe = styled(ShatterStrokes)`
   top: ${(props) => props.$y}px;
   left: ${(props) => props.$x}px;
   transform-origin: center center;
-  /* transform: translate(-50%, -50%); */
   z-index: 1000;
   mix-blend-mode: overlay;
-  /* opacity: ${(props) => (props.$isFrozen === 1 ? 1 : 0)}; */
-  /* transition: all 0.1s ease-in-out; */
 
   path {
-    stroke-width: 0.2px;
+    stroke-width: 0.3px;
     stroke-dasharray: 1000;
     stroke-dashoffset: 10;
     opacity: 0;
@@ -53,7 +50,7 @@ const ShatterMe = styled(ShatterStrokes)`
 
     @keyframes draw {
       from {
-        opacity: 1;
+        opacity: 0.5;
         stroke-dashoffset: 1000;
       }
 

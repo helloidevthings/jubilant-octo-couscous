@@ -734,21 +734,6 @@ const Xan = () => {
             <strong>Perception</strong> +7*
           </p>
           <p>
-
-        <PrevButton
-          className="embla__prev"
-          id="ad-bar-prev"
-          onClick={() => emblaApi.scrollPrev()}
-          tabIndex={-1}
-        >
-          <ChevronLeft />
-        </PrevButton>
-        <NextButton
-          className="embla__next"
-          id="ad-bar-next"
-          onClick={() => emblaApi.scrollNext()}
-          tabIndex={-1}
-        >
             <strong>Performance</strong> +7*
           </p>
           <p>
