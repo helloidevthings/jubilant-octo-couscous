@@ -13,8 +13,9 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 const ShatterWrap = styled.div`
@@ -26,6 +27,7 @@ const ShatterWrap = styled.div`
   transform: translate(-100%, -100%);
   z-index: 1000;
   overflow: hidden;
+  overflow-y: hidden;
 `;
 
 const ShatterMe = styled(ShatterStrokes)`
@@ -36,7 +38,6 @@ const ShatterMe = styled(ShatterStrokes)`
   left: ${(props) => props.$x}px;
   transform-origin: center center;
   z-index: 1000;
-  mix-blend-mode: overlay;
 
   path {
     stroke-width: 0.5px;
@@ -67,28 +68,27 @@ const ShatterMe = styled(ShatterStrokes)`
 
 const ShatterScatter = styled(ShatterPiece)`
   position: absolute;
-  opacity: 0.5;
   z-index: 10;
   width: 100%;
   height: 100%;
   opacity: 0;
+  transform-origin: top center;
   animation: ${(props) =>
-    props.$isFrozen === 1
-      ? 'scatter1 0.5s cubic-bezier(0.42, 0, 0, 0.97) 0.5s forwards'
-      : 'none'};
+    props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'};
 
   @keyframes scatter1 {
-    from {
-      /* transform: perspective(500px) translate3d(0, 0, 0); */
-      /* top: ${(props) => props.$y}px; */
-      /* left: ${(props) => props.$x}px; */
-      top: -10%;
+    0% {
+      transform: translate3d(0, 0, 0);
+      /* top: -10%; */
       opacity: 0.8;
     }
-    to {
-      /* transform: perspective(500px) translate3d(0, 0, 100px); */
+    50% {
+      transform: translate3d(0, -30%, 0) rotate(150deg);
+    }
+    100% {
       opacity: 0;
-      top: 100%;
+      /* top: 100%; */
+      transform: translate3d(-100%, 100%, 0) rotate(160deg) scale(0.2);
     }
   }
 `;
@@ -165,7 +165,7 @@ const FrozenImage = styled(Image)`
   }
 `;
 
-const shatterPieces = Array.from({ length: 10 });
+const shatterPieces = Array.from({ length: 20 });
 
 const RegalFrozen = () => {
   const [frozen, unFrozen] = useState(0);
@@ -177,11 +177,11 @@ const RegalFrozen = () => {
     updatePos(
       shatterPieces.map(() => ({
         X: `${Math.random() * 100}%`,
-        Y: `-${Math.random() * 10}%`,
+        Y: `${Math.random() * 100}%`,
         // Z: `${Math.random() * 10}px`,
-        rotate: `${Math.random() * 100}deg`,
-        // delay: `${Math.random() * 3}s`,
-        duration: `${Math.floor(Math.random() * 5) * 0.5}s`,
+        rotate: `${Math.random() * 110}deg`,
+        // delay: `${Math.random() * 1}s`,
+        duration: `${Math.floor(Math.random() * 3) * 1}s`,
       }))
     );
   }, []);
@@ -197,6 +197,7 @@ const RegalFrozen = () => {
     }
   };
 
+  // get mouse position only once when clicked
   const handleMouseMove = (e) => {
     setMousePos({ x: e.clientX, y: e.clientY });
     console.log(mousePos);
@@ -238,8 +239,7 @@ const RegalFrozen = () => {
             top: randomPos[i]?.Y,
             left: randomPos[i]?.X,
             // transform: `rotate(${randomPos[i]?.rotate}) perspective(500px) translate3d(0, 0, ${randomPos[i]?.Z})`,
-            transform: `rotate(${randomPos[i]?.rotate})`,
-            transformOrigin: 'top center',
+            rotate: randomPos[i]?.rotate,
             // animationDelay: randomPos[i]?.delay,
             animationDuration: randomPos[i]?.duration,
           }}
