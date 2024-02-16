@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ShatterStrokes from '../../components/Icons/ShatterStrokes';
-import ShatterPieces from '../../components/Icons/ShatterPieces';
+import ShatterPiece from '../../components/Icons/ShatterPiece';
 
 const Wrapper = styled.div`
   background: #000;
@@ -42,16 +42,14 @@ const ShatterMe = styled(ShatterStrokes)`
     stroke-width: 0.5px;
 
     @media (min-width: 768px) {
-      stroke-width: 0.3px;
+      stroke-width: 0.4px;
     }
 
     stroke-dasharray: 1000;
     stroke-dashoffset: 10;
     opacity: 0;
-    /* animation-play-state: ${(props) =>
-      props.$isFrozen === 1 ? 'paused' : 'running'}; */
     animation: ${(props) =>
-      props.$isFrozen === 1 ? 'draw 3s linear' : 'none'};
+      props.$isFrozen === 1 ? 'draw 1.25s ease-in-out' : 'none'};
 
     @keyframes draw {
       from {
@@ -67,32 +65,30 @@ const ShatterMe = styled(ShatterStrokes)`
   }
 `;
 
-const ShatterScatter = styled(ShatterPieces)`
+const ShatterScatter = styled(ShatterPiece)`
   position: absolute;
   opacity: 0.5;
   z-index: 10;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   opacity: 0;
+  animation: ${(props) =>
+    props.$isFrozen === 1
+      ? 'scatter1 0.5s cubic-bezier(0.42, 0, 0, 0.97) 0.5s forwards'
+      : 'none'};
 
-  .piece1 {
-    opacity: 0;
-    transform-origin: top left;
-    transform: translate(0, 0);
-    animation: ${(props) =>
-      props.$isFrozen === 1 ? 'scatter1 3s linear 1s forwards' : 'none'};
-
-    @keyframes scatter1 {
-      from {
-        transform: translate(0, 0);
-        opacity: 0.5;
-      }
-      to {
-        transform: translate(100%, 100%);
-        opacity: 0;
-      }
+  @keyframes scatter1 {
+    from {
+      /* transform: perspective(500px) translate3d(0, 0, 0); */
+      /* top: ${(props) => props.$y}px; */
+      /* left: ${(props) => props.$x}px; */
+      top: -10%;
+      opacity: 0.8;
+    }
+    to {
+      /* transform: perspective(500px) translate3d(0, 0, 100px); */
+      opacity: 0;
+      top: 100%;
     }
   }
 `;
@@ -122,10 +118,9 @@ const FrozenOverlay = styled.div`
   background-image: radial-gradient(#e6646500, #b2b3c3);
   backdrop-filter: blur(3px);
   z-index: 100;
-  opacity: ${(props) => (props.$isFrozen === 2 ? 0 : 0.9)};
-  transition: all 0.5s ease-in-out;
+  opacity: ${(props) => props.$isFrozen === 1 && 0};
   transition: ${(props) =>
-    props.$isFrozen === 1 ? 'all 1s ease-in-out' : 'all 0.5s ease-in-out'};
+    props.$isFrozen === 1 ? 'all 3s ease-in-out' : 'all 0.5s ease-in-out'};
 `;
 
 const FrozenImage = styled(Image)`
@@ -139,14 +134,18 @@ const FrozenImage = styled(Image)`
   z-index: 100;
   object-fit: cover;
   mix-blend-mode: overlay;
-  opacity: ${(props) => (props.$isFrozen === 2 ? 0 : 0.5)};
+  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.5)};
   /* opacity: 0; */
   /* transition: ${(props) =>
-    props.$isFrozen === 2
-      ? 'opacity 0.2s ease-in-out'
-      : 'opacity 1s ease-in-out'}; */
+    props.$isFrozen === 1
+      ? 'opacity 3s ease-in-out'
+      : 'opacity .5s ease-in-out'}; */
 
-  animation: fadeIn 1.9s ease-in-out;
+  animation: ${(props) =>
+    props.$isFrozen === 1
+      ? 'fadeOut 2s ease-in-out forwards'
+      : 'fadeIn 1.9s ease-in-out forwards'};
+
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -155,12 +154,37 @@ const FrozenImage = styled(Image)`
       opacity: 0.5;
     }
   }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 `;
+
+const shatterPieces = Array.from({ length: 10 });
 
 const RegalFrozen = () => {
   const [frozen, unFrozen] = useState(0);
   const [shatter, setShatter] = useState(0);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0, z: 0 });
+  const [randomPos, updatePos] = useState([]);
+
+  useEffect(() => {
+    updatePos(
+      shatterPieces.map(() => ({
+        X: `${Math.random() * 100}%`,
+        Y: `-${Math.random() * 10}%`,
+        // Z: `${Math.random() * 10}px`,
+        rotate: `${Math.random() * 100}deg`,
+        // delay: `${Math.random() * 3}s`,
+        duration: `${Math.floor(Math.random() * 5) * 0.5}s`,
+      }))
+    );
+  }, []);
 
   // toggle state based on how many clicks
   const handleClick = () => {
@@ -174,7 +198,7 @@ const RegalFrozen = () => {
   };
 
   const handleMouseMove = (e) => {
-    frozen === 1 && setMousePos({ x: e.clientX, y: e.clientY });
+    setMousePos({ x: e.clientX, y: e.clientY });
     console.log(mousePos);
   };
 
@@ -195,20 +219,35 @@ const RegalFrozen = () => {
       }}
       onMouseDown={(e) => handleMouseMove(e)}
     >
+      <FrozenOverlay $isFrozen={frozen}></FrozenOverlay>
+      <FrozenImage
+        $isFrozen={frozen}
+        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1708017066/winter-temp_hqkbgy.jpg"
+        alt="Frozen Ice"
+        width={1920}
+        height={1080}
+      />
+      {shatterPieces.map((_, i) => (
+        <ShatterScatter
+          key={i}
+          $isFrozen={frozen}
+          $x={mousePos[i]?.X}
+          $y={mousePos[i]?.Y}
+          // $rotate={randomPos[i]?.rotate}
+          style={{
+            top: randomPos[i]?.Y,
+            left: randomPos[i]?.X,
+            // transform: `rotate(${randomPos[i]?.rotate}) perspective(500px) translate3d(0, 0, ${randomPos[i]?.Z})`,
+            transform: `rotate(${randomPos[i]?.rotate})`,
+            transformOrigin: 'top center',
+            // animationDelay: randomPos[i]?.delay,
+            animationDuration: randomPos[i]?.duration,
+          }}
+        />
+      ))}
       <ShatterWrap>
         <ShatterMe $isFrozen={frozen} $x={mousePos.x} $y={mousePos.y} />
       </ShatterWrap>
-      <FrozenWrap>
-        <FrozenOverlay $isFrozen={frozen}></FrozenOverlay>
-        <FrozenImage
-          $isFrozen={frozen}
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1708017066/winter-temp_hqkbgy.jpg"
-          alt="Frozen Ice"
-          width={1920}
-          height={1080}
-        />
-        <ShatterScatter $isFrozen={frozen} />
-      </FrozenWrap>
       {/* <Shatter /> */}
       <Image
         src="https://res.cloudinary.com/labofthingsimages/image/upload/v1708019832/ghostbustersapppage_1_k9jkjo.png"
@@ -217,15 +256,6 @@ const RegalFrozen = () => {
         height={844}
         s
       />
-      {/* <h1>Frozen</h1>
-      <p>Regal Frozen</p>
-      <Image
-        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263629/Portfolio_Images/cat_udlzld.gif"
-        alt="sleeping kitten"
-        width={640}
-        height={480}
-        s
-      /> */}
     </Wrapper>
   );
 };
