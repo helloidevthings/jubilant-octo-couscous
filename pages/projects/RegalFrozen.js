@@ -68,27 +68,25 @@ const ShatterMe = styled(ShatterStrokes)`
 
 const ShatterScatter = styled(ShatterPiece)`
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transform-origin: top center;
+  /* transform-origin: center center; */
   animation: ${(props) =>
     props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'};
 
   @keyframes scatter1 {
     0% {
       transform: translate3d(0, 0, 0);
-      /* top: -10%; */
-      opacity: 0.8;
+      opacity: 0.4;
     }
-    50% {
-      transform: translate3d(0, -30%, 0) rotate(150deg);
+    20% {
+      transform: translate3d(0, -100%, 0) rotate(-20deg) scale(2);
     }
     100% {
       opacity: 0;
-      /* top: 100%; */
-      transform: translate3d(-100%, 100%, 0) rotate(160deg) scale(0.2);
+      transform: translate3d(0, 100%, 0) rotate(-180deg) scale(3);
     }
   }
 `;
@@ -143,7 +141,7 @@ const FrozenImage = styled(Image)`
 
   animation: ${(props) =>
     props.$isFrozen === 1
-      ? 'fadeOut 2s ease-in-out forwards'
+      ? 'fadeOut 2.5s ease-in-out forwards'
       : 'fadeIn 1.9s ease-in-out forwards'};
 
   @keyframes fadeIn {
