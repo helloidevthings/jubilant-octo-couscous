@@ -72,21 +72,21 @@ const ShatterScatter = styled(ShatterPiece)`
   width: 100%;
   height: 100%;
   opacity: 0;
-  /* transform-origin: center center; */
+  transform-origin: center center;
   animation: ${(props) =>
     props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'};
 
   @keyframes scatter1 {
     0% {
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(-10%, 0, 0);
       opacity: 0.4;
     }
     20% {
-      transform: translate3d(0, -100%, 0) rotate(-20deg) scale(2);
+      transform: translate3d(0, -100px, 0) rotate(-20deg) scale(2);
     }
     100% {
       opacity: 0;
-      transform: translate3d(0, 100%, 0) rotate(-180deg) scale(3);
+      transform: translate3d(0, 0, 0) rotate(-180deg) scale(0);
     }
   }
 `;
@@ -163,7 +163,7 @@ const FrozenImage = styled(Image)`
   }
 `;
 
-const shatterPieces = Array.from({ length: 20 });
+const shatterPieces = Array.from({ length: 10 });
 
 const RegalFrozen = () => {
   const [frozen, unFrozen] = useState(0);
