@@ -73,20 +73,20 @@ const ShatterScatter = styled(ShatterPiece)`
   height: 100%;
   opacity: 0;
   transform-origin: center center;
-  /* animation: ${(props) =>
-    props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'}; */
+  animation: ${(props) =>
+    props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'};
 
   @keyframes scatter1 {
     0% {
-      transform: translate3d(-10%, 0, 0);
+      transform: translate3d(0, 0, 0);
       opacity: 0.4;
     }
     20% {
-      transform: translate3d(0, -100px, 0) scale(2);
+      transform: translate3d(0, -100%, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) scale(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 `;
