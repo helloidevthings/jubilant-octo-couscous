@@ -73,8 +73,8 @@ const ShatterScatter = styled(ShatterPiece)`
   height: 100%;
   opacity: 0;
   transform-origin: center center;
-  animation: ${(props) =>
-    props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'};
+  /* animation: ${(props) =>
+    props.$isFrozen === 1 ? 'scatter1 0.5s ease-out 0.8s forwards' : 'none'}; */
 
   @keyframes scatter1 {
     0% {
@@ -82,11 +82,11 @@ const ShatterScatter = styled(ShatterPiece)`
       opacity: 0.4;
     }
     20% {
-      transform: translate3d(0, -100px, 0) rotate(-20deg) scale(2);
+      transform: translate3d(0, -100px, 0) scale(2);
     }
     100% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) rotate(-180deg) scale(0);
+      transform: translate3d(0, 0, 0) scale(0);
     }
   }
 `;
@@ -226,24 +226,24 @@ const RegalFrozen = () => {
         width={1920}
         height={1080}
       />
-      {shatterPieces.map((_, i) => (
-        <ShatterScatter
-          key={i}
-          $isFrozen={frozen}
-          $x={mousePos[i]?.X}
-          $y={mousePos[i]?.Y}
-          // $rotate={randomPos[i]?.rotate}
-          style={{
-            top: randomPos[i]?.Y,
-            left: randomPos[i]?.X,
-            // transform: `rotate(${randomPos[i]?.rotate}) perspective(500px) translate3d(0, 0, ${randomPos[i]?.Z})`,
-            rotate: randomPos[i]?.rotate,
-            // animationDelay: randomPos[i]?.delay,
-            animationDuration: randomPos[i]?.duration,
-          }}
-        />
-      ))}
       <ShatterWrap>
+        {shatterPieces.map((_, i) => (
+          <ShatterScatter
+            key={i}
+            $isFrozen={frozen}
+            $x={mousePos[i]?.X}
+            $y={mousePos[i]?.Y}
+            // $rotate={randomPos[i]?.rotate}
+            style={{
+              top: randomPos[i]?.Y,
+              left: randomPos[i]?.X,
+              // transform: `rotate(${randomPos[i]?.rotate}) perspective(500px) translate3d(0, 0, ${randomPos[i]?.Z})`,
+              rotate: randomPos[i]?.rotate,
+              // animationDelay: randomPos[i]?.delay,
+              animationDuration: randomPos[i]?.duration,
+            }}
+          />
+        ))}
         <ShatterMe $isFrozen={frozen} $x={mousePos.x} $y={mousePos.y} />
       </ShatterWrap>
       {/* <Shatter /> */}
