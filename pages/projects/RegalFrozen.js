@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import ShatterStrokes from '../../components/Icons/ShatterStrokes';
+import ShatterStrokes2 from '../../components/Icons/ShatterStrokes2';
 import ShatterPiece from '../../components/Icons/ShatterPiece';
 
 const Wrapper = styled.div`
@@ -30,16 +30,33 @@ const ShatterWrap = styled.div`
   overflow-y: hidden;
 `;
 
-const ShatterMe = styled(ShatterStrokes)`
+const ShatterMe = styled(ShatterStrokes2)`
   position: absolute;
   width: 100%;
   height: 100%;
   top: ${(props) => props.$y}px;
   left: ${(props) => props.$x}px;
-  transform-origin: center center;
+  /* transform-origin: center center; */
   z-index: 1000;
 
-  path {
+  .pieces {
+    opacity: 0;
+    animation: ${(props) =>
+      props.$isFrozen === 1 ? 'drop 1s cubic-bezier(0, 0, 0, 1.23)' : 'none'};
+  }
+
+  @keyframes drop {
+    from {
+      opacity: 0.5;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  .cracks {
     stroke-width: 0.5px;
 
     @media (min-width: 768px) {
@@ -163,7 +180,7 @@ const FrozenImage = styled(Image)`
   }
 `;
 
-const shatterPieces = Array.from({ length: 10 });
+const shatterPieces = Array.from({ length: 0 });
 
 const RegalFrozen = () => {
   const [frozen, unFrozen] = useState(0);
