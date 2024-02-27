@@ -197,7 +197,13 @@ const FrozenOverlay = styled.div`
     backdrop-filter: blur(4px);
   }
 
+  // only stark for mobile
   z-index: 50;
+
+  @media (min-width: 600px) {
+    z-index: 100;
+  }
+
   opacity: ${(props) => props.$isFrozen === 1 && 0};
   transition: ${(props) =>
     props.$isFrozen === 1 ? 'all 3s ease-in-out' : 'all 0.5s ease-in-out'};
