@@ -73,13 +73,11 @@ const ShatterMe = styled(ShatterBoth)`
 
     @keyframes draw {
       from {
-        /* opacity: 1; */
         stroke-dashoffset: 1000;
       }
 
       to {
         stroke-dashoffset: 0;
-        /* opacity: 0; */
       }
     }
   }
@@ -190,8 +188,15 @@ const FrozenOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(#e6646500, #b2b3c3);
+
+  background-image: radial-gradient(#e6646500, #696b8dba);
   backdrop-filter: blur(2px);
+
+  @media (min-width: 768px) {
+    background-image: radial-gradient(#e6646500, #7e7f8d);
+    backdrop-filter: blur(3px);
+  }
+
   z-index: 100;
   opacity: ${(props) => props.$isFrozen === 1 && 0};
   transition: ${(props) =>
@@ -209,12 +214,11 @@ const FrozenImage = styled(Image)`
   z-index: 100;
   object-fit: cover;
   mix-blend-mode: overlay;
-  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.5)};
-  /* opacity: 0; */
-  /* transition: ${(props) =>
-    props.$isFrozen === 1
-      ? 'opacity 3s ease-in-out'
-      : 'opacity .5s ease-in-out'}; */
+  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.3)};
+
+  @media (min-width: 768px) {
+    opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.5)};
+  }
 
   animation: ${(props) =>
     props.$isFrozen === 1
@@ -226,7 +230,11 @@ const FrozenImage = styled(Image)`
       opacity: 0;
     }
     100% {
-      opacity: 0.5;
+      opacity: 0.3;
+
+      @media (min-width: 768px) {
+        opacity: 0.5;
+      }
     }
   }
 
