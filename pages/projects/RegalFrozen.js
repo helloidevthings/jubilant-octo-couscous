@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import ShatterStrokes4 from '../../components/Icons/ShatterStrokes4';
+// import ShatterStrokes4 from '../../components/Icons/ShatterStrokes4';
 import ShatterPiece from '../../components/Icons/ShatterPiece';
-import ShatterPieces2 from '../../components/Icons/ShatterPieces2';
+// import ShatterPieces3 from '../../components/Icons/ShatterPieces3';
+import ShatterBoth from '../../components/Icons/ShatterBoth';
 // import LogoSVG from '../../components/Icons/LogoSVG';
 
 const Wrapper = styled.div`
@@ -32,38 +33,43 @@ const ShatterWrap = styled.div`
   overflow-y: hidden;
 `;
 
-const ShatterMe = styled(ShatterStrokes4)`
+const ShatterMe = styled(ShatterBoth)`
   position: absolute;
   width: 100%;
   height: 100%;
   top: ${(props) => props.$y}px;
   left: ${(props) => props.$x}px;
   z-index: 1000;
-  opacity: 0;
-  animation: ${(props) =>
-    props.$isFrozen === 1 ? 'opacity 2s ease-in-out' : 'none'};
 
-  @keyframes opacity {
-    0% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 0;
+  .slowFade {
+    opacity: 0;
+    animation: ${(props) =>
+      props.$isFrozen === 1
+        ? 'opacity 1.1s cubic-bezier(0, 0.8, 0.58, 0.95)'
+        : 'none'};
+
+    @keyframes opacity {
+      0% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   }
 
   .cracks {
-    /* stroke-width: 0.5px;
+    stroke-width: 2px;
 
     @media (min-width: 768px) {
-      stroke-width: 0.4px;
-    } */
+      stroke-width: 1px;
+    }
 
     stroke-dasharray: 1000;
     stroke-dashoffset: 10;
     opacity: 1;
     animation: ${(props) =>
-      props.$isFrozen === 1 ? 'draw 0.5s ease-in-out' : 'none'};
+      props.$isFrozen === 1 ? 'draw 0.8s forwards' : 'none'};
 
     @keyframes draw {
       from {
@@ -77,34 +83,65 @@ const ShatterMe = styled(ShatterStrokes4)`
       }
     }
   }
-`;
 
-const ShatterDrop = styled(ShatterPieces2)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-
-  .piece {
+  .bigFade {
     opacity: 0;
     animation: ${(props) =>
-      props.$isFrozen === 1 ? 'drop 1s cubic-bezier(0, 0, 0, 1.23)' : 'none'};
+      props.$isFrozen === 1 ? 'opacity 2s ease-in 0.3s' : 'none'};
+
+    @keyframes opacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .pieces {
+    animation: ${(props) =>
+      props.$isFrozen === 1
+        ? 'drop 1s cubic-bezier(0, 0, 0, 1.23) forwards'
+        : 'none'};
   }
 
   @keyframes drop {
     from {
-      opacity: 0.8;
       transform: translateY(0px);
     }
     to {
-      opacity: 0;
-      transform: translateY(100px);
+      transform: translateY(100%);
     }
   }
 `;
+
+// const ShatterDrop = styled(ShatterPieces3)`
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 1000;
+
+//   .piece {
+//     opacity: 0;
+//     animation: ${(props) =>
+//       props.$isFrozen === 1 ? 'drop 1s cubic-bezier(0, 0, 0, 1.23)' : 'none'};
+//   }
+
+//   @keyframes drop {
+//     from {
+//       opacity: 0.8;
+//       transform: translateY(0px);
+//     }
+//     to {
+//       opacity: 0;
+//       transform: translateY(100px);
+//     }
+//   }
+// `;
 
 const ShatterScatter = styled(ShatterPiece)`
   position: absolute;
@@ -285,7 +322,7 @@ const RegalFrozen = () => {
           />
         ))}
         <ShatterMe $isFrozen={frozen} $x={mousePos.x} $y={mousePos.y} />
-        <ShatterDrop $isFrozen={frozen} />
+        {/* <ShatterDrop $isFrozen={frozen} $x={mousePos.x} $y={mousePos.y} /> */}
       </ShatterWrap>
       {/* <Shatter /> */}
       <Image
