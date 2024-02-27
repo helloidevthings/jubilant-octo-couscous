@@ -59,7 +59,7 @@ const ShatterMe = styled(ShatterBoth)`
   }
 
   .cracks {
-    stroke-width: 4px;
+    stroke-width: 2px;
 
     @media (min-width: 768px) {
       stroke-width: 1px;
@@ -197,7 +197,7 @@ const FrozenOverlay = styled.div`
     backdrop-filter: blur(4px);
   }
 
-  z-index: 100;
+  z-index: 50;
   opacity: ${(props) => props.$isFrozen === 1 && 0};
   transition: ${(props) =>
     props.$isFrozen === 1 ? 'all 3s ease-in-out' : 'all 0.5s ease-in-out'};
@@ -217,7 +217,7 @@ const FrozenImage = styled(Image)`
   /* opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.3)};
 
   @media (min-width: 768px) { */
-  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.6)};
+  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.5)};
   /* } */
 
   animation: ${(props) =>
@@ -233,7 +233,7 @@ const FrozenImage = styled(Image)`
       /* opacity: 0.3; */
 
       /* @media (min-width: 768px) { */
-      opacity: 0.6;
+      opacity: 0.5;
       /* } */
     }
   }
