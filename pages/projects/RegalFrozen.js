@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import ShatterStrokes2 from '../../components/Icons/ShatterStrokes2';
+import ShatterStrokes4 from '../../components/Icons/ShatterStrokes4';
 import ShatterPiece from '../../components/Icons/ShatterPiece';
+import ShatterPieces2 from '../../components/Icons/ShatterPieces2';
+// import LogoSVG from '../../components/Icons/LogoSVG';
 
 const Wrapper = styled.div`
   background: #000;
@@ -30,16 +32,63 @@ const ShatterWrap = styled.div`
   overflow-y: hidden;
 `;
 
-const ShatterMe = styled(ShatterStrokes2)`
+const ShatterMe = styled(ShatterStrokes4)`
   position: absolute;
   width: 100%;
   height: 100%;
   top: ${(props) => props.$y}px;
   left: ${(props) => props.$x}px;
-  /* transform-origin: center center; */
+  z-index: 1000;
+  opacity: 0;
+  animation: ${(props) =>
+    props.$isFrozen === 1 ? 'opacity 2s ease-in-out' : 'none'};
+
+  @keyframes opacity {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .cracks {
+    /* stroke-width: 0.5px;
+
+    @media (min-width: 768px) {
+      stroke-width: 0.4px;
+    } */
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 10;
+    opacity: 1;
+    animation: ${(props) =>
+      props.$isFrozen === 1 ? 'draw 0.5s ease-in-out' : 'none'};
+
+    @keyframes draw {
+      from {
+        /* opacity: 1; */
+        stroke-dashoffset: 1000;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+        /* opacity: 0; */
+      }
+    }
+  }
+`;
+
+const ShatterDrop = styled(ShatterPieces2)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1000;
 
-  .pieces {
+  .piece {
     opacity: 0;
     animation: ${(props) =>
       props.$isFrozen === 1 ? 'drop 1s cubic-bezier(0, 0, 0, 1.23)' : 'none'};
@@ -47,38 +96,12 @@ const ShatterMe = styled(ShatterStrokes2)`
 
   @keyframes drop {
     from {
-      opacity: 0.5;
+      opacity: 0.8;
       transform: translateY(0px);
     }
     to {
       opacity: 0;
-      transform: translateY(100%);
-    }
-  }
-
-  .cracks {
-    stroke-width: 0.5px;
-
-    @media (min-width: 768px) {
-      stroke-width: 0.4px;
-    }
-
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 10;
-    opacity: 0;
-    animation: ${(props) =>
-      props.$isFrozen === 1 ? 'draw 1.25s ease-in-out' : 'none'};
-
-    @keyframes draw {
-      from {
-        opacity: 0.5;
-        stroke-dashoffset: 1000;
-      }
-
-      to {
-        stroke-dashoffset: 0;
-        opacity: 0;
-      }
+      transform: translateY(100px);
     }
   }
 `;
@@ -262,6 +285,7 @@ const RegalFrozen = () => {
           />
         ))}
         <ShatterMe $isFrozen={frozen} $x={mousePos.x} $y={mousePos.y} />
+        <ShatterDrop $isFrozen={frozen} />
       </ShatterWrap>
       {/* <Shatter /> */}
       <Image
@@ -269,8 +293,8 @@ const RegalFrozen = () => {
         alt="regal website mobile"
         width={390}
         height={844}
-        s
       />
+      {/* <LogoSVG /> */}
     </Wrapper>
   );
 };

@@ -93,43 +93,43 @@ const ShatterStrokes2 = (props) => (
       />
       <path
         className="pieces"
-        style={{ animationDelay: '0.68s' }}
+        style={{ animationDelay: '0.6s' }}
         fill="#fff"
         d="m136.5 290.5-4-52 7-43-1-46 33 14 33 26 51 19-7 66-49 9-31 9-32-2Z"
       />
       <path
         className="pieces"
-        style={{ animationDelay: '1.6s' }}
+        style={{ animationDelay: '0.4s' }}
         fill="#fff"
         d="m251.68 207-50.59-19.01-29.59-24.49-26.38-9.6L142 147l10-7 59-38 27-33 2-8 16-13 16 57-8 79-12.32 23Z"
       />
       <path
         className="pieces"
-        style={{ animationDelay: '1.4s' }}
+        style={{ animationDelay: '0.3s' }}
         fill="#fff"
         d="m256 48-21-25-33-18-37-5-3 19 1 19-23 102 6.92 3.5L211 102l27-33 2-8 16-13Z"
       />
       <path
         className="pieces"
-        style={{ animationDelay: '1.5s' }}
+        style={{ animationDelay: '0.24s' }}
         fill="#fff"
         d="m165 0-55 10-60-1 17 30 34 43 18 38 14 18 4 5 3-3 23-102 2-38Z"
       />
       <path
         className="pieces"
-        style={{ animationDelay: '1.7s' }}
+        style={{ animationDelay: '0.7s' }}
         fill="#fff"
         d="m131 148-19-4-41-2-23-8-44-2-3-75 12-11 3-19 9-19 25 1 39.87 59.16L101 82l26.17 49.63 11.61 10.7L131 148Z"
       />
       <path
         className="pieces"
-        style={{ animationDelay: '1.1s' }}
+        style={{ animationDelay: '0.4s' }}
         fill="#fff"
         d="m131 148-19-4-31.14-1.1L48 134l-44-2-3 32-1 57 13 38 71-66 11-6 36-32 4-5-4-2Z"
       />
       <path
         className="pieces"
-        style={{ animationDelay: '1.57s' }}
+        style={{ animationDelay: '0.57s' }}
         fill="#fff"
         d="m135 153-40 34-33 19-49 53 33 20 53-3 38.24 12.89-4.74-50.39 7-43-.66-41.7-3.84-.8Z"
       />
