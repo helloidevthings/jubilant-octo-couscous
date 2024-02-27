@@ -189,12 +189,12 @@ const FrozenOverlay = styled.div`
   width: 100%;
   height: 100%;
 
-  background-image: radial-gradient(#e6646500, #696b8dba);
-  backdrop-filter: blur(2px);
+  background-image: radial-gradient(#e6646500, #7a7c99e0);
+  backdrop-filter: blur(3px);
 
   @media (min-width: 768px) {
     background-image: radial-gradient(#e6646500, #7e7f8d);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
   }
 
   z-index: 100;
@@ -217,7 +217,7 @@ const FrozenImage = styled(Image)`
   /* opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.3)};
 
   @media (min-width: 768px) { */
-  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.5)};
+  opacity: ${(props) => (props.$isFrozen === 1 ? 0 : 0.6)};
   /* } */
 
   animation: ${(props) =>
@@ -233,7 +233,7 @@ const FrozenImage = styled(Image)`
       /* opacity: 0.3; */
 
       /* @media (min-width: 768px) { */
-      opacity: 0.5;
+      opacity: 0.6;
       /* } */
     }
   }
