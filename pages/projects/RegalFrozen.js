@@ -59,7 +59,7 @@ const ShatterMe = styled(ShatterBoth)`
   }
 
   .cracks {
-    stroke-width: 2px;
+    stroke-width: 5px;
 
     @media (min-width: 768px) {
       stroke-width: 1px;
@@ -198,11 +198,11 @@ const FrozenOverlay = styled.div`
   }
 
   // only stark for mobile
-  z-index: 50;
+  /* z-index: 50; */
 
-  @media (min-width: 600px) {
-    z-index: 100;
-  }
+  /* @media (min-width: 600px) { */
+  z-index: 100;
+  /* } */
 
   opacity: ${(props) => props.$isFrozen === 1 && 0};
   transition: ${(props) =>
