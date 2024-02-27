@@ -28,7 +28,7 @@ const ShatterWrap = styled.div`
   top: 100%;
   left: 100%;
   transform: translate(-100%, -100%);
-  z-index: 1000;
+  z-index: 90;
   overflow: hidden;
   overflow-y: hidden;
 `;
@@ -39,7 +39,7 @@ const ShatterMe = styled(ShatterBoth)`
   height: 100%;
   top: ${(props) => props.$y}px;
   left: ${(props) => props.$x}px;
-  z-index: 1000;
+  z-index: 90;
 
   .slowFade {
     opacity: 0;
@@ -50,7 +50,7 @@ const ShatterMe = styled(ShatterBoth)`
 
     @keyframes opacity {
       0% {
-        opacity: 0.5;
+        opacity: 1;
       }
       100% {
         opacity: 0;
@@ -191,7 +191,7 @@ const FrozenOverlay = styled.div`
   width: 100%;
   height: 100%;
   background-image: radial-gradient(#e6646500, #b2b3c3);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
   z-index: 100;
   opacity: ${(props) => props.$isFrozen === 1 && 0};
   transition: ${(props) =>
