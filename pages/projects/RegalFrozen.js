@@ -59,7 +59,7 @@ const ShatterMe = styled(ShatterBoth)`
   }
 
   .cracks {
-    stroke-width: 5px;
+    stroke-width: 2px;
 
     @media (min-width: 768px) {
       stroke-width: 1px;
