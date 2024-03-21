@@ -1,5 +1,17 @@
-const SvgComponent = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+import styled from 'styled-components';
+
+const SVGNoise = styled.svg`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  mix-blend-mode: overlay;
+`;
+
+const SvgComponent = ({ customDark }) => (
+  <SVGNoise xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
     <defs>
       <filter
         id="a"
@@ -21,6 +33,7 @@ const SvgComponent = () => (
           result="turbulence"
           seed={15}
           stitchTiles="stitch"
+          type="fractalNoise"
         />
         <feSpecularLighting
           width="100%"
@@ -28,18 +41,18 @@ const SvgComponent = () => (
           x="0%"
           y="0%"
           in="turbulence"
-          lightingColor="#7957A8"
+          lightingColor="#6b00ff"
           result="specularLighting"
-          specularConstant={3}
+          specularConstant={1.1}
           specularExponent={20}
-          surfaceScale={9}
+          surfaceScale={14}
         >
-          <feDistantLight azimuth={3} elevation={1} />
+          <feDistantLight azimuth={3} elevation={66} />
         </feSpecularLighting>
       </filter>
     </defs>
-    <path fill="#ffffffff" d="M0 0h700v700H0z" />
-    <path fill="#7957a8" d="M0 0h700v700H0z" filter="url(#a)" />
-  </svg>
+    <path fill="#00000000" d="M0 0h700v700H0z" />
+    <path fill="#6b00ff" d="M0 0h700v700H0z" filter="url(#a)" />
+  </SVGNoise>
 );
 export default SvgComponent;
