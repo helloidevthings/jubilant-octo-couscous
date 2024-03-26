@@ -25,12 +25,41 @@ const Gradient = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(at var(--x) var(--y), #fff0 0%, #ffffff1a 40%),
+  /* background: radial-gradient(at var(--x) var(--y), #fff0 0%, #ffffff1a 40%),
     linear-gradient(
       to bottom right,
       ${(props) => props.$passFeeling.colorLight},
       ${(props) => props.$passFeeling.colorDark}
-    );
+    ); */
+  background-size: 100% 100%;
+  background-position:
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px;
+  background-image:
+    /* radial-gradient(18% 28% at 24% 50%, #cefaffff 7%, #073aff00 100%), */
+    /* radial-gradient(18% 28% at 18% 71%, #ffffff59 6%, #073aff00 100%), */
+    radial-gradient(
+      70% 53% at 36% 76%,
+      ${(props) => props.$passFeeling.colorLight} 0%,
+      #073aff00 100%
+    ),
+    radial-gradient(42% 53% at 15% 94%, #ffffffff 7%, #073aff00 100%),
+    /* radial-gradient(42% 53% at 34% 72%, #ffffffff 7%, #073aff00 100%), */
+      /* radial-gradient(18% 28% at 35% 87%, #ffffffff 7%, #073aff00 100%), */
+      /* radial-gradient(31% 43% at 7% 98%, #ffffffff 24%, #073aff00 100%), */
+      /* radial-gradient(21% 37% at 72% 23%, #d3ff6d9c 24%, #073aff00 100%), */
+      /* radial-gradient(35% 56% at 91% 74%, #8a4ffff5 9%, #073aff00 100%), */
+      radial-gradient(74% 86% at 67% 38%, #6dffaef5 24%, #073aff00 100%),
+    linear-gradient(125deg, #4eb5ffff 1%, #4c00fcff 100%);
   z-index: -10;
   animation: gradient 5s infinite;
   @keyframes gradient {
@@ -41,10 +70,61 @@ const Gradient = styled.div`
       background-position: 100% 100%;
     }
   }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: ${(props) => props.$passFeeling.colorLight};
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    z-index: -1;
+    animation: slowMove 3s ease-in-out infinite alternate;
+
+    @keyframes slowMove {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-30px, 50px) scale(1.25);
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    z-index: -1;
+  }
 `;
 
 const SVGWrap = styled.div`
   filter: overlay;
+`;
+
+const Cursor = styled.div`
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: 0.1s ease;
+  transition-property: width, height, border;
+  will-change: width, height, border;
+  top: var(--y);
+  left: var(--x);
+  z-index: -1;
 `;
 
 const PopUp = styled.div`
@@ -59,18 +139,6 @@ const PopUp = styled.div`
     background: #ffffff69;
     border-radius: 2rem;
     box-shadow: 6px 5px 17px 2px rgb(171 171 171 / 43%);
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: -1;
   }
 `;
 
@@ -165,7 +233,9 @@ const RegalColors = () => {
       <SVGWrap>
         <SVGNoise customDark={imFeeling.colorDark} />
       </SVGWrap>
-      <Gradient $passFeeling={imFeeling} />
+      <Gradient $passFeeling={imFeeling}>
+        <Cursor />
+      </Gradient>
     </Wrapper>
   );
 };
