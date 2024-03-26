@@ -191,20 +191,20 @@ const RegalColors = () => {
 
   const handleFeeling = ({ name, colorLight, colorDark }) => {
     setMyFeeling({ feeling: name, colorLight, colorDark });
-    setMousePos({ x: 0, y: 0 });
+    // setMousePos({ x: 0, y: 0 });
   };
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (e) => {
+  //     setMousePos({ x: e.clientX, y: e.clientY });
+  //   };
 
-    window.addEventListener('mousemove', handleMouseMove);
+  //   window.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //   };
+  // }, []);
 
   return (
     <Wrapper $imFeeling={imFeeling} $mousePos={mousePos}>
