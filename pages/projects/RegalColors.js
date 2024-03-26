@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 // import SVGNoise from '/components/icons/SVGNoise';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.main`
   color: #fff;
@@ -13,8 +13,9 @@ const Wrapper = styled.main`
   justify-content: center;
   overflow: hidden;
   z-index: 0;
+
   --color-light: ${(props) => props.$imFeeling.colorLight};
-  --color-light: ${(props) => props.$imFeeling.colorDark};
+  --color-dark: ${(props) => props.$imFeeling.colorDark};
   --x: ${(props) => props.$mousePos.x}px;
   --y: ${(props) => props.$mousePos.y}px;
 `;
@@ -112,12 +113,13 @@ const Gradient = styled.div`
 
 const Cursor = styled.div`
   position: absolute;
-  width: 0px;
-  height: 0px;
+  width: 20rem;
+  height: 20rem;
   background: #fff;
   border-radius: 50%;
+  opacity: 0.3;
   pointer-events: none;
-  mix-blend-mode: difference;
+  mix-blend-mode: overlay;
   transform: translate(-50%, -50%);
   transition: 0.1s ease;
   transition-property: width, height, border;
@@ -136,7 +138,7 @@ const Circles = styled.div`
   border-radius: 50%;
   z-index: -1;
   background: ${(props) => props.$passFeeling.colorLight};
-  animation: slowMove 3s ease-in-out infinite alternate;
+  animation: slowMove 5s ease-in-out infinite alternate;
 
   @keyframes slowMove {
     0% {
@@ -204,8 +206,8 @@ const RegalColors = () => {
 
   const [imFeeling, setMyFeeling] = useState({
     feeling: 'everything',
-    colorLight: '#FFFFFF',
-    colorDark: '#000000',
+    colorLight: '#6d47b4',
+    colorDark: '#240067',
   });
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -215,17 +217,17 @@ const RegalColors = () => {
     // setMousePos({ x: 0, y: 0 });
   };
 
-  // useEffect(() => {
-  //   const handleMouseMove = (e) => {
-  //     setMousePos({ x: e.clientX, y: e.clientY });
-  //   };
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
 
-  //   window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
-  //   return () => {
-  //     window.removeEventListener('mousemove', handleMouseMove);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   return (
     <Wrapper $imFeeling={imFeeling} $mousePos={mousePos}>
