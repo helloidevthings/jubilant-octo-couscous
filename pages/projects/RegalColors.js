@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import SVGNoise from '/components/icons/SVGNoise';
-import { useState, useEffect } from 'react';
+// import SVGNoise from '/components/icons/SVGNoise';
+import { useState } from 'react';
 
 const Wrapper = styled.main`
   color: #fff;
@@ -58,8 +58,12 @@ const Gradient = styled.div`
       /* radial-gradient(31% 43% at 7% 98%, #ffffffff 24%, #073aff00 100%), */
       /* radial-gradient(21% 37% at 72% 23%, #d3ff6d9c 24%, #073aff00 100%), */
       /* radial-gradient(35% 56% at 91% 74%, #8a4ffff5 9%, #073aff00 100%), */
-      radial-gradient(74% 86% at 67% 38%, #6dffaef5 24%, #073aff00 100%),
-    linear-gradient(125deg, #4eb5ffff 1%, #4c00fcff 100%);
+      radial-gradient(
+        74% 86% at 67% 38%,
+        ${(props) => props.$passFeeling.colorDark} 24%,
+        #073aff00 100%
+      ),
+    linear-gradient(125deg, #8a4ffff5 1%, #4c00fcff 100%);
   z-index: -10;
   animation: gradient 5s infinite;
   @keyframes gradient {
@@ -106,14 +110,10 @@ const Gradient = styled.div`
   }
 `;
 
-const SVGWrap = styled.div`
-  filter: overlay;
-`;
-
 const Cursor = styled.div`
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 0px;
+  height: 0px;
   background: #fff;
   border-radius: 50%;
   pointer-events: none;
@@ -125,6 +125,27 @@ const Cursor = styled.div`
   top: var(--y);
   left: var(--x);
   z-index: -1;
+`;
+
+const Circles = styled.div`
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  z-index: -1;
+  background: ${(props) => props.$passFeeling.colorLight};
+  animation: slowMove 3s ease-in-out infinite alternate;
+
+  @keyframes slowMove {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(30px, 150px) scale(1.25);
+    }
+  }
 `;
 
 const PopUp = styled.div`
@@ -230,11 +251,12 @@ const RegalColors = () => {
           ))}
         </div>
       </PopUp>
-      <SVGWrap>
-        <SVGNoise customDark={imFeeling.colorDark} />
-      </SVGWrap>
+      {/* <SVGWrap> */}
+      {/* <SVGNoise customDark={imFeeling.colorDark} /> */}
+      {/* </SVGWrap> */}
       <Gradient $passFeeling={imFeeling}>
         <Cursor />
+        <Circles $passFeeling={imFeeling} />
       </Gradient>
     </Wrapper>
   );
