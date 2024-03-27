@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-// import SVGNoise from '/components/icons/SVGNoise';
+import SVGNoise from '../../components/Icons/SVGNoise';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Wrapper = styled.main`
   color: #fff;
@@ -131,8 +132,8 @@ const Cursor = styled.div`
 
 const Circles = styled.div`
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 30rem;
+  height: 30rem;
   right: 0;
   bottom: 0;
   border-radius: 50%;
@@ -150,18 +151,58 @@ const Circles = styled.div`
   }
 `;
 
+const SVGWrap = styled.div`
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  /* max-height: 100vh; */
+  left: 0;
+  top: 0;
+  transform: translateZ(0);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  display: none;
+`;
+
+const NoiseImg = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  z-index: -1;
+  opacity: 0.5;
+  /* display: none; */
+`;
+
 const PopUp = styled.div`
   margin: 45% auto;
   position: relative;
-  width: 30rem;
+  width: 50ch;
   text-align: center;
   z-index: 40;
 
   & div {
-    padding: 2rem 0.5rem;
-    background: #ffffff69;
-    border-radius: 2rem;
-    box-shadow: 6px 5px 17px 2px rgb(171 171 171 / 43%);
+    padding: 1rem 1.5rem;
+    background: #0000008f;
+    border-radius: 1rem;
+    box-shadow: 6px 5px 17px 2px rgb(255 255 255 / 43%);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: -1;
   }
 `;
 
@@ -172,6 +213,7 @@ const PopUpDots = styled.button`
   border: none;
   border-radius: 1rem;
   color: #fff;
+  box-shadow: 6px 5px 17px 2px rgb(0 0 0 / 43%);
   font-weight: 600;
   background: linear-gradient(
     to right,
@@ -253,9 +295,15 @@ const RegalColors = () => {
           ))}
         </div>
       </PopUp>
-      {/* <SVGWrap> */}
-      {/* <SVGNoise customDark={imFeeling.colorDark} /> */}
-      {/* </SVGWrap> */}
+      <SVGWrap>
+        <SVGNoise />
+      </SVGWrap>
+      <NoiseImg
+        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1711562882/noise2_nokpwr.png"
+        alt="noise filter"
+        width={2234}
+        height={1972}
+      />
       <Gradient $passFeeling={imFeeling}>
         <Cursor />
         <Circles $passFeeling={imFeeling} />
