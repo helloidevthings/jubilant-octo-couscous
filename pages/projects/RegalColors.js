@@ -114,8 +114,8 @@ const Gradient = styled.div`
 
 const Cursor = styled.div`
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 30rem;
+  height: 30rem;
   background: #fff;
   border-radius: 50%;
   opacity: 0.3;
@@ -239,11 +239,11 @@ const PopUpDots = styled.button`
 
 const RegalColors = () => {
   const Feelings = [
-    { name: 'Joy', color: { light: '#FADE79', dark: '#EFA812' } },
-    { name: 'Anxiety', color: { light: '#F2B050', dark: '#D95F12' } },
-    { name: 'Angry', color: { light: '#960606', dark: '#D76337' } },
-    { name: 'Envy', color: { light: '#48EAD3', dark: '#098A81' } },
-    { name: 'Sadness', color: { light: '#6098C8', dark: '#2E49DA' } },
+    { name: 'Yellow', color: { light: '#e2c24e', dark: '#EFA812' } },
+    { name: 'Orange', color: { light: '#F2B050', dark: '#D95F12' } },
+    { name: 'Red', color: { light: '#960606', dark: '#D76337' } },
+    { name: 'Green', color: { light: '#48EAD3', dark: '#098A81' } },
+    { name: 'Blue', color: { light: '#6098C8', dark: '#2E49DA' } },
   ];
 
   const [imFeeling, setMyFeeling] = useState({
@@ -275,7 +275,7 @@ const RegalColors = () => {
     <Wrapper $imFeeling={imFeeling} $mousePos={mousePos}>
       <PopUp>
         <div>
-          <h2>How are you feeling today?</h2>
+          <h2>Choose your color?</h2>
           {Feelings.map(({ name, color }, i) => (
             <PopUpDots
               key={name}
