@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SVGNoise from '../../components/Icons/SVGNoise';
+// import SVGNoise from '../../components/Icons/SVGNoise';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -83,8 +83,15 @@ const Gradient = styled.div`
     top: 0;
     left: 0;
     background: ${(props) => props.$passFeeling.colorLight};
-    width: 800px;
-    height: 800px;
+    width: 60vh;
+    height: 60vh;
+
+    // Large Circle
+    @media (min-width: 768px) {
+      width: 80vh;
+      height: 80vh;
+    }
+
     border-radius: 50%;
     z-index: -1;
     animation: slowMove 3s ease-in-out infinite alternate;
@@ -132,8 +139,15 @@ const Cursor = styled.div`
 
 const Circles = styled.div`
   position: absolute;
-  width: 30rem;
-  height: 30rem;
+  width: 50vh;
+  height: 50vh;
+
+  // 2nd circle
+  @media (min-width: 768px) {
+    width: 40vh;
+    height: 40vh;
+  }
+
   right: 0;
   bottom: 0;
   border-radius: 50%;
@@ -151,19 +165,19 @@ const Circles = styled.div`
   }
 `;
 
-const SVGWrap = styled.div`
-  position: absolute;
-  width: 100vw;
-  max-width: 100%;
-  min-height: 100vh;
-  /* max-height: 100vh; */
-  left: 0;
-  top: 0;
-  transform: translateZ(0);
-  mix-blend-mode: soft-light;
-  opacity: 0;
-  display: none;
-`;
+// const SVGWrap = styled.div`
+//   position: absolute;
+//   width: 100vw;
+//   max-width: 100%;
+//   min-height: 100vh;
+//   /* max-height: 100vh; */
+//   left: 0;
+//   top: 0;
+//   transform: translateZ(0);
+//   mix-blend-mode: soft-light;
+//   opacity: 0;
+//   display: none;
+// `;
 
 const NoiseImg = styled(Image)`
   position: absolute;
@@ -295,9 +309,9 @@ const RegalColors = () => {
           ))}
         </div>
       </PopUp>
-      <SVGWrap>
+      {/* <SVGWrap>
         <SVGNoise />
-      </SVGWrap>
+      </SVGWrap> */}
       <NoiseImg
         src="https://res.cloudinary.com/labofthingsimages/image/upload/v1711562882/noise2_nokpwr.png"
         alt="noise filter"
