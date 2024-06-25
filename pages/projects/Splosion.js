@@ -29,6 +29,7 @@ const BoxWrapper = styled.div`
   position: relative;
   width: 600px;
   height: 705px;
+  z-index: 1000;
 
   img {
     object-fit: contain;
@@ -66,6 +67,41 @@ const BoxImage = styled(Image)`
   left: 0;
 `;
 
+const PaintWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: ${(props) => props.$splosion === true && 1000};
+`;
+
+const PaintImage = styled(Image)`
+  perspective: 400px;
+  opacity: 0;
+  transform: scale(0);
+
+  ${(props) =>
+    props.$splosion === true && 'animation: 1s splat 1s ease-in-out forwards;'}
+
+  @keyframes splat {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+      z-index: 1000;
+    }
+    75% {
+      transform: scale(10);
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      transform: scale(0);
+      z-index: -1000;
+    }
+  }
+`;
+
 const Splosion = () => {
   const [activate, setActivate] = useState(false);
 
@@ -74,11 +110,11 @@ const Splosion = () => {
     console.log('activate', activate);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      handleSplosion(true);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     handleSplosion(true);
+  //   }, 1000);
+  // }, []);
 
   return (
     <Wrapper>
@@ -94,6 +130,15 @@ const Splosion = () => {
       <h1>Borderlands</h1>
 
       <PopUpWrapper>
+        <PaintWrapper>
+          <PaintImage
+            $splosion={activate}
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719334739/paint_avubsu.png"
+            alt="Seat map and selection screens"
+            width={800}
+            height={608}
+          />
+        </PaintWrapper>
         <BoxWrapper onClick={handleSplosion}>
           <LeverImage
             $splosion={activate}
