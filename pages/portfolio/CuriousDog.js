@@ -16,7 +16,7 @@ const CuriousDog = () => {
           height={1218}
           // 750 × 574
         />
-        <figcaption></figcaption>
+        <figcaption>2015 • Custom Branding for CuriousDog</figcaption>
       </figure>
       <figure>
         <Image
@@ -26,7 +26,6 @@ const CuriousDog = () => {
           height={1218}
           // 750 × 574
         />
-        <figcaption></figcaption>
       </figure>
       <figure>
         <Image
@@ -36,7 +35,6 @@ const CuriousDog = () => {
           height={1218}
           // 750 × 574
         />
-        <figcaption></figcaption>
       </figure>
       <figure>
         <Image
@@ -46,7 +44,24 @@ const CuriousDog = () => {
           height={1218}
           // 750 × 574
         />
-        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263605/Portfolio_Images/curiousdogillustrations_ol9gkd.png"
+          alt="Seat map and selection screens"
+          width={1796}
+          height={1218}
+          // 750 × 574
+        />
+      </figure>
+      <figure>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/curiousdog_ylput4.png"
+          alt="Seat map and selection screens"
+          width={1796}
+          height={1218}
+          // 750 × 574
+        />
       </figure>
     </Wrapper>
   );

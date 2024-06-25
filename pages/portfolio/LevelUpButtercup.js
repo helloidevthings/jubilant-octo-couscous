@@ -16,7 +16,10 @@ const LevelUpButtercup = () => {
           height={1218}
           // 750 × 574
         />
-        <figcaption></figcaption>
+        <figcaption>
+          2018 • All Ladies D&D Group! Custom branding, illustration and
+          animations.
+        </figcaption>
       </figure>
       <figure>
         <Image
@@ -30,7 +33,7 @@ const LevelUpButtercup = () => {
       </figure>
       <figure>
         <Image
-          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263617/Portfolio_Images/instagramshot_tczdhr.png"
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263626/Portfolio_Images/buttercupshirt_wbhght.png"
           alt="Seat map and selection screens"
           width={1796}
           height={1218}
@@ -46,7 +49,6 @@ const LevelUpButtercup = () => {
           height={1218}
           // 750 × 574
         />
-        <figcaption></figcaption>
       </figure>
     </Wrapper>
   );
