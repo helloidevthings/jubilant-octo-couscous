@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
+import Paint from '../../components/Icons/Paint';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,7 +30,10 @@ const BoxWrapper = styled.div`
   position: relative;
   width: 600px;
   height: 705px;
-  z-index: 1000;
+  /* z-index: 1000; */
+  z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
+  /* transform: ${(props) =>
+    props.$splosion === true ? 'translateZ(-1px)' : 'translateZ(1000px)'}; */
 
   img {
     object-fit: contain;
@@ -69,11 +73,38 @@ const BoxImage = styled(Image)`
 
 const PaintWrapper = styled.div`
   position: absolute;
+  height: 100%;
+  width: 100%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: ${(props) => props.$splosion === true && 1000};
 `;
+
+// const PaintSvg = styled(Paint)`
+//   opacity: 0;
+//   transform: scale(0);
+
+//   ${(props) =>
+//     props.$splosion === true && 'animation: 1s splat 1s ease-in-out forwards;'}
+
+//   @keyframes splat {
+//     0% {
+//       opacity: 1;
+//       transform: scale(0);
+//       z-index: 1000;
+//     }
+//     75% {
+//       transform: scale(10);
+//     }
+//     99% {
+//       opacity: 0;
+//     }
+//     100% {
+//       transform: scale(0);
+//       z-index: -1000;
+//     }
+//   }
+// `;
 
 const PaintImage = styled(Image)`
   perspective: 400px;
@@ -92,7 +123,7 @@ const PaintImage = styled(Image)`
     75% {
       transform: scale(10);
     }
-    90% {
+    99% {
       opacity: 0;
     }
     100% {
@@ -110,11 +141,20 @@ const Splosion = () => {
     console.log('activate', activate);
   };
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     handleSplosion(true);
-  //   }, 1000);
-  // }, []);
+  const splats = [{ alt: '1' }, { alt: '2' }, { alt: '3' }];
+
+  const [positions, updatePos] = useState([]);
+
+  useEffect(() => {
+    updatePos(
+      splats.map(() => ({
+        Y: `-${Math.random() * 30}%`,
+        X: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 1}s`,
+        duration: `${Math.floor(Math.random() * 5) * 3}s`,
+      }))
+    );
+  }, []);
 
   return (
     <Wrapper>
@@ -129,17 +169,8 @@ const Splosion = () => {
       </figure>
       <h1>Borderlands</h1>
 
-      <PopUpWrapper>
-        <PaintWrapper>
-          <PaintImage
-            $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719334739/paint_avubsu.png"
-            alt="Seat map and selection screens"
-            width={800}
-            height={608}
-          />
-        </PaintWrapper>
-        <BoxWrapper onClick={handleSplosion}>
+      <PopUpWrapper $splosion={activate}>
+        <BoxWrapper onClick={handleSplosion} $splosion={activate}>
           <LeverImage
             $splosion={activate}
             src="https://res.cloudinary.com/labofthingsimages/image/upload/v1718825737/bom-handle_aw9j9c.png"
@@ -154,6 +185,27 @@ const Splosion = () => {
             height={2506}
           />
         </BoxWrapper>
+        <PaintWrapper>
+          {splats.map(({ alt }, i) => (
+            <Paint
+              $splosion={activate}
+              key={alt + i}
+              style={{
+                top: positions[i]?.Y,
+                left: positions[i]?.X,
+                animationDelay: positions[i]?.delay,
+                animationDuration: positions[i]?.duration,
+              }}
+            />
+          ))}
+          {/* <PaintImage
+            $splosion={activate}
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719334739/paint_avubsu.png"
+            alt="Seat map and selection screens"
+            width={800}
+            height={608}
+          /> */}
+        </PaintWrapper>
       </PopUpWrapper>
     </Wrapper>
   );
