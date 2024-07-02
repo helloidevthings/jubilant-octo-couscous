@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Paint from '../../components/Icons/Paint';
+import PaintDrip from '../../components/Icons/PaintDrip';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -205,6 +206,7 @@ const Splosion = () => {
             width={800}
             height={608}
           /> */}
+          <PaintDrip $activate={activate} />
         </PaintWrapper>
       </PopUpWrapper>
     </Wrapper>
