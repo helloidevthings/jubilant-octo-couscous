@@ -13,7 +13,7 @@ const Wrapper = styled.svg`
     stroke-dasharray: 1000;
     stroke-dashoffset: 10;
     animation: ${(props) =>
-      props.$activate === true ? 'draw 0.8s forwards' : 'none'};
+      props.$splosion === true ? 'draw 0.8s forwards' : 'none'};
 
     @keyframes draw {
       from {
@@ -27,12 +27,13 @@ const Wrapper = styled.svg`
   }
 `;
 
-const PaintDrip = ({ activate }) => (
+const PaintDrip = ({ splosion, style }) => (
   <Wrapper
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
-    $activate={activate}
+    $splosion={splosion}
     viewBox="0 0 62 242"
+    style={style}
   >
     <g clipPath="url(#a)">
       <path

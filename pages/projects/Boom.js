@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Paint from '../../components/Icons/Paint';
 import PaintDrip from '../../components/Icons/PaintDrip';
+import Explosion from '../../components/Icons/Explosion';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -31,10 +32,7 @@ const BoxWrapper = styled.div`
   position: relative;
   width: 600px;
   height: 705px;
-  /* z-index: 1000; */
   z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
-  /* transform: ${(props) =>
-    props.$splosion === true ? 'translateZ(-1px)' : 'translateZ(1000px)'}; */
 
   img {
     object-fit: contain;
@@ -134,7 +132,7 @@ const PaintImage = styled(Image)`
   }
 `;
 
-const Splosion = () => {
+const Boom = () => {
   const [activate, setActivate] = useState(false);
 
   const handleSplosion = () => {
@@ -189,7 +187,7 @@ const Splosion = () => {
         <PaintWrapper>
           {splats.map(({ alt }, i) => (
             <Paint
-              $splosion={activate}
+              splosion={activate}
               key={alt + i}
               style={{
                 top: positions[i]?.Y,
@@ -199,18 +197,12 @@ const Splosion = () => {
               }}
             />
           ))}
-          {/* <PaintImage
-            $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719334739/paint_avubsu.png"
-            alt="Seat map and selection screens"
-            width={800}
-            height={608}
-          /> */}
-          <PaintDrip $activate={activate} />
+          <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} />
+          <Explosion splosion={activate} />
         </PaintWrapper>
       </PopUpWrapper>
     </Wrapper>
   );
 };
 
-export default Splosion;
+export default Boom;
