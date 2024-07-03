@@ -4,9 +4,9 @@ import styled from 'styled-components';
 const Wrapper = styled.svg`
   opacity: 0;
   transform: scale(0);
+  position: absolute;
 
   ${(props) => props.$splosion === true && 'animation: splat 1s ease-in-out;'}
-
   @keyframes splat {
     0% {
       opacity: 1;
@@ -14,7 +14,7 @@ const Wrapper = styled.svg`
       z-index: 1000;
     }
     75% {
-      transform: scale(10);
+      transform: scale(4);
     }
     99% {
       opacity: 0;

@@ -19,7 +19,6 @@ const Wrapper = styled.svg`
       from {
         stroke-dashoffset: 1000;
       }
-
       to {
         stroke-dashoffset: 0;
       }

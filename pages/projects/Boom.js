@@ -20,12 +20,15 @@ const Wrapper = styled.div`
 
 const PopUpWrapper = styled.div`
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  max-width: 100vw;
+  max-height: 100%;
   display: grid;
   place-items: center;
   background: #0000008f;
   backdrop-filter: blur(18px);
+  overflow: hidden;
 `;
 
 const BoxWrapper = styled.div`
@@ -33,6 +36,68 @@ const BoxWrapper = styled.div`
   width: 600px;
   height: 705px;
   z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
+  transform: translate(0, -100%) rotate(3deg);
+
+  animation: bounce-top 1s ease-in-out forwards;
+
+  @keyframes bounce-top {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+
+    38% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0) rotate(-10deg);
+    }
+
+    55% {
+      animation-timing-function: ease-in;
+      transform: translateY(-65px) rotate(2deg);
+    }
+
+    72% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+
+    81% {
+      animation-timing-function: ease-in;
+      transform: translateY(-28px);
+    }
+
+    90% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+
+    95% {
+      animation-timing-function: ease-in;
+      transform: translateY(-8px);
+    }
+
+    100% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes drop {
+    0% {
+      transform: translate(0, -100%) rotate(-35deg);
+    }
+    20% {
+      transform: translate(0, -100%) rotate(-35deg);
+    }
+    30% {
+      transform: translate(0, -100%) rotate(20deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
 
   img {
     object-fit: contain;
@@ -41,8 +106,8 @@ const BoxWrapper = styled.div`
 
 const LeverImage = styled(Image)`
   position: absolute;
-  max-width: 500px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 270px;
   top: 0;
   left: 0;
   transform: translateY(0px);
@@ -64,8 +129,8 @@ const LeverImage = styled(Image)`
 
 const BoxImage = styled(Image)`
   position: absolute;
-  max-width: 500px;
-  max-height: 600px;
+  max-width: 400px;
+  max-height: 550px;
   bottom: 0;
   left: 0;
 `;
@@ -140,17 +205,33 @@ const Boom = () => {
     console.log('activate', activate);
   };
 
-  const splats = [{ alt: '1' }, { alt: '2' }, { alt: '3' }];
+  const splats = [
+    { alt: '1' },
+    { alt: '2' },
+    { alt: '3' },
+    { alt: '4' },
+    { alt: '5' },
+    { alt: '6' },
+  ];
+
+  const sparks = [
+    { alt: '1' },
+    { alt: '2' },
+    { alt: '3' },
+    { alt: '4' },
+    { alt: '5' },
+    { alt: '6' },
+  ];
 
   const [positions, updatePos] = useState([]);
 
   useEffect(() => {
     updatePos(
       splats.map(() => ({
-        Y: `-${Math.random() * 30}%`,
-        X: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 1}s`,
-        duration: `${Math.floor(Math.random() * 5) * 3}s`,
+        Y: `${Math.random() * 30}%`,
+        X: `${Math.random() * 50}%`,
+        delay: `${Math.random() * 0.1}s`,
+        duration: `${Math.floor(Math.random() * 5) * 1}s`,
       }))
     );
   }, []);
@@ -167,22 +248,33 @@ const Boom = () => {
         />
       </figure>
       <h1>Borderlands</h1>
-
       <PopUpWrapper $splosion={activate}>
         <BoxWrapper onClick={handleSplosion} $splosion={activate}>
           <LeverImage
             $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1718825737/bom-handle_aw9j9c.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720022073/bom-handle_rxl9ae.png"
             alt="Seat map and selection screens"
             width={3460}
             height={1074}
           />
           <BoxImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1718825738/bom-base_lmllvq.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720022073/bom-base_h2p5dq.png"
             alt="Seat map and selection screens"
             width={3460}
             height={2506}
           />
+          {sparks.map(({ alt }, i) => (
+            <Explosion
+              splosion={activate}
+              key={alt + i}
+              style={{
+                top: positions[i]?.Y,
+                left: positions[i]?.X,
+                animationDelay: positions[i]?.delay,
+                animationDuration: positions[i]?.duration,
+              }}
+            />
+          ))}
         </BoxWrapper>
         <PaintWrapper>
           {splats.map(({ alt }, i) => (
@@ -198,7 +290,6 @@ const Boom = () => {
             />
           ))}
           <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} />
-          <Explosion splosion={activate} />
         </PaintWrapper>
       </PopUpWrapper>
     </Wrapper>
