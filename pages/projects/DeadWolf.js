@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   max-height: 100vh;
   margin: auto;
   color: #fff;
-  font-family: 'AzoSansWebMed', Helvetica, sans-serif;
+  font-family: 'Azo Sans', Helvetica, sans-serif;
   text-align: center;
   display: grid;
   place-items: center;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   h1,
   h2,
   h3 {
-    margin: 1em auto;
+    margin: 1.25em auto;
   }
 `;
 const TextureImage = styled(Image)`
@@ -74,6 +74,12 @@ const ToggleWrap = styled.div`
     outline: 2px solid #393939;
     box-shadow: inset 1px 4px 7px 4px #50505094;
     background: linear-gradient(to right, #0d0e0e91, #333538d1);
+    background: linear-gradient(
+      to right 0% #ca272d,
+      10% #0d0e0e91,
+      90% #333538d1,
+      100% #fdd900
+    );
   }
 `;
 const ToggleImage = styled(Image)`
@@ -106,7 +112,7 @@ const DeadWolf = () => {
       deg: 'rotate(-1deg)',
     },
     {
-      name: 'him? really, bub?',
+      name: 'Good choic, bub!',
       light: '#fdd900',
       dark: '#e2a400',
       left: '58%',
