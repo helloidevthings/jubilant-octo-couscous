@@ -120,16 +120,16 @@ const ToggleButton = styled.button`
 const DeadWolf = () => {
   const colors = [
     {
-      name: 'good choice peanut',
-      light: '#ED213A',
-      dark: '#93291E',
+      name: 'Wade to go, peanut!',
+      light: '#ca272d',
+      dark: '#c02227',
       left: '-25px',
       deg: 'rotate(-1deg)',
     },
     {
       name: 'him? really?',
-      light: '#F9D423',
-      dark: '#EFA812',
+      light: '#fdd900',
+      dark: '#e2a400',
       left: '58%',
       deg: 'rotate(359deg)',
     },
@@ -138,7 +138,7 @@ const DeadWolf = () => {
   const [currentColor, setMyColor] = useState({
     name: 'Hugh will you choose?',
     light: '#203A43',
-    dark: '#0F2027',
+    dark: '#1a333d',
     left: '-25px',
     top: '-25px',
     deg: 'rotate(0deg)',
@@ -161,7 +161,7 @@ const DeadWolf = () => {
         <ToggleWrap $colors={currentColor}>
           <ToggleImage
             $colors={currentColor}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720032337/toggle2_qllosy.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720037214/toggle2-locket_zkjsyg.png"
             alt="Seat map and selection screens"
             width={150}
             height={150}

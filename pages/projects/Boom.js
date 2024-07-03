@@ -43,8 +43,8 @@ const PopUpWrapper = styled.div`
 
 const BoxWrapper = styled.div`
   position: relative;
-  width: 600px;
-  height: 705px;
+  width: 400px;
+  height: 660px;
   z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
   transform: translate(0, -150%) rotate(3deg);
 
@@ -116,8 +116,10 @@ const BoxWrapper = styled.div`
 
 const LeverImage = styled(Image)`
   position: absolute;
-  max-width: 400px;
-  max-height: 270px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 232px;
   top: 0;
   left: 0;
   transform: translateY(0px);
@@ -139,8 +141,10 @@ const LeverImage = styled(Image)`
 
 const BoxImage = styled(Image)`
   position: absolute;
-  max-width: 400px;
-  max-height: 550px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 542px;
   bottom: 0;
   left: 0;
 `;
@@ -152,6 +156,14 @@ const PaintWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  svg {
+    mask-image: url('https://res.cloudinary.com/labofthingsimages/image/upload/v1719329019/border-lands-bg-22_nztqyd.jpg');
+    -webkit-mask-image: url(w3logo.png);
+    mask-image: url(w3logo.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
 `;
 
 // const PaintSvg = styled(Paint)`
@@ -262,16 +274,16 @@ const Boom = () => {
         <BoxWrapper onClick={handleSplosion} $splosion={activate}>
           <LeverImage
             $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720022073/bom-handle_rxl9ae.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035568/bom-handle_fvs6gc.png"
             alt="Seat map and selection screens"
-            width={3460}
-            height={1074}
+            width={500}
+            height={232}
           />
           <BoxImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720022073/bom-base_h2p5dq.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035567/bom-base_fn8ijd.png"
             alt="Seat map and selection screens"
-            width={3460}
-            height={2506}
+            width={500}
+            height={542}
           />
           {sparks.map(({ alt }, i) => (
             <Explosion
