@@ -75,10 +75,28 @@ const ToggleWrap = styled.div`
     box-shadow: inset 1px 4px 7px 4px #50505094;
     background: linear-gradient(to right, #0d0e0e91, #333538d1);
     background: linear-gradient(
-      to right 0% #ca272d,
-      10% #0d0e0e91,
-      90% #333538d1,
-      100% #fdd900
+      to right,
+      #ca272db5 0%,
+      #0d0e0e70 25%,
+      #0d0e0e70 50%,
+      #0d0e0e70 75%,
+      #fdd900db 100%
+    );
+    background: linear-gradient(
+      to right,
+      #ca272d75 0%,
+      #0d0e0e70 25%,
+      #0d0e0e 50%,
+      #0d0e0e70 74%,
+      #fdd90045 100%
+    );
+    background: linear-gradient(
+      to right,
+      #ca272d -31%,
+      #1c1c1c 25%,
+      #0d0e0e 50%,
+      #191a1a 74%,
+      #fdd900 150%
     );
   }
 `;
