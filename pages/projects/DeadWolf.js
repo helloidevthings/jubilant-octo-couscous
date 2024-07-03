@@ -55,26 +55,11 @@ const PopUpWrapper = styled.div`
 
 const ToggleWrap = styled.div`
   position: relative;
-  height: 100px;
+  height: 85px;
   width: 300px;
   border-radius: 50px;
-  box-shadow: 0px 5px 13px 5px #000;
-  /* background: linear-gradient(to right, #232526, #181f27cc); */
+  box-shadow: 0px 8px 16px 5px #000;
   z-index: 10;
-
-  /* &:after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    background: linear-gradient(to right, #f9d423, #ed213a);
-    top: 0;
-    left: ${(props) => props.$colors.X};
-    transform: ${(props) => props.$colors.r};
-    transition: left 0.4s cubic-bezier(1, -0.35, 0.4, 1.19);
-    z-index: -1;
-  } */
 
   &:after {
     content: '';
@@ -85,23 +70,16 @@ const ToggleWrap = styled.div`
     right: 0;
     border-radius: 50px;
     z-index: -1;
-    border: 2px solid #000;
-    background: linear-gradient(to right, #23252691, #414345d1);
+    outline: 2px solid #393939;
+    box-shadow: inset 1px 4px 7px 4px #50505094;
+    background: linear-gradient(to right, #0d0e0e91, #333538d1);
   }
-
-  /* svg {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    top: 0;
-    left: ${(props) => props.$colors.X};
-  } */
 `;
 const ToggleImage = styled(Image)`
   position: absolute;
   width: 150px;
   height: 150px;
-  top: -25px;
+  top: -30px;
   left: ${(props) => props.$colors.left};
   transform: ${(props) => props.$colors.deg};
   z-index: 0;
@@ -123,11 +101,11 @@ const DeadWolf = () => {
       name: 'Wade to go, peanut!',
       light: '#ca272d',
       dark: '#c02227',
-      left: '-25px',
+      left: '-20px',
       deg: 'rotate(-1deg)',
     },
     {
-      name: 'him? really?',
+      name: 'him? really, bub?',
       light: '#fdd900',
       dark: '#e2a400',
       left: '58%',
@@ -139,7 +117,7 @@ const DeadWolf = () => {
     name: 'Hugh will you choose?',
     light: '#203A43',
     dark: '#1a333d',
-    left: '-25px',
+    left: '-20px',
     top: '-25px',
     deg: 'rotate(0deg)',
   });
