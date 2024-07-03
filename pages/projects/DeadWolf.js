@@ -130,7 +130,7 @@ const DeadWolf = () => {
       deg: 'rotate(-1deg)',
     },
     {
-      name: 'Good choic, bub!',
+      name: 'Good choice, bub!',
       light: '#fdd900',
       dark: '#e2a400',
       left: '58%',
