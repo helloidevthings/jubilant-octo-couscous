@@ -29,6 +29,16 @@ const PopUpWrapper = styled.div`
   background: #0000008f;
   backdrop-filter: blur(18px);
   overflow: hidden;
+  animation: opacity 0.5s ease-in-out forwards;
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 const BoxWrapper = styled.div`
@@ -36,9 +46,9 @@ const BoxWrapper = styled.div`
   width: 600px;
   height: 705px;
   z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
-  transform: translate(0, -100%) rotate(3deg);
+  transform: translate(0, -150%) rotate(3deg);
 
-  animation: bounce-top 1s ease-in-out forwards;
+  animation: bounce-top 1s ease-in-out 0.5s forwards;
 
   @keyframes bounce-top {
     0% {
