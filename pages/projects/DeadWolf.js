@@ -58,6 +58,7 @@ const ToggleWrap = styled.div`
   height: 85px;
   width: 300px;
   border-radius: 50px;
+  border: 4px solid #252424;
   box-shadow: 0px 8px 16px 5px #000;
   z-index: 10;
 
@@ -117,7 +118,7 @@ const DeadWolf = () => {
     name: 'Hugh will you choose?',
     light: '#203A43',
     dark: '#1a333d',
-    left: '-20px',
+    left: '25%',
     top: '-25px',
     deg: 'rotate(0deg)',
   });
