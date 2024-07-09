@@ -13,12 +13,13 @@ const Wrapper = styled.svg`
     stroke-dasharray: 1000;
     stroke-dashoffset: 10;
     animation: ${(props) =>
-      props.$splosion === true ? 'draw 0.8s forwards' : 'none'};
+      props.$splosion === true ? '1s draw 0.8s forwards' : 'none'};
 
     @keyframes draw {
       from {
         stroke-dashoffset: 1000;
       }
+
       to {
         stroke-dashoffset: 0;
       }

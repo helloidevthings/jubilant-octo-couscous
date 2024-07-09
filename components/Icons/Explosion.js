@@ -2,9 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  /* position: absolute; */
-  /* right: 50%; */
-  /* top: 50%; */
+  position: absolute;
   width: 300px;
   height: 300px;
 
@@ -17,9 +15,9 @@ const Fire = styled.svg`
   position: absolute;
   opacity: 0;
   ${(props) =>
-    props.$splosion === true && 'animation: 0.4s splat 2s ease-in-out;'}
+    props.$splosion === true && 'animation: 0.8s explode ease-in-out;'}
 
-  @keyframes splat {
+  @keyframes explode {
     0% {
       opacity: 1;
       transform: scale(0);
@@ -40,17 +38,16 @@ const Fire = styled.svg`
 const Smoke = styled.svg`
   position: absolute;
   opacity: 0;
-  ${(props) =>
-    props.$splosion === true && 'animation: 2s splat 1s ease-in-out;'}
+  ${(props) => props.$splosion === true && 'animation: 0.5s smoke ease-in-out;'}
 
-  @keyframes splat {
+  @keyframes smoke {
     0% {
       opacity: 1;
       transform: scale(0);
       z-index: 1000;
     }
     75% {
-      transform: scale(1.4);
+      transform: scale(1.5);
     }
     99% {
       opacity: 0;
@@ -61,8 +58,8 @@ const Smoke = styled.svg`
   }
 `;
 
-const Explosion = ({ splosion, props }) => (
-  <Wrapper $splosion={splosion} {...props}>
+const Explosion = ({ splosion, style }) => (
+  <Wrapper $splosion={splosion} style={style}>
     <Smoke
       $splosion={splosion}
       xmlns="http://www.w3.org/2000/svg"

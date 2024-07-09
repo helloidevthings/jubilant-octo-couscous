@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Paint from '../../components/Icons/Paint';
 import PaintDrip from '../../components/Icons/PaintDrip';
 import Explosion from '../../components/Icons/Explosion';
+import Paint1 from '../../components/Icons/Paint1';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -156,51 +157,20 @@ const PaintWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  svg {
-    mask-image: url('https://res.cloudinary.com/labofthingsimages/image/upload/v1719329019/border-lands-bg-22_nztqyd.jpg');
-    -webkit-mask-image: url(w3logo.png);
-    mask-image: url(w3logo.png);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
 `;
 
-// const PaintSvg = styled(Paint)`
-//   opacity: 0;
-//   transform: scale(0);
-
-//   ${(props) =>
-//     props.$splosion === true && 'animation: 1s splat 1s ease-in-out forwards;'}
-
-//   @keyframes splat {
-//     0% {
-//       opacity: 1;
-//       transform: scale(0);
-//       z-index: 1000;
-//     }
-//     75% {
-//       transform: scale(10);
-//     }
-//     99% {
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: scale(0);
-//       z-index: -1000;
-//     }
-//   }
-// `;
-
 const PaintImage = styled(Image)`
-  perspective: 400px;
   opacity: 0;
   transform: scale(0);
+  position: absolute;
+  top: 0;
+  left: 0;
 
   ${(props) =>
-    props.$splosion === true && 'animation: 1s splat 1s ease-in-out forwards;'}
+    props.$splosion === true &&
+    'animation: 1s paintImg 1s ease-in-out forwards;'}
 
-  @keyframes splat {
+  @keyframes paintImg {
     0% {
       opacity: 1;
       transform: scale(0);
@@ -232,31 +202,21 @@ const Boom = () => {
     { alt: '2' },
     { alt: '3' },
     { alt: '4' },
-    { alt: '5' },
-    { alt: '6' },
+    // { alt: '5' },
+    // { alt: '6' },
   ];
+  // const [positions, updatePos] = useState([]);
 
-  const sparks = [
-    { alt: '1' },
-    { alt: '2' },
-    { alt: '3' },
-    { alt: '4' },
-    { alt: '5' },
-    { alt: '6' },
-  ];
-
-  const [positions, updatePos] = useState([]);
-
-  useEffect(() => {
-    updatePos(
-      splats.map(() => ({
-        Y: `${Math.random() * 30}%`,
-        X: `${Math.random() * 50}%`,
-        delay: `${Math.random() * 0.1}s`,
-        duration: `${Math.floor(Math.random() * 5) * 1}s`,
-      }))
-    );
-  }, []);
+  // useEffect(() => {
+  //   updatePos(
+  //     splats.map(() => ({
+  //       Y: `${Math.random() * 30}%`,
+  //       X: `${Math.random() * 50}%`,
+  //       delay: `${Math.random() * 0.1}s`,
+  //       duration: `${Math.floor(Math.random() * 5) * 1}s`,
+  //     }))
+  //   );
+  // }, []);
 
   return (
     <Wrapper>
@@ -285,33 +245,74 @@ const Boom = () => {
             width={500}
             height={542}
           />
-          {sparks.map(({ alt }, i) => (
-            <Explosion
-              splosion={activate}
-              key={alt + i}
-              style={{
-                top: positions[i]?.Y,
-                left: positions[i]?.X,
-                animationDelay: positions[i]?.delay,
-                animationDuration: positions[i]?.duration,
-              }}
-            />
-          ))}
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '10%',
+              left: '30%',
+              animationDelay: '03s',
+              animationDuration: '2s',
+            }}
+          />
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '50%',
+              left: '50%',
+              // animationDelay: '1s',
+              // animationDuration: '1s',
+            }}
+          />
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '10%',
+              left: '90%',
+              // animationDelay: '1s',
+              // animationDuration: '1s',
+            }}
+          />
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '10%',
+              left: '90%',
+              // animationDelay: '1s',
+              // animationDuration: '1s',
+            }}
+          />
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '30%',
+              left: '80%',
+              // animationDelay: '0.2s',
+              // animationDuration: '1s',
+            }}
+          />
         </BoxWrapper>
         <PaintWrapper>
-          {splats.map(({ alt }, i) => (
-            <Paint
-              splosion={activate}
-              key={alt + i}
-              style={{
-                top: positions[i]?.Y,
-                left: positions[i]?.X,
-                animationDelay: positions[i]?.delay,
-                animationDuration: positions[i]?.duration,
-              }}
-            />
-          ))}
-          <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} />
+          <Paint
+            splosion={activate}
+            style={{
+              top: '30%',
+              left: '50%',
+            }}
+          />
+          <Paint1
+            splosion={activate}
+            style={{
+              top: '30%',
+              left: '50%',
+            }}
+          />
+          {/* <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} /> */}
+          <PaintImage
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720550815/borderlands-explosion_lcfwcb.png"
+            alt="Seat map and selection screens"
+            width={1400}
+            height={1400}
+          />
         </PaintWrapper>
       </PopUpWrapper>
     </Wrapper>
