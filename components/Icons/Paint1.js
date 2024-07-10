@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.svg`
   position: absolute;
-  transform: scale(0);
+  transform: scale(0) translate(-50%, -50%);
   opacity: 0;
 
   ${(props) => props.$splosion === true && 'animation: splat 1s ease-in-out;'}
