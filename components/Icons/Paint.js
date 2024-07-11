@@ -6,8 +6,7 @@ const Wrapper = styled.svg`
   transform: scale(0) translate(-50%, -50%);
   opacity: 0;
 
-  ${(props) =>
-    props.$splosion === true && 'animation: splat 1s forwards ease-in-out;'}
+  ${(props) => props.$splosion === true && 'animation: splat 1s forwards;'}
   @keyframes splat {
     0% {
       opacity: 1;
@@ -17,12 +16,8 @@ const Wrapper = styled.svg`
     75% {
       transform: scale(4);
     }
-    99% {
-      /* opacity: 0; */
-    }
     100% {
-      /* transform: scale(0); */
-      transform: scale(4);
+      transform: scale(4) translate(-50%, -50%);
       opacity: 1;
     }
   }

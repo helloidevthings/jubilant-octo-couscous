@@ -55,6 +55,7 @@ const PopUpWrapper = styled.div`
 
 const ToggleWrap = styled.div`
   position: relative;
+  margin: 3em auto 1em;
   height: 85px;
   width: 300px;
   border-radius: 50px;
@@ -160,7 +161,12 @@ const DeadWolf = () => {
         height={500}
       />
       <PopUpWrapper>
-        <h1>cHUGHse your favorite...</h1>
+        <Image
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720719713/deadwolf-logo-300_krvxbw.png"
+          alt="Seat map and selection screens"
+          width={300}
+          height={122}
+        />
         <ToggleWrap $colors={currentColor}>
           <ToggleImage
             $colors={currentColor}

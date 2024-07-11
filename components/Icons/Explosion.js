@@ -11,11 +11,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const Fire = styled.svg`
+const Smoke = styled.svg`
   position: absolute;
   opacity: 0;
   ${(props) =>
-    props.$splosion === true && 'animation: 0.8s explode ease-in-out;'}
+    props.$splosion === true && 'animation: 0.4s explode ease-in-out;'}
 
   @keyframes explode {
     0% {
@@ -35,10 +35,11 @@ const Fire = styled.svg`
   }
 `;
 
-const Smoke = styled.svg`
+const Fire = styled.svg`
   position: absolute;
   opacity: 0;
-  ${(props) => props.$splosion === true && 'animation: 0.5s smoke ease-in-out;'}
+  ${(props) =>
+    props.$splosion === true && `animation: 0.75s smoke ease-in-out;`}
 
   @keyframes smoke {
     0% {
@@ -58,9 +59,10 @@ const Smoke = styled.svg`
   }
 `;
 
-const Explosion = ({ splosion, style }) => (
+const Explosion = ({ splosion, style, delay }) => (
   <Wrapper $splosion={splosion} style={style}>
     <Smoke
+      $delay={delay}
       $splosion={splosion}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

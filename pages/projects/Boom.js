@@ -168,7 +168,7 @@ const PaintImage = styled(Image)`
 
   ${(props) =>
     props.$splosion === true &&
-    'animation: 1s paintImg 0.1s ease-in-out forwards;'}
+    'animation: 1s paintImg 0.25s ease-in-out forwards;'}
 
   @keyframes paintImg {
     0% {
@@ -254,10 +254,10 @@ const Boom = () => {
           />
           <Explosion
             splosion={activate}
+            delay={'0.15s'}
             style={{
               top: '25%',
               left: '25%',
-              animationDelay: '0.5s',
             }}
           />
         </BoxWrapper>
@@ -268,6 +268,7 @@ const Boom = () => {
             style={{
               top: '5%',
               left: '10%',
+              animationDelay: '0.35s',
             }}
           />
           <Paint1
@@ -276,6 +277,7 @@ const Boom = () => {
             style={{
               top: '30%',
               left: '50%',
+              animationDelay: '0.35s',
             }}
           />
           {/* <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} /> */}
