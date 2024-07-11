@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled.svg`
   position: absolute;
-  transform: scale(0) translate(-50%, -50%);
+
+  /* using Animation */
+  /* transform: scale(0);
   opacity: 0;
 
   ${(props) => props.$splosion === true && 'animation: splat 1s ease-in-out;'}
@@ -22,13 +24,20 @@ const Wrapper = styled.svg`
     100% {
       transform: scale(0);
     }
-  }
+  } */
+
+  /* using Transition */
+  transform: ${(props) => (props.$splosion === true ? 'scale(3)' : 'scale(0)')};
+  transform-origin: center;
+  transition: all 0.2s ease-in;
+  transition-delay: 1s;
+  opacity: 0;
 `;
 
 const Paint1 = ({ splosion, style, fill }) => (
   <Wrapper
     style={style}
-    $splosion={splosion}
+    $splosion={splosion ? splosion : false}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 685 714"

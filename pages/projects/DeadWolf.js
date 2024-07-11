@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   h1,
   h2,
   h3 {
-    margin: 1.25em auto;
+    margin: 1.25em auto 0.25em;
   }
 `;
 const TextureImage = styled(Image)`
@@ -43,6 +43,7 @@ const TextureImage = styled(Image)`
 `;
 
 const PopUpWrapper = styled.div`
+  max-width: 44ch;
   display: grid;
   place-items: center;
   padding: 1em 3em;
@@ -192,6 +193,14 @@ const DeadWolf = () => {
           {/* <DeadWolfIcon /> */}
         </ToggleWrap>
         <h3>{currentColor.name}</h3>
+        <p>
+          <small>
+            <strong>
+              Choose between Deadpool and Wolverine by tapping the left or right
+              side of the bar.{' '}
+            </strong>
+          </small>
+        </p>
       </PopUpWrapper>
     </Wrapper>
   );

@@ -3,24 +3,36 @@ import styled from 'styled-components';
 
 const Wrapper = styled.svg`
   position: absolute;
-  transform: scale(0) translate(-50%, -50%);
-  opacity: 0;
 
-  ${(props) => props.$splosion === true && 'animation: splat 1s forwards;'}
-  @keyframes splat {
-    0% {
-      opacity: 1;
-      transform: scale(0);
-      z-index: 1000;
-    }
-    75% {
-      transform: scale(4);
-    }
-    100% {
-      transform: scale(4) translate(-50%, -50%);
-      opacity: 1;
-    }
+  /* using Animation */
+  /* transform: scale(0);
+opacity: 0;
+
+${(props) => props.$splosion === true && 'animation: splat 1s ease-in-out;'}
+@keyframes splat {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+    z-index: 1000;
   }
+  75% {
+    transform: scale(4);
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+  }
+} */
+
+  /* using Transition */
+  /* opacity: ${(props) => (props.$splosion === true ? 1 : 0)}; */
+  transform: ${(props) => (props.$splosion === true ? 'scale(3)' : 'scale(0)')};
+  transform-origin: center;
+  transition: all 0.2s ease-in;
+  transition-delay: 1s;
+  opacity: 0;
 `;
 
 const Paint = ({ splosion, style, fill }) => (

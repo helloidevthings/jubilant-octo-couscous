@@ -160,15 +160,16 @@ const PaintWrapper = styled.div`
 `;
 
 const PaintImage = styled(Image)`
-  opacity: 0;
-  transform: scale(0) translate(-50%, -50%);
+  /* opacity: 0; */
   position: absolute;
   top: 0;
   left: 0;
+  transform: scale(0);
 
   ${(props) =>
     props.$splosion === true &&
-    'animation: 1s paintImg 0.25s ease-in-out forwards;'}
+    'animation: paintImg 0.7s ease-in-out forwards;'}
+  animation-delay: 0.15s;
 
   @keyframes paintImg {
     0% {
@@ -245,7 +246,7 @@ const Boom = () => {
             width={500}
             height={542}
           />
-          <Explosion
+          {/* <Explosion
             splosion={activate}
             style={{
               top: '5%',
@@ -254,36 +255,49 @@ const Boom = () => {
           />
           <Explosion
             splosion={activate}
-            delay={'0.15s'}
             style={{
-              top: '25%',
-              left: '25%',
+              top: '40%',
+              left: '35%',
             }}
           />
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '55%',
+              left: '5%',
+            }}
+          />
+          <Explosion
+            splosion={activate}
+            style={{
+              top: '0',
+              left: '75%',
+            }}
+          /> */}
         </BoxWrapper>
         <PaintWrapper>
-          <Paint
-            fill="pink"
+          {/* <Paint
+            fill="#950202"
             splosion={activate}
             style={{
               top: '5%',
               left: '10%',
-              animationDelay: '0.35s',
+              // transitionDelay: '0.5s',
             }}
           />
           <Paint1
-            fill="pink"
+            fill="#9b008e"
             splosion={activate}
             style={{
-              top: '30%',
+              top: '60%',
               left: '50%',
-              animationDelay: '0.35s',
+              // animationDelay: '0.5s',
             }}
-          />
+          /> */}
           {/* <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} /> */}
           <PaintImage
             $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720644399/border-img-small_gzsndr.png"
+            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720727535/fire-flames-explosion-png_pypff6.webp"
             alt="Seat map and selection screens"
             width={900}
             height={900}
