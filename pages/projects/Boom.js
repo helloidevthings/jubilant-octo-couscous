@@ -60,7 +60,19 @@ const BoxWrapper = styled.div`
   z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
   transform: translate(0, -150%) rotate(3deg);
 
-  animation: bounce-top 1s ease-in-out 0.5s forwards;
+  animation: ${(props) =>
+    props.$splosion === false
+      ? 'bounce-top 1s ease-in-out 0.5s forwards'
+      : 'fadeOut 10s ease-in-out forwards'};
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 
   @keyframes bounce-top {
     0% {
