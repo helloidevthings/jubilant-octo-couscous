@@ -1,11 +1,8 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import Paint from '../../components/Icons/Paint';
-import PaintDrip from '../../components/Icons/PaintDrip';
-import Explosion from '../../components/Icons/Explosion';
-import Paint1 from '../../components/Icons/Paint1';
+import Paint3 from '../../components/Icons/Paint3';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -32,12 +29,26 @@ const PopUpWrapper = styled.div`
   overflow: hidden;
   animation: opacity 0.5s ease-in-out forwards;
 
-  @keyframes opacity {
+  ${(props) =>
+    props.$fadeOut === false
+      ? 'animation: fadeIn 0.5s ease-in-out forwards;'
+      : 'animation: fadeOut 0.5s ease-in-out forwards;'}
+
+  @keyframes fadeIn {
     0% {
       opacity: 0;
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 `;
@@ -150,20 +161,18 @@ const BoxImage = styled(Image)`
   left: 0;
 `;
 
-const PaintWrapper = styled.div`
+const SplodeWrap = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
 `;
 
-const PaintImage = styled(Image)`
-  /* opacity: 0; */
-  position: absolute;
-  top: 0;
-  left: 0;
+const BoomImage1 = styled(Image)`
   transform: scale(0);
 
   ${(props) =>
@@ -192,32 +201,14 @@ const PaintImage = styled(Image)`
 
 const Boom = () => {
   const [activate, setActivate] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   const handleSplosion = () => {
     activate ? setActivate(false) : setActivate(true);
-    console.log('activate', activate);
+    setTimeout(() => {
+      setFadeOut(true);
+    }, 1000);
   };
-
-  const splats = [
-    { alt: '1' },
-    { alt: '2' },
-    { alt: '3' },
-    { alt: '4' },
-    // { alt: '5' },
-    // { alt: '6' },
-  ];
-  // const [positions, updatePos] = useState([]);
-
-  // useEffect(() => {
-  //   updatePos(
-  //     splats.map(() => ({
-  //       Y: `${Math.random() * 30}%`,
-  //       X: `${Math.random() * 50}%`,
-  //       delay: `${Math.random() * 0.1}s`,
-  //       duration: `${Math.floor(Math.random() * 5) * 1}s`,
-  //     }))
-  //   );
-  // }, []);
 
   return (
     <Wrapper>
@@ -227,11 +218,10 @@ const Boom = () => {
           alt="Seat map and selection screens"
           width={921}
           height={594}
-          // 921 × 594
         />
       </figure>
       <h1>Borderlands</h1>
-      <PopUpWrapper $splosion={activate}>
+      <PopUpWrapper $splosion={activate} $fadeOut={fadeOut}>
         <BoxWrapper onClick={handleSplosion} $splosion={activate}>
           <LeverImage
             $splosion={activate}
@@ -246,64 +236,18 @@ const Boom = () => {
             width={500}
             height={542}
           />
-          {/* <Explosion
-            splosion={activate}
-            style={{
-              top: '5%',
-              left: '5%',
-            }}
-          />
-          <Explosion
-            splosion={activate}
-            style={{
-              top: '40%',
-              left: '35%',
-            }}
-          />
-          <Explosion
-            splosion={activate}
-            style={{
-              top: '55%',
-              left: '5%',
-            }}
-          />
-          <Explosion
-            splosion={activate}
-            style={{
-              top: '0',
-              left: '75%',
-            }}
-          /> */}
         </BoxWrapper>
-        <PaintWrapper>
-          {/* <Paint
-            fill="#950202"
-            splosion={activate}
-            style={{
-              top: '5%',
-              left: '10%',
-              // transitionDelay: '0.5s',
-            }}
-          />
-          <Paint1
-            fill="#9b008e"
-            splosion={activate}
-            style={{
-              top: '60%',
-              left: '50%',
-              // animationDelay: '0.5s',
-            }}
-          /> */}
-          {/* <PaintDrip splosion={activate} style={{ animationDelay: '2s' }} /> */}
-          <PaintImage
+        <SplodeWrap>
+          <BoomImage1
             $splosion={activate}
             src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720727535/fire-flames-explosion-png_pypff6.webp"
             alt="Seat map and selection screens"
             width={900}
             height={900}
           />
-        </PaintWrapper>
+        </SplodeWrap>
       </PopUpWrapper>
+      <Paint3 activate={fadeOut} fill="green" />
     </Wrapper>
   );
 };

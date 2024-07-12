@@ -102,6 +102,7 @@ const ToggleWrap = styled.div`
     );
   }
 `;
+
 const ToggleImage = styled(Image)`
   position: absolute;
   width: 150px;
@@ -190,7 +191,6 @@ const DeadWolf = () => {
               }
             ></ToggleButton>
           ))}
-          {/* <DeadWolfIcon /> */}
         </ToggleWrap>
         <h3>{currentColor.name}</h3>
         <p>
