@@ -9,22 +9,23 @@ const Wrapper = styled.svg`
   /* opacity: 0; */
 
   path {
-    stroke-width: 14px;
+    stroke-dashoffset: 0;
+    transform: scale(0);
+    transform-origin: center center;
     stroke-dasharray: 1000;
-    stroke-dashoffset: 10;
+    stroke-width: 18px;
     animation: ${(props) =>
-      props.$activate ? '10s paint3 ease-in forwards' : 'none'};
-    /* animation-delay: 1s; */
+      props.$activate ? '8s paint3 0.9s ease-in forwards' : 'none'};
+    animation-iteration-count: 1;
 
     @keyframes paint3 {
       0% {
-        opacity: 1;
-      }
-      10% {
+        transform: scale(1);
         stroke-dashoffset: 1000;
       }
       100% {
         stroke-dashoffset: 0;
+        transform: scale(1);
       }
     }
   }

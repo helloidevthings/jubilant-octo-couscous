@@ -22,8 +22,15 @@ const PopUpWrapper = styled.div`
   height: 100vh;
   max-width: 100vw;
   max-height: 100%;
+
+  // put this in the middle of the screen...
   display: grid;
-  place-items: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   background: #0000008f;
   backdrop-filter: blur(18px);
   overflow: hidden;
@@ -53,26 +60,35 @@ const PopUpWrapper = styled.div`
   }
 `;
 
-const BoxWrapper = styled.div`
-  position: relative;
-  width: 400px;
-  height: 660px;
-  z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
-  transform: translate(0, -150%) rotate(3deg);
+const BoxFade = styled.div`
+  grid-column: 1;
+  grid-row: 1;
 
-  animation: ${(props) =>
-    props.$splosion === false
-      ? 'bounce-top 1s ease-in-out 0.5s forwards'
-      : 'fadeOut 10s ease-in-out forwards'};
+  ${(props) =>
+    props.$splosion === true &&
+    'animation: 0.4s fadeBox 0.2s ease-in-out forwards;'}
 
-  @keyframes fadeOut {
+  @keyframes fadeBox {
     0% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+`;
+
+const BoxWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  grid-column: 1;
+  grid-row: 1;
+  width: 400px;
+  height: 660px;
+  transform: translate(0, -150%) rotate(3deg);
+  z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
+  animation: bounce-top 1s ease-in-out 0.5s forwards;
 
   @keyframes bounce-top {
     0% {
@@ -118,21 +134,6 @@ const BoxWrapper = styled.div`
     }
   }
 
-  @keyframes drop {
-    0% {
-      transform: translate(0, -100%) rotate(-35deg);
-    }
-    20% {
-      transform: translate(0, -100%) rotate(-35deg);
-    }
-    30% {
-      transform: translate(0, -100%) rotate(20deg);
-    }
-    100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-  }
-
   img {
     object-fit: contain;
   }
@@ -173,26 +174,17 @@ const BoxImage = styled(Image)`
   left: 0;
 `;
 
-const SplodeWrap = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-items: center;
-`;
-
 const BoomImage1 = styled(Image)`
+  grid-column: 1;
+  grid-row: 1;
   transform: scale(0);
+  transform-origin: center center;
 
   ${(props) =>
-    props.$splosion === true &&
-    'animation: paintImg 0.7s ease-in-out forwards;'}
+    props.$splosion === true && 'animation: bigBoom 0.7s ease-in-out forwards;'}
   animation-delay: 0.15s;
 
-  @keyframes paintImg {
+  @keyframes bigBoom {
     0% {
       opacity: 1;
       transform: scale(0);
@@ -232,34 +224,35 @@ const Boom = () => {
           height={594}
         />
       </figure>
-      <h1>Borderlands</h1>
       <PopUpWrapper $splosion={activate} $fadeOut={fadeOut}>
-        <BoxWrapper onClick={handleSplosion} $splosion={activate}>
-          <LeverImage
-            $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035568/bom-handle_fvs6gc.png"
-            alt="Seat map and selection screens"
-            width={500}
-            height={232}
-          />
-          <BoxImage
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035567/bom-base_fn8ijd.png"
-            alt="Seat map and selection screens"
-            width={500}
-            height={542}
-          />
-        </BoxWrapper>
-        <SplodeWrap>
-          <BoomImage1
-            $splosion={activate}
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720727535/fire-flames-explosion-png_pypff6.webp"
-            alt="Seat map and selection screens"
-            width={900}
-            height={900}
-          />
-        </SplodeWrap>
+        <BoxFade $splosion={activate}>
+          <BoxWrapper onClick={handleSplosion} $splosion={activate}>
+            <LeverImage
+              $splosion={activate}
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035568/bom-handle_fvs6gc.png"
+              alt="Seat map and selection screens"
+              width={500}
+              height={232}
+            />
+            <BoxImage
+              src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035567/bom-base_fn8ijd.png"
+              alt="Seat map and selection screens"
+              width={500}
+              height={542}
+            />
+          </BoxWrapper>
+        </BoxFade>
+        {/* <SplodeWrap> */}
+        <BoomImage1
+          $splosion={activate}
+          src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720727535/fire-flames-explosion-png_pypff6.webp"
+          alt="Seat map and selection screens"
+          width={900}
+          height={900}
+        />
+        {/* </SplodeWrap> */}
       </PopUpWrapper>
-      <Paint3 activate={fadeOut} fill="green" />
+      <Paint3 activate={activate} fill="green" />
     </Wrapper>
   );
 };
