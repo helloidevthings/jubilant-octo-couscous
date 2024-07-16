@@ -158,14 +158,14 @@ const DeadWolf = () => {
     <Wrapper $colors={currentColor}>
       <TextureImage
         src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720032456/DP-Texture_mqyrig.jpg"
-        alt="Seat map and selection screens"
+        alt="texture image"
         width={500}
         height={500}
       />
       <PopUpWrapper>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720719713/deadwolf-logo-300_krvxbw.png"
-          alt="Seat map and selection screens"
+          alt="dead and wp;f logo"
           width={300}
           height={122}
         />
@@ -173,13 +173,14 @@ const DeadWolf = () => {
           <ToggleImage
             $colors={currentColor}
             src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720037214/toggle2-locket_zkjsyg.png"
-            alt="Seat map and selection screens"
+            alt="dead wp;f locket"
             width={150}
             height={150}
           />
           {colors.map(({ name, light, dark, left, deg }, i) => (
             <ToggleButton
               key={light}
+              id={name}
               onClick={() =>
                 handleColors({
                   name: name,

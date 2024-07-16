@@ -264,7 +264,7 @@ const Boom = () => {
       <figure>
         <BgImg
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719330260/Screenshot_2024-06-25_at_11.41.24_AM_essuba.png"
-          alt="Seat map and selection screens"
+          alt="mock up image"
           width={921}
           height={594}
         />
@@ -275,13 +275,13 @@ const Boom = () => {
             <LeverImage
               $splosion={activate}
               src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035568/bom-handle_fvs6gc.png"
-              alt="Seat map and selection screens"
+              alt="lever"
               width={500}
               height={232}
             />
             <BoxImage
               src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720035567/bom-base_fn8ijd.png"
-              alt="Seat map and selection screens"
+              alt="box"
               width={500}
               height={542}
             />
@@ -291,7 +291,7 @@ const Boom = () => {
         <BoomImage1
           $splosion={activate}
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1720727535/fire-flames-explosion-png_pypff6.webp"
-          alt="Seat map and selection screens"
+          alt="big boom"
           width={900}
           height={900}
         />
