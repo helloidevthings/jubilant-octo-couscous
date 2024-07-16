@@ -23,6 +23,7 @@ const Wrapper = styled.svg`
         transform: scale(1);
         stroke-dashoffset: 1000;
       }
+
       100% {
         stroke-dashoffset: 0;
         transform: scale(1);

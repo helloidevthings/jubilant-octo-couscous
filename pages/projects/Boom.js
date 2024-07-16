@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Paint3 from '../../components/Icons/Paint3';
+import Paint4 from '../../components/Icons/Paint4';
+import Paint5 from '../../components/Icons/Paint5';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -16,12 +18,39 @@ const Wrapper = styled.div`
   z-index: 0;
 `;
 
-const PopUpWrapper = styled.div`
+const PaintWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  z-index: 1;
+  opacity: 1;
+
+  ${(props) =>
+    props.$fadeOut === true &&
+    'animation: 3s fadeOut 0.8s ease-in-out forwards;'}
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+`;
+
+const BlurryBoomWrap = styled.div`
   position: fixed;
   width: 100%;
   height: 100vh;
   max-width: 100vw;
   max-height: 100%;
+  z-index: 1000;
 
   // put this in the middle of the screen...
   display: grid;
@@ -31,6 +60,8 @@ const PopUpWrapper = styled.div`
   justify-content: center;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+
+  /* other styling */
   background: #0000008f;
   backdrop-filter: blur(18px);
   overflow: hidden;
@@ -66,14 +97,20 @@ const BoxFade = styled.div`
 
   ${(props) =>
     props.$splosion === true &&
-    'animation: 0.4s fadeBox 0.2s ease-in-out forwards;'}
+    'animation: 0.3s fadeBox 0.2s ease-in-out forwards;'}
 
   @keyframes fadeBox {
     0% {
+      transform: scale(1.5);
       opacity: 1;
     }
 
+    90% {
+      transform: scale(1);
+    }
+
     100% {
+      transform: scale(0);
       opacity: 0;
     }
   }
@@ -181,7 +218,8 @@ const BoomImage1 = styled(Image)`
   transform-origin: center center;
 
   ${(props) =>
-    props.$splosion === true && 'animation: bigBoom 0.7s ease-in-out forwards;'}
+    props.$splosion === true &&
+    'animation: 0.7s bigBoom 0.3s ease-in-out forwards;'}
   animation-delay: 0.15s;
 
   @keyframes bigBoom {
@@ -203,6 +241,7 @@ const BoomImage1 = styled(Image)`
   }
 `;
 
+// Adding two states to manage animations, the initial trigger for the boom and then the fade out for the pop up and paint
 const Boom = () => {
   const [activate, setActivate] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
@@ -216,6 +255,7 @@ const Boom = () => {
 
   return (
     <Wrapper>
+      {/* ignore this, it's just to have something behind the images */}
       <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719330260/Screenshot_2024-06-25_at_11.41.24_AM_essuba.png"
@@ -224,7 +264,7 @@ const Boom = () => {
           height={594}
         />
       </figure>
-      <PopUpWrapper $splosion={activate} $fadeOut={fadeOut}>
+      <BlurryBoomWrap $splosion={activate} $fadeOut={fadeOut}>
         <BoxFade $splosion={activate}>
           <BoxWrapper onClick={handleSplosion} $splosion={activate}>
             <LeverImage
@@ -251,8 +291,12 @@ const Boom = () => {
           height={900}
         />
         {/* </SplodeWrap> */}
-      </PopUpWrapper>
-      <Paint3 activate={activate} fill="green" />
+      </BlurryBoomWrap>
+      <PaintWrapper $fadeOut={fadeOut}>
+        <Paint3 activate={activate} fill="green" />
+        <Paint4 activate={activate} fill="yellow" />
+        <Paint5 activate={activate} fill="pink" />
+      </PaintWrapper>
     </Wrapper>
   );
 };
