@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.svg`
-  width: 400px;
+  width: 300px;
   position: absolute;
   bottom: 10%;
   right: 0;
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
 
   path {
     stroke-dashoffset: 0;

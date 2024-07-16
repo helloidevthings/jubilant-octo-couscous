@@ -8,6 +8,10 @@ const Wrapper = styled.svg`
   right: 0;
   /* opacity: 0; */
 
+  @media (max-width: 768px) {
+    width: 300px;
+  }
+
   path {
     stroke-dashoffset: 0;
     transform: scale(0);

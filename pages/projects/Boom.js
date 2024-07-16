@@ -28,8 +28,7 @@ const PaintWrapper = styled.div`
   opacity: 1;
 
   ${(props) =>
-    props.$fadeOut === true &&
-    'animation: 3s fadeOut 0.8s ease-in-out forwards;'}
+    props.$fadeOut === true && 'animation: 3s fadeOut 1s ease-in-out forwards;'}
 
   @keyframes fadeOut {
     0% {
@@ -94,6 +93,7 @@ const BlurryBoomWrap = styled.div`
 const BoxFade = styled.div`
   grid-column: 1;
   grid-row: 1;
+  font-size: calc(14px + (16 - 12) * ((100vw - 320px) / (2100 - 320)));
 
   ${(props) =>
     props.$splosion === true &&
@@ -121,8 +121,8 @@ const BoxWrapper = styled.div`
   overflow: hidden;
   grid-column: 1;
   grid-row: 1;
-  width: 400px;
-  height: 660px;
+  width: 25em;
+  height: 41.25em;
   transform: translate(0, -150%) rotate(3deg);
   z-index: ${(props) => (props.$splosion === true ? '-1' : '1000')};
   animation: bounce-top 1s ease-in-out 0.5s forwards;
@@ -180,8 +180,8 @@ const LeverImage = styled(Image)`
   position: absolute;
   width: 100%;
   height: 100%;
-  max-width: 500px;
-  max-height: 232px;
+  max-width: 31.25em;
+  max-height: 14.5em;
   top: 0;
   left: 0;
   transform: translateY(0px);
@@ -205,8 +205,8 @@ const BoxImage = styled(Image)`
   position: absolute;
   width: 100%;
   height: 100%;
-  max-width: 500px;
-  max-height: 542px;
+  max-width: 31.25em;
+  max-height: 33.875em;
   bottom: 0;
   left: 0;
 `;
@@ -216,6 +216,7 @@ const BoomImage1 = styled(Image)`
   grid-row: 1;
   transform: scale(0);
   transform-origin: center center;
+  object-fit: cover;
 
   ${(props) =>
     props.$splosion === true &&
