@@ -18,6 +18,10 @@ const Wrapper = styled.div`
   z-index: 0;
 `;
 
+const BgImg = styled(Image)`
+  object-fit: cover;
+`;
+
 const PaintWrapper = styled.div`
   position: fixed;
   width: 100%;
@@ -258,7 +262,7 @@ const Boom = () => {
     <Wrapper>
       {/* ignore this, it's just to have something behind the images */}
       <figure>
-        <Image
+        <BgImg
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1719330260/Screenshot_2024-06-25_at_11.41.24_AM_essuba.png"
           alt="Seat map and selection screens"
           width={921}
