@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import BackArrowButton from '../../components/BackArrowButton';
-import Providers from '../../public/Providers';
+// import Providers from '../../public/Providers';
 
 const Wrapper = styled.div`
   /* display: flex;
@@ -105,12 +105,12 @@ const Wrapper = styled.div`
 
 const PortfolioPageTemplate = ({ children }) => {
   return (
-    <Providers>
-      <Wrapper>
-        <BackArrowButton />
-        {children}
-      </Wrapper>
-    </Providers>
+    // <Providers>
+    <Wrapper>
+      <BackArrowButton />
+      {children}
+    </Wrapper>
+    // </Providers>
   );
 };
 

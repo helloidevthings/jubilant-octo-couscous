@@ -68,3 +68,5 @@ export const ProjectBranding = [
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/brochurch6_qu4cwb',
   },
 ];
+
+export default ProjectBranding;

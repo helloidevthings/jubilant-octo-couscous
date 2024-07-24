@@ -82,3 +82,5 @@ export const ProductDesign = [
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/fillauerlogo_hmmm7c',
   },
 ];
+
+export default ProductDesign;

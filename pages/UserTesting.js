@@ -28,3 +28,5 @@ export const UserTesting = [
   //   src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/usertesting2_xd5fao',
   // },
 ];
+
+export default UserTesting;

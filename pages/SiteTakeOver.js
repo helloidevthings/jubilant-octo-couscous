@@ -28,3 +28,5 @@ export const SiteTakeOver = [
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721841208/2024-07-24_13.12.53_ny3ki0.gif',
   },
 ];
+
+export default SiteTakeOver;

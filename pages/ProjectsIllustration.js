@@ -48,3 +48,5 @@ export const ProjectsIllustration = [
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/elainedrawing3_fci2rk',
   },
 ];
+
+export default ProjectsIllustration;
