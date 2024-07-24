@@ -1,4 +1,3 @@
-'use client';
 export const UserTesting = [
   {
     title: 'Seats First Booking Test',

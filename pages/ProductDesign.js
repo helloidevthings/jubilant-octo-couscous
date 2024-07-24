@@ -1,4 +1,3 @@
-'use client';
 export const ProductDesign = [
   // {
   //   title: 'Membership Calculator',

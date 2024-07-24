@@ -1,4 +1,3 @@
-'use client';
 export const SiteTakeOver = [
   {
     title: 'Inside Out 2',
