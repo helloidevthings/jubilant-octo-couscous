@@ -1,9 +1,14 @@
 import styled from 'styled-components';
+import BackArrowButton from '../../components/BackArrowButton';
 
 const Wrapper = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  position: relative;
+  display: grid;
+  place-items: center;
+
   width: 100%;
   height: 100%;
   max-width: 100vw;
@@ -16,17 +21,51 @@ const Wrapper = styled.div`
 
   hr {
     margin: 1rem 0 1.5rem;
-    border: 2px solid #f5f5f5;
+    border: 2px solid var(--secondary);
   }
 
   .twoCol {
-    background: #f5f5f5;
+    background: var(--bg);
     padding: 1rem 0.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0 0.1em;
+    position: relative;
+    font-family: 'loos-normal', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    letter-spacing: 0.03em;
+    z-index: 0;
+    transition: color 0.6s ease-in-out;
+
+    &:after {
+      content: '';
+      background: var(--accentText);
+      height: 3px;
+      width: 100%;
+      height: 100%;
+      transform: scaleY(0.1);
+      transform-origin: bottom;
+      left: 0;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      transition: transform 0.5s cubic-bezier(0.62, 0.01, 0.64, 1.32);
+    }
+
+    &:hover {
+      color: var(--text);
+      &:after {
+        transform: scaleY(1);
+      }
+    }
   }
 
   figure {
@@ -46,16 +85,30 @@ const Wrapper = styled.div`
       max-width: 70ch;
       font-size: 1rem;
       margin: 0.5rem auto 0.5rem;
-      background: #f5f5f5;
+      background: var(--bg);
       padding: 1rem 1.5rem;
       border-radius: 10px;
       font-weight: 700;
     }
   }
+
+  video {
+    width: 100%;
+    max-width: 80vw;
+
+    @media (max-width: 768px) {
+      max-width: 100vw;
+    }
+  }
 `;
 
 const PortfolioPageTemplate = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+  return (
+    <Wrapper>
+      <BackArrowButton />
+      {children}
+    </Wrapper>
+  );
 };
 
 export default PortfolioPageTemplate;

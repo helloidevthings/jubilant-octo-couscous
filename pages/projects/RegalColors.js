@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import SVGNoise from '../../components/Icons/SVGNoise';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -27,12 +26,6 @@ const Gradient = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  /* background: radial-gradient(at var(--x) var(--y), #fff0 0%, #ffffff1a 40%),
-    linear-gradient(
-      to bottom right,
-      ${(props) => props.$passFeeling.colorLight},
-      ${(props) => props.$passFeeling.colorDark}
-    ); */
   background-size: 100% 100%;
   background-position:
     0px 0px,
@@ -46,25 +39,17 @@ const Gradient = styled.div`
     0px 0px,
     0px 0px,
     0px 0px;
-  background-image:
-    /* radial-gradient(18% 28% at 24% 50%, #cefaffff 7%, #073aff00 100%), */
-    /* radial-gradient(18% 28% at 18% 71%, #ffffff59 6%, #073aff00 100%), */
-    radial-gradient(
+  background-image: radial-gradient(
       70% 53% at 36% 76%,
       ${(props) => props.$passFeeling.colorLight} 0%,
       #073aff00 100%
     ),
     radial-gradient(42% 53% at 15% 94%, #ffffffff 7%, #073aff00 100%),
-    /* radial-gradient(42% 53% at 34% 72%, #ffffffff 7%, #073aff00 100%), */
-      /* radial-gradient(18% 28% at 35% 87%, #ffffffff 7%, #073aff00 100%), */
-      /* radial-gradient(31% 43% at 7% 98%, #ffffffff 24%, #073aff00 100%), */
-      /* radial-gradient(21% 37% at 72% 23%, #d3ff6d9c 24%, #073aff00 100%), */
-      /* radial-gradient(35% 56% at 91% 74%, #8a4ffff5 9%, #073aff00 100%), */
-      radial-gradient(
-        74% 86% at 67% 38%,
-        ${(props) => props.$passFeeling.colorDark} 24%,
-        #073aff00 100%
-      ),
+    radial-gradient(
+      74% 86% at 67% 38%,
+      ${(props) => props.$passFeeling.colorDark} 24%,
+      #073aff00 100%
+    ),
     linear-gradient(125deg, #8a4ffff5 1%, #4c00fcff 100%);
   z-index: -10;
   animation: gradient 5s infinite;
@@ -165,20 +150,6 @@ const Circles = styled.div`
   }
 `;
 
-// const SVGWrap = styled.div`
-//   position: absolute;
-//   width: 100vw;
-//   max-width: 100%;
-//   min-height: 100vh;
-//   /* max-height: 100vh; */
-//   left: 0;
-//   top: 0;
-//   transform: translateZ(0);
-//   mix-blend-mode: soft-light;
-//   opacity: 0;
-//   display: none;
-// `;
-
 const NoiseImg = styled(Image)`
   position: absolute;
   top: 0;
@@ -189,19 +160,27 @@ const NoiseImg = styled(Image)`
   mix-blend-mode: overlay;
   z-index: -1;
   opacity: 0.5;
-  /* display: none; */
 `;
 
 const PopUp = styled.div`
-  margin: 45% auto;
-  position: relative;
-  width: 50ch;
+  margin: 20% auto auto auto;
+  width: 70rem;
+  max-width: 80vw;
+  position: absolute;
   text-align: center;
   z-index: 40;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 768px) {
+    margin: 2rem auto auto;
+    top: 0;
+  }
 
   & div {
-    padding: 1rem 1.5rem;
-    background: #0000008f;
+    padding: 1.8em 0.8em 1.5em;
+    background: #121212d6;
     border-radius: 1rem;
     box-shadow: 6px 5px 17px 2px rgb(255 255 255 / 43%);
   }
@@ -229,35 +208,88 @@ const PopUpDots = styled.button`
   color: #fff;
   box-shadow: 6px 5px 17px 2px rgb(0 0 0 / 43%);
   font-weight: 600;
-  background: linear-gradient(
-    to right,
-    ${(props) => props.$customLight},
-    ${(props) => props.$customDark}
-  );
+  background: transparent;
+  box-shadow: none;
   cursor: pointer;
+  z-index: 10000;
   animation: popUp 0.5s cubic-bezier(0.61, 0.29, 0.7, 1.2) forwards;
 
   @keyframes popUp {
     0% {
       transform: scale(0);
     }
+
     50% {
       opacity: 1;
     }
+
     100% {
       transform: scale(1);
       opacity: 1;
+    }
+  }
+
+  img {
+    width: 8em;
+    height: 8em;
+    margin: auto;
+    transition: transform 0.4s cubic-bezier(0.09, 0.27, 0.2, 0.99);
+
+    @media (max-width: 768px) {
+      width: 8em;
+      height: 8em;
+    }
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
     }
   }
 `;
 
 const RegalColors = () => {
   const Feelings = [
-    { name: 'Yellow', color: { light: '#e2c24e', dark: '#EFA812' } },
-    { name: 'Orange', color: { light: '#F2B050', dark: '#D95F12' } },
-    { name: 'Red', color: { light: '#960606', dark: '#D76337' } },
-    { name: 'Green', color: { light: '#48EAD3', dark: '#098A81' } },
-    { name: 'Blue', color: { light: '#6098C8', dark: '#2E49DA' } },
+    {
+      name: 'Joy',
+      color: { light: '#ff8100', dark: '#EFA812' },
+      img: {
+        alt: 'joy character',
+        src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1714588863/joy_fsxb1a.png',
+      },
+    },
+    {
+      name: 'Anxiety',
+      color: { light: '#F2B050', dark: '#D95F12' },
+      img: {
+        alt: 'anxiety character',
+        src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1714588863/anxiety_a14vdf.png',
+      },
+    },
+    {
+      name: 'Anger',
+      color: { light: '#B63520', dark: '#960606' },
+      img: {
+        alt: 'anger character',
+        src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1714588857/anger_zojifs.png',
+      },
+    },
+    {
+      name: 'Sadness',
+      color: { light: '#6098C8', dark: '#2E49DA' },
+      img: {
+        alt: 'sadness character',
+        src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1714588863/sadness_nmdcbh.png',
+      },
+    },
+    {
+      name: 'Embarrassment',
+      color: { light: '#f25bc5', dark: '#D0308A' },
+      img: {
+        alt: 'embarassed character',
+        src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1714588863/embarrassment_pjj2jq.png',
+      },
+    },
   ];
 
   const [imFeeling, setMyFeeling] = useState({
@@ -289,21 +321,33 @@ const RegalColors = () => {
     <Wrapper $imFeeling={imFeeling} $mousePos={mousePos}>
       <PopUp>
         <div>
-          <h2>Choose your color?</h2>
-          {Feelings.map(({ name, color }, i) => (
+          <h2>How are you feeling?</h2>
+          {Feelings.map(({ name, color, img }, i) => (
             <PopUpDots
               key={name}
               style={{ animationDelay: `${0.2 * i}s` }}
               $customLight={color.light}
               $customDark={color.dark}
+              onMouseOver={() => {
+                handleFeeling({
+                  colorLight: color.light,
+                  colorDark: color.dark,
+                });
+              }}
               onClick={() =>
                 handleFeeling({
-                  name,
                   colorLight: color.light,
                   colorDark: color.dark,
                 })
               }
             >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={150}
+                height={150}
+                priority
+              />
               {name}
             </PopUpDots>
           ))}

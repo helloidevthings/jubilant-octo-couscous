@@ -4,10 +4,11 @@ import Image from 'next/image';
 
 const Shelf = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   grid-auto-flow: dense;
-  align-items: center;
-  gap: 0.5em;
+  align-content: stretch;
+  align-items: start;
+  gap: 0.75em;
   transition: all 0.2s ease-in-out;
 `;
 
@@ -34,17 +35,18 @@ const TagWrapper = styled.ul`
   flex-wrap: wrap;
   margin-inline-start: 0;
   padding-inline-start: 0.5rem;
-  margin: 1rem 0 0.2rem 0;
+  margin: 0 0 0.4em 0;
 
   li {
     list-style: none;
     margin: 0 0.2em;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 3px 10px;
-    border: 2px solid var(--secondary);
+    background: var(--secondary);
+    /* border: 2px solid var(--secondary); */
     border-radius: 15px;
   }
 
@@ -59,42 +61,51 @@ const TagWrapper = styled.ul`
 const ProjectFig = styled.figure`
   position: relative;
   overflow: hidden;
-  padding: 0.5rem 0.6rem;
-  height: 25rem;
+  height: 35rem;
+  box-shadow: var(--boxShadow);
+
+  @media (min-width: 768px) {
+    height: 25rem;
+  }
 
   img {
     width: 100%;
-    height: 330px;
-    border-radius: 10px;
+    height: 78%;
     object-fit: cover;
-    box-shadow: var(--primaryBoxShadow);
+    transition: transform 0.3s ease-in-out;
   }
 
-  &:hover figcaption,
-  &:focus-visible figcaption {
-    transform: translateY(0);
+  &:hover img {
+    transform: scale(1.1);
+  }
 
-    & > p {
-      transform: translateY(0%) scaleY(1);
-      height: max-content;
+  @media (min-width: 768px) {
+    &:hover figcaption,
+    &:focus-visible figcaption {
+      transform: translateY(0);
+
+      & > p {
+        transform: translateY(0%) scaleY(1);
+        opacity: 1;
+        height: max-content;
+      }
     }
   }
 
   figcaption {
     position: absolute;
-    width: 100%;
+    padding: 0.5em 0 0 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    background: var(--primaryGradient90);
-    color: var(--primaryText);
+    width: 100%;
+    background: var(--bgTrans);
+    color: var(--text);
     font-weight: 600;
     font-size: 1.2rem;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(13px);
     transform: translateY(10px);
     transform-origin: left bottom;
     transition: all 0.3s ease-in-out;
-    border-radius: 15px;
 
     h3 {
       font-weight: 800;
@@ -102,10 +113,16 @@ const ProjectFig = styled.figure`
     }
 
     p {
-      height: 0;
       padding: 0 0.8rem 1rem;
-      transform: translateY(100%) scaleY(0);
-      transition: transform 0.4s ease-in-out;
+
+      @media (min-width: 768px) {
+        opacity: 0;
+        height: 0;
+        transform: translateY(100%) scaleY(0);
+        transition:
+          transform 0.4s ease-in-out,
+          opacity 0.8s ease-in-out;
+      }
     }
   }
 `;
@@ -128,13 +145,13 @@ const ProjectShelf = ({ imgs }) => {
               height={500}
             />
             <figcaption>
+              <h3>{title}</h3>
               <TagWrapper>
                 {tag.map((tag, i) => (
                   <li key={i}>{tag}</li>
                 ))}
                 <small>{date}</small>
               </TagWrapper>
-              <h3>{title}</h3>
               <p>{description}</p>
             </figcaption>
           </ProjectFig>

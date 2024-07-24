@@ -14,26 +14,79 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+
+  --light: #ffffff;
+  --dark: #000000;
+  --pink: 'pink';
+
+  --lightBg: #dedede;
+  --darkBg: #1f1f29;
+  --pinkBg: #ffffff;
+
+  --lightBgTrans: #eaf6ffa6;
+  --darkBgTrans: #1f1f29ab;
+  --pinkBgTrans: #ffffffaa;
+
+  --lightText: #000000;
+  --darkText: #ffffff;
+  --pinkText: #ab01a2;
+
+  --lightSecondary: #cecece;
+  --darkSecondary: #69697c;
+  --pinkSecondary: #ffc7fe;
+
+  --lightBoxShadow: 2px 4px 7px 0px #c8c8d7;
+  --darkBoxShadow: 2px 4px 7px 0px #0a0a0b;
+  --pinkBoxShadow: 2px 4px 7px 0px #d372cd;
+
+  --darkGradient90: linear-gradient(90deg, #14141c, #b8b7d259);
+  --lightGradient90: linear-gradient(90deg, #c5c5d2b3, #ffffffbf);
+  --pinkGradient90: linear-gradient(90deg, #fff0fea8, #ffffffbf);
+  --darkGradient30: linear-gradient(30deg, #14141c, #b8b7d259);
+  --lightGradient30: linear-gradient(30deg, #f4f4fcb3, #ffffffbf);
+  --pinkGradient30: linear-gradient(30deg, #fff0fea8, #ffffffbf);
+}
+
+html.dark {
+  --bg: var(--darkBg);
+  --bgTrans: var(--darkBgTrans);
+  --text: var(--darkText);
+  --secondary: var(--darkSecondary);
+  --boxShadow: var(--darkBoxShadow);
+  --gradient90: var(--darkGradient90);
+  --gradient30: var(--darkGradient30);
+  --accent: var(--pink);
+  --accentBg: var(--pinkBg);
+  --accentBgTrans: var(--pinkBgTrans);
+  --accentText: var(--pinkText);
+  --accentSecondary: var(--pinkSecondary);
+  --accentBoxShadow: var(--pinkBoxShadow);
+  --accentGradient90: var(--pinkGradient90);
+  --accentGradient30: var(--pinkGradient30);
+}
+
+html.light {
+  --bg: var(--lightBg);
+  --bgTrans: var(--lightBgTrans);
+  --text: var(--lightText);
+  --secondary: var(--lightSecondary);
+  --boxShadow: var(--lightBoxShadow);
+  --gradient90: var(--lightGradient90);
+  --gradient30: var(--lightGradient30);
+  --accent: var(--pink);
+  --accentBg: var(--pinkBg);
+  --accentBgTrans: var(--pinkBgTrans);
+  --accentText: var(--pinkText);
+  --accentSecondary: var(--pinkSecondary);
+  --accentBoxShadow: var(--pinkBoxShadow);
+  --accentGradient90: var(--pinkGradient90);
+  --accentGradient30: var(--pinkGradient30);
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-/* * {
-  box-sizing: border-box;
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */
 
 /* Global Reset -- Separate from Global Styles, scroll down for Global Styles :58 */
 /* These styles standardize all HTML elements and making it easier to style */
