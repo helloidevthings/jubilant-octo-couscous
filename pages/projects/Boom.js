@@ -224,7 +224,7 @@ const BoomImage1 = styled(Image)`
 
   ${(props) =>
     props.$splosion === true &&
-    'animation: 0.7s bigBoom 0.3s ease-in-out forwards;'}
+    'animation: 0.7s bigBoom 0.4s ease-in-out forwards;'}
   animation-delay: 0.15s;
 
   @keyframes bigBoom {
@@ -234,7 +234,7 @@ const BoomImage1 = styled(Image)`
       z-index: 1000;
     }
     75% {
-      transform: scale(5);
+      transform: scale(4);
     }
     99% {
       opacity: 0;
