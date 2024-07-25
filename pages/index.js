@@ -67,6 +67,15 @@ const SiteTakeOver = [
     path: '/portfolio/Borderlands',
     src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721841208/2024-07-24_13.12.53_ny3ki0.gif',
   },
+  {
+    title: 'Deadpool',
+    description: 'Animation to promote ticket sales for Deadpool and Wolverine',
+    date: '2024',
+    alt: 'alt',
+    tag: ['Development', 'Design'],
+    path: '/portfolio/Deadpool',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721916053/2024-07-25_10.00.20_helszr.gif',
+  },
 ];
 
 const UserTesting = [
