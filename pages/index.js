@@ -290,7 +290,7 @@ export default function Home() {
           </p>
         </Intro>
         <PortfolioSection>
-          <h2>Site Take Over</h2>
+          <h2>Development</h2>
           <ProjectShelf imgs={SiteTakeOver} />
         </PortfolioSection>
         <PortfolioSection>
