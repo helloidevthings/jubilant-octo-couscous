@@ -47,7 +47,7 @@ const SiteTakeOver = [
     alt: 'alt',
     tag: ['Development', 'Design'],
     path: '/portfolio/IO2',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722870590/io2_ihpja8.gif',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722873615/regalcolors_lp8mxa.png',
   },
   {
     title: 'Ghostbusters',
@@ -56,7 +56,7 @@ const SiteTakeOver = [
     alt: 'alt',
     tag: ['Development', 'Design'],
     path: '/portfolio/Ghostbusters',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722870591/frozen_ailw8w.gif',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722873681/regal-frozen_d42rmj.png',
   },
   {
     title: 'Borderlands',
