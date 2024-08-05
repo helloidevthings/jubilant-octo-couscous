@@ -47,7 +47,7 @@ const SiteTakeOver = [
     alt: 'alt',
     tag: ['Development', 'Design'],
     path: '/portfolio/IO2',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721744230/2024-05-10_12.25.19_fzrztu.gif',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722870590/io2_ihpja8.gif',
   },
   {
     title: 'Ghostbusters',
@@ -56,7 +56,7 @@ const SiteTakeOver = [
     alt: 'alt',
     tag: ['Development', 'Design'],
     path: '/portfolio/Ghostbusters',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721839568/2024-03-04_16.26.07_b4xmca.gif',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722870591/frozen_ailw8w.gif',
   },
   {
     title: 'Borderlands',
@@ -74,7 +74,7 @@ const SiteTakeOver = [
     alt: 'alt',
     tag: ['Development', 'Design'],
     path: '/portfolio/Deadpool',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721916053/2024-07-25_10.00.20_helszr.gif',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722870588/dpw_lxafdl.gif',
   },
 ];
 
