@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
+import Image from 'next/image';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
@@ -36,17 +37,12 @@ const Deadpool = () => {
           </video>
         </AnimationOnScroll>
       </section>
-      <section>
-        <hr />
-        <h2>Deadpool & Wolverine Site waiting page</h2>
-        <video controls>
-          <source
-            src="https://res.cloudinary.com/labofthingsimages/image/upload/v1721839859/2024-07-24_11.53.46_njkl1g.gif"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </section>
+      <Image
+        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1722870587/waiting-page_run7c8.gif"
+        alt="noise filter"
+        width={500}
+        height={536}
+      />
     </Wrapper>
   );
 };
