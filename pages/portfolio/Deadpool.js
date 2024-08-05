@@ -23,7 +23,7 @@ const Deadpool = () => {
           </p>
           <h3>Here's the prototype I created to test the concept</h3>
           <br />
-          <a href="/projects/Boom" target="_blank">
+          <a href="/projects/DeadWolf" target="_blank">
             Try It Yourself
           </a>
           <p></p>

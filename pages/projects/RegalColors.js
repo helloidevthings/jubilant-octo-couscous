@@ -357,7 +357,7 @@ const RegalColors = () => {
         <SVGNoise />
       </SVGWrap> */}
       <NoiseImg
-        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1711562882/noise2_nokpwr.png"
+        src="https://res.cloudinary.com/labofthingsimages/image/upload/v1711560648/Rectangle_1_v7fwbu.png"
         alt="noise filter"
         width={2234}
         height={1972}

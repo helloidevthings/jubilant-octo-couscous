@@ -65,7 +65,7 @@ const SiteTakeOver = [
     alt: 'alt',
     tag: ['Development', 'Design'],
     path: '/portfolio/Borderlands',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1721841208/2024-07-24_13.12.53_ny3ki0.gif',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722869205/test_lhmdii.gif',
   },
   {
     title: 'Deadpool',
@@ -94,8 +94,8 @@ const UserTesting = [
     date: '2024',
     alt: 'alt',
     tag: ['App', 'Testing', 'Research'],
-    path: '/portfolio/SeatsFirst',
-    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/usertesting2_xd5fao',
+    path: '/portfolio/UnlimitedSignUp',
+    src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1722869010/Screenshot_2024-08-05_at_10.43.18_AM_cwb5zw.png',
   },
   // {
   //   title: 'Seats First Booking Test',

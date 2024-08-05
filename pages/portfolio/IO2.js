@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
-import Image from 'next/image';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
@@ -17,15 +16,18 @@ const IO2 = () => {
           />
           Your browser does not support the video tag.
         </video>
+        <a href="/projects/RegalColors" target="_blank">
+          Try It Yourself
+        </a>
       </AnimationOnScroll>
-      <figure>
+      {/* <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1721744252/2024-05-14_12.15.21_m63g67.gif"
           alt="inside out 2 mobile"
           width={994}
           height={1478}
         />
-      </figure>
+      </figure> */}
     </Wrapper>
   );
 };
