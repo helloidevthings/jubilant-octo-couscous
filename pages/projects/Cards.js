@@ -175,13 +175,21 @@ const Cards = () => {
   return (
     <CardsWrap>
       <h2>Card Grid</h2>
-      <Card />
+
+      {/* title: 'Brave New Concessions',
+    id: 'brave-new-concessions',
+    description:
+      'Take home your favorite character from Captain America: Brave New World as Funko POPs! Add the newest Captain America or the iconic Red Hulk to your collection today, available in theatres.',
+    image: {
+      src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
+      alt: 'merch',
+    }, */}
       <BlockGrid>
         {blockData.map(({ title, id, description, image, links }, i) => {
           return (
             <Card
-              key={title + i}
-              title={title}
+              key={id + i}
+              cardTitle={title}
               id={id}
               desc={description}
               image={image}

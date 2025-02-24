@@ -131,10 +131,10 @@ const BlockLink = styled.a`
   }
 `;
 
-const Card = ({ title, id, desc, image = {}, links }, i) => {
+const Card = ({ cardTitle, id, desc, image = {}, links }, i) => {
   const [expanded, setExpand] = useState(false);
   <Block
-    key={title}
+    key={cardTitle}
     id={id + i}
     $expanded={expanded}
     onClick={() => setExpand(!expanded)}
@@ -142,7 +142,7 @@ const Card = ({ title, id, desc, image = {}, links }, i) => {
     <BlockImageWrap>
       <BlockImage fill src={image.src} alt={image.alt} />
     </BlockImageWrap>
-    <BlockTitle>{title}</BlockTitle>
+    <BlockTitle>{cardTitle}</BlockTitle>
     <VisuallyHidden $expanded={expanded}>
       <BlockDescription>{desc}</BlockDescription>
       {links && (
