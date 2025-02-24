@@ -274,6 +274,12 @@ const Block = styled.div`
   transform: scale(1);
   transition: all 0.5s ease-in-out;
 
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #8787874d;
+    transition: all 0.25s ease-in-out;
+  }
+
   ${(props) =>
     props.$expanded &&
     `
