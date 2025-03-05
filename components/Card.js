@@ -4,10 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const Block = styled.div`
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: flex-start; */
-  /* flex-direction: column; */
   display: grid;
   grid-template-rows: minmax(10rem, 12rem) auto 1fr auto;
   justify-items: center;
@@ -39,14 +35,6 @@ const Block = styled.div`
       height: auto;
       transition: opacity 0.5s ease-in-out;
     }
-
-    figure {
-      border-radius: 100%;
-      width: 150px;
-      height: 150px;
-      margin-top: 1em;
-      transition: 0.25s ease-in-out;
-    }
   `}
 `;
 
@@ -54,10 +42,32 @@ const BlockImageWrap = styled.figure`
   position: relative;
   width: 100%;
   height: 100%;
-  max-width: 375px;
+  max-height: 10rem;
+  max-width: 340px;
   overflow: hidden;
   padding: 0;
   margin: 0;
+
+  @media (min-width: 600px) {
+    max-width: 375px;
+    height: 190px;
+  }
+
+  ${(props) =>
+    props.$expanded &&
+    `
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    margin-top: 1em;
+    transition: 0.25s ease-in-out;
+
+    @media (min-width: 600px) {
+      width: 200px;
+      height: 200px;
+    }
+
+    `}
 `;
 
 const BlockImage = styled(Image)`
