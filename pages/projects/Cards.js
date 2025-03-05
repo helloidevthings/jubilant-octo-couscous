@@ -255,8 +255,12 @@ const BlockGrid = styled.div`
   padding: 2rem;
   align-content: center;
   justify-content: center;
-  align-items: center;
   justify-items: center;
+  align-items: end;
+
+  @media (min-width: 768px) {
+    align-items: start;
+  }
 `;
 
 const Cards = () => {
