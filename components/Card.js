@@ -6,6 +6,7 @@ import Image from 'next/image';
 const Block = styled.div`
   display: grid;
   grid-template-rows: minmax(10rem, 12rem) auto 1fr auto;
+  /* grid-template-rows: 10rem auto 1fr auto; */
   justify-items: center;
   overflow: hidden;
   border-radius: 10px;
@@ -42,32 +43,14 @@ const BlockImageWrap = styled.figure`
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 10rem;
-  max-width: 340px;
+  max-width: ${(props) => (props.$expanded === true ? '10rem' : 'none')};
+  max-height: ${(props) => (props.$expanded === true ? '10rem' : '12rem')};
   overflow: hidden;
   padding: 0;
   margin: 0;
-
-  @media (min-width: 600px) {
-    max-width: 375px;
-    height: 190px;
-  }
-
-  ${(props) =>
-    props.$expanded &&
-    `
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
-    margin-top: 1em;
-    transition: 0.25s ease-in-out;
-
-    @media (min-width: 600px) {
-      width: 200px;
-      height: 200px;
-    }
-
-    `}
+  border-radius: ${(props) => (props.$expanded === true ? '100%' : 0)};
+  margin: ${(props) => (props.$expanded === true ? '1.5em 0' : 0)};
+  transition: 0.15s ease-in-out;
 `;
 
 const BlockImage = styled(Image)`
