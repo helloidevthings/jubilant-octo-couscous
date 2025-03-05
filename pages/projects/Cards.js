@@ -142,44 +142,44 @@ const blockData = [
   },
 ];
 
-const blockNavigation = [
-  {
-    title: 'Merchandise',
-    id: 'merchandise',
-    link: '/',
-    img: {
-      src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
-      alt: 'merch',
-    },
-  },
-  {
-    title: 'Concessions',
-    id: 'concessions',
-    link: '/',
-    img: {
-      src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
-      alt: 'merch',
-    },
-  },
-  {
-    title: 'Extra Credits',
-    id: 'extra-credits',
-    link: '/',
-    img: {
-      src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
-      alt: 'merch',
-    },
-  },
-  {
-    title: 'Sweepstakes',
-    id: 'sweepstakes',
-    link: '/',
-    img: {
-      src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
-      alt: 'merch',
-    },
-  },
-];
+// const blockNavigation = [
+//   {
+//     title: 'Merchandise',
+//     id: 'merchandise',
+//     link: '/',
+//     img: {
+//       src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
+//       alt: 'merch',
+//     },
+//   },
+//   {
+//     title: 'Concessions',
+//     id: 'concessions',
+//     link: '/',
+//     img: {
+//       src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
+//       alt: 'merch',
+//     },
+//   },
+//   {
+//     title: 'Extra Credits',
+//     id: 'extra-credits',
+//     link: '/',
+//     img: {
+//       src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
+//       alt: 'merch',
+//     },
+//   },
+//   {
+//     title: 'Sweepstakes',
+//     id: 'sweepstakes',
+//     link: '/',
+//     img: {
+//       src: 'https://res.cloudinary.com/labofthingsimages/image/upload/v1739201125/merch-card_psyvro.jpg',
+//       alt: 'merch',
+//     },
+//   },
+// ];
 
 const CardsWrap = styled.section`
   text-align: center;
@@ -190,62 +190,62 @@ const CardsWrap = styled.section`
     font-size: 3rem;
   }
 `;
-const AnchorNav = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-  position: ${(props) => (props.$sticky ? 'sticky' : 'normal')};
-  top: 0;
-  width: 100%;
-  background: ${(props) => props.$sticky && '#3f3f3f9c'};
-  backdrop-filter: blur(10px);
-  z-index: 100;
-`;
+// const AnchorNav = styled.nav`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   overflow-x: auto;
+//   position: ${(props) => (props.$sticky ? 'sticky' : 'normal')};
+//   top: 0;
+//   width: 100%;
+//   background: ${(props) => props.$sticky && '#3f3f3f9c'};
+//   backdrop-filter: blur(10px);
+//   z-index: 100;
+// `;
 
-const AnchorLink = styled.div`
-  display: block;
-  flex: 0 0 auto;
-  position: relative;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5em;
-  align-items: center;
-  justify-items: center;
-  ${(props) => props.$sticky && 'grid-template-columns: 1fr 2fr;'}
-  transition: all 0.25s ease-in-out;
+// const AnchorLink = styled.div`
+//   display: block;
+//   flex: 0 0 auto;
+//   position: relative;
+//   padding: 0.5em 1em;
+//   text-decoration: none;
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   gap: 0.5em;
+//   align-items: center;
+//   justify-items: center;
+//   ${(props) => props.$sticky && 'grid-template-columns: 1fr 2fr;'}
+//   transition: all 0.25s ease-in-out;
 
-  &:hover {
-    img {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #3f3f3f;
-    }
-  }
-`;
+//   &:hover {
+//     img {
+//       transform: scale(1.1);
+//       box-shadow: 0 0 20px #3f3f3f;
+//     }
+//   }
+// `;
 
-const AnchorText = styled.span`
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: ${(props) => (props.$sticky ? '0em' : '0.5em')};
-`;
+// const AnchorText = styled.span`
+//   display: block;
+//   font-size: 0.95rem;
+//   font-weight: 700;
+//   letter-spacing: 0.1em;
+//   text-transform: uppercase;
+//   margin-top: ${(props) => (props.$sticky ? '0em' : '0.5em')};
+// `;
 
-const AnchorImage = styled(Image)`
-  display: block;
-  object-fit: cover;
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 2px solid #3f3f3f;
-  box-shadow: 0 0 10px #3f3f3f;
-  top: 0;
-  left: 0;
-  ${(props) => props.$sticky && 'max-width: 50px; max-height: 50px;'}
-  transition: all 0.125s ease-in-out;
-`;
+// const AnchorImage = styled(Image)`
+//   display: block;
+//   object-fit: cover;
+//   margin: 0 auto;
+//   border-radius: 50%;
+//   border: 2px solid #3f3f3f;
+//   box-shadow: 0 0 10px #3f3f3f;
+//   top: 0;
+//   left: 0;
+//   ${(props) => props.$sticky && 'max-width: 50px; max-height: 50px;'}
+//   transition: all 0.125s ease-in-out;
+// `;
 
 const BlockGrid = styled.div`
   display: grid;
@@ -272,12 +272,12 @@ const Block = styled.div`
   background: linear-gradient(180deg, #d9d9d970 0%, #d9d9d920 100%);
   font-family: 'Azo Sans';
   transform: scale(1);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 
   &:hover {
     transform: scale(1.02);
     box-shadow: 0 0 20px #8787874d;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.125s ease-in-out;
   }
 
   ${(props) =>
@@ -396,7 +396,7 @@ const Cards = () => {
   const [stickyState, setStickyState] = useState(false);
   return (
     <CardsWrap>
-      <AnchorNav $sticky={stickyState}>
+      {/* <AnchorNav $sticky={stickyState}>
         {blockNavigation.map((block) => (
           <AnchorLink
             key={block.title}
@@ -415,7 +415,7 @@ const Cards = () => {
             <AnchorText $stick={stickyState}>{block.title}</AnchorText>
           </AnchorLink>
         ))}
-      </AnchorNav>
+      </AnchorNav> */}
       <h2>Card Grid</h2>
       <BlockGrid>
         {blockData.map((block) => {
