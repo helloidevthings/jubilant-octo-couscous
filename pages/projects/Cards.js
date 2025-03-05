@@ -250,6 +250,7 @@ const CardsWrap = styled.section`
 const BlockGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 375px));
+  grid-template-rows: 1fr 1fr;
   gap: 1rem;
   padding: 2rem;
   align-content: center;
