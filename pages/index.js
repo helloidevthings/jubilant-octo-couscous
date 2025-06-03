@@ -288,21 +288,21 @@ export default function Home() {
           <h1>Joyanna's Portfolio</h1>
           <h2>Everything is in progress...</h2>
           <p>
-            Taking this opportunity to play around with Next.js.
-            <br />
             Every page is a draft that I'm currently working on. ☠️
+            <br />
+            Feel free to reach out for my lastest product design work.
           </p>
         </Intro>
         <PortfolioSection>
           <h2>Development</h2>
           <ProjectShelf imgs={SiteTakeOver} />
         </PortfolioSection>
-        <PortfolioSection>
+        {/* <PortfolioSection>
           <h2>User Testing</h2>
           <ProjectShelf imgs={UserTesting} />
-        </PortfolioSection>
+        </PortfolioSection> */}
         <PortfolioSection>
-          <h2>Product Design</h2>
+          <h2>Web Design</h2>
           <ProjectShelf imgs={ProductDesign} />
         </PortfolioSection>
         <PortfolioSection>
