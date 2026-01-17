@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 13 portfolio website showcasing design and development work. It uses styled-components for styling and framer-motion for animations. The site features a dark/light theme toggle and includes portfolio pieces across multiple categories: web development, user testing, web design, branding, and illustration.
+This is a Next.js 16 portfolio website showcasing design and development work. It uses styled-components for styling and framer-motion for animations. The site features a dark/light theme toggle and includes portfolio pieces across multiple categories: web development, user testing, web design, branding, and illustration. The site is configured for static export and deploys to Netlify.
 
 ## Development Commands
 
@@ -53,12 +53,13 @@ yarn lint
 
 ### Key Technologies
 
-- **Next.js 13.0.6**: React framework with file-based routing
-- **styled-components 6.1.0**: CSS-in-JS with server-side rendering configured via `.babelrc`
-- **next-themes 0.3.0**: Theme management (dark/light modes)
-- **framer-motion 7.6.19**: Animation library for complex animations
-- **react-intersection-observer 9.5.3**: Scroll-based animation triggers
-- **next-cloudinary 4.28.0**: Cloudinary integration for image hosting
+- **Next.js 16.1.3**: React framework with file-based routing and static export
+- **React 19.2.3**: Latest React with improved performance
+- **styled-components 6.1.0**: CSS-in-JS with server-side rendering via Next.js compiler
+- **next-themes 0.4.6**: Theme management (dark/light modes)
+- **framer-motion 12.26.2**: Animation library for complex animations
+- **react-intersection-observer 10.0.2**: Scroll-based animation triggers
+- **next-cloudinary 6.17.5**: Cloudinary integration for image hosting
 
 ### Styling System
 
@@ -96,17 +97,22 @@ The site uses a CSS custom property theming system defined in `styles/globals.cs
 
 - **`ScrollAnimateMe.js`**: More advanced scroll-based animations using Framer Motion
 
-### Babel Configuration
-
-`.babelrc` configures styled-components with:
-- `ssr: true` for server-side rendering
-- `displayName: true` for debugging component names in dev tools
-
 ### Next.js Configuration
 
 `next.config.js`:
 - Enables React Strict Mode
-- Configures Cloudinary domain for `next/image` component
+- Configured for static export (`output: 'export'`)
+- Uses Next.js built-in compiler for styled-components (SSR enabled, displayName for debugging)
+- Images set to unoptimized for static export compatibility
+- Configures Cloudinary remote patterns for `next/image` component
+
+### Deployment
+
+`netlify.toml`:
+- Configured for Netlify deployment
+- Node.js version set to 20 (required for Next.js 16)
+- Build output directory: `out`
+- Uses @netlify/plugin-nextjs for optimal Next.js support
 
 ## Important Notes
 
