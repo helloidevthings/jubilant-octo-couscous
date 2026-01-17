@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import MoviePoster from '/components/MoviePoster';
-import FoodButton from '/components/FoodButton';
+import MoviePoster from '../../components/MoviePoster';
+import FoodButton from '../../components/FoodButton';
 
 const MainWrapper = styled.main`
   width: 100%;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Popcorn3D from '/components/Popcorn3D';
+import Popcorn3D from '../../components/Popcorn3D';
 
 const Container = styled.section`
   display: flex;

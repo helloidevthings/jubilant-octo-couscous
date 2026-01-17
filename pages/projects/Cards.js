@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Card from '/components/Card';
+import Card from '../../components/Card';
 
 const blockData = [
   {
