@@ -45,6 +45,23 @@ body {
   --darkGradient30: linear-gradient(30deg, #14141c, #b8b7d259);
   --lightGradient30: linear-gradient(30deg, #f4f4fcb3, #ffffffbf);
   --pinkGradient30: linear-gradient(30deg, #fff0fea8, #ffffffbf);
+
+  /* Fallback theme variables (dark theme as default) */
+  --bg: var(--darkBg);
+  --bgTrans: var(--darkBgTrans);
+  --text: var(--darkText);
+  --secondary: var(--darkSecondary);
+  --boxShadow: var(--darkBoxShadow);
+  --gradient90: var(--darkGradient90);
+  --gradient30: var(--darkGradient30);
+  --accent: var(--pink);
+  --accentBg: var(--pinkBg);
+  --accentBgTrans: var(--pinkBgTrans);
+  --accentText: var(--pinkText);
+  --accentSecondary: var(--pinkSecondary);
+  --accentBoxShadow: var(--pinkBoxShadow);
+  --accentGradient90: var(--pinkGradient90);
+  --accentGradient30: var(--pinkGradient30);
 }
 
 html.dark {
