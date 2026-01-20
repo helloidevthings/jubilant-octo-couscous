@@ -5,21 +5,32 @@ const BackButton = styled.a`
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1em;
-  width: 2em;
-  height: 2em;
-  text-align: left;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
   background: var(--bg);
+  border: 2px solid var(--secondary);
   border-radius: 50px;
-  display: grid;
-  place-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+  }
 
   &:after {
     content: none !important;
+  }
+
+  svg {
+    flex-shrink: 0;
   }
 `;
 
@@ -27,6 +38,7 @@ const BackArrowButton = () => {
   return (
     <BackButton href="/">
       <BackArrow />
+      <span>Back</span>
     </BackButton>
   );
 };

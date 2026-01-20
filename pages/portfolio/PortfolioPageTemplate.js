@@ -14,6 +14,11 @@ const Wrapper = styled.div`
   height: 100%;
   max-width: 100vw;
   max-height: 100vh;
+  min-height: 100vh;
+
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
 
   section {
     padding: 0.5rem 0.5rem 1rem;

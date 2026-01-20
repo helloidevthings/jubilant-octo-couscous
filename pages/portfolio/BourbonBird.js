@@ -3,7 +3,6 @@ import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
 
 const Wrapper = styled(PortfolioPageTemplate)`
-  color: #fff;
   h1 {
     font-size: 3rem;
   }

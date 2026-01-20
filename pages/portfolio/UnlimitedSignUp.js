@@ -10,7 +10,7 @@ const Heading = styled.h1`
   white-space: nowrap;
   overflow: hidden;
   line-height: 1.5;
-  border-right: 3px solid #555;
+  border-right: 3px solid var(--secondary);
   animation:
     2s steps(15) 0s 1 normal none running typing,
     0.5s step-end 0s infinite alternate none running effect;
@@ -40,7 +40,7 @@ const Heading2 = styled.h2`
     left: 0;
     width: 100%;
     height: 2px;
-    background: #999;
+    background: var(--secondary);
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.5s ease-in-out;
