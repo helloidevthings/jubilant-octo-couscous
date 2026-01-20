@@ -20,7 +20,7 @@ const Tabs = styled.nav`
     left: 0;
     border-radius: 4rem;
     transform: translateX(${(props) => props.positionX - 2}px);
-    background: var(--tertiaryGradient90);
+    background: var(--accentGradient90);
     /* box-shadow: 0 0 7px 2px #4b4b4b; */
     transition: transform 0.4s cubic-bezier(1, -0.35, 0.4, 1.19);
     z-index: -1;

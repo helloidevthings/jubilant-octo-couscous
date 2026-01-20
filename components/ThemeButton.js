@@ -1,20 +1,30 @@
 import { useTheme } from 'next-themes';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-// import Moon from './Icons/Moon';
-// import Sun from './Icons/Sun';
 
-const ColorToggle = styled.button`
-  background: var(--bg);
-  color: var(--text);
+const SwitchContainer = styled.div`
+  display: inline-flex;
+  background: var(--secondary);
+  border-radius: 2rem;
+  padding: 0.25rem;
+  gap: 0.25rem;
+`;
+
+const ThemeOption = styled.button`
+  background: ${(props) => (props.$isActive ? 'var(--bg)' : 'transparent')};
+  color: ${(props) => (props.$isActive ? 'var(--text)' : 'var(--text)')};
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 1em;
-  text-decoration: none;
+  border-radius: 1.5rem;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 700;
-  transition: background 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: ${(props) => (props.$isActive ? '700' : '500')};
+  transition: all 0.2s ease;
+  opacity: ${(props) => (props.$isActive ? '1' : '0.6')};
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const ThemeButton = () => {
@@ -26,16 +36,36 @@ const ThemeButton = () => {
     setMounted(true);
   }, []);
 
+  const themes = [
+    { value: 'dark', label: 'Dark' },
+    { value: 'light', label: 'Light' },
+    { value: 'pink', label: 'Pink' },
+  ];
+
   if (!mounted) {
-    return <ColorToggle>Theme</ColorToggle>;
+    return (
+      <SwitchContainer>
+        {themes.map(({ value, label }) => (
+          <ThemeOption key={value} $isActive={false}>
+            {label}
+          </ThemeOption>
+        ))}
+      </SwitchContainer>
+    );
   }
 
   return (
-    <ColorToggle onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-      {/* <Moon /> */}
-      {/* <Sun /> */}
-      {theme === 'light' ? 'Dark' : 'Light'}
-    </ColorToggle>
+    <SwitchContainer>
+      {themes.map(({ value, label }) => (
+        <ThemeOption
+          key={value}
+          $isActive={theme === value}
+          onClick={() => setTheme(value)}
+        >
+          {label}
+        </ThemeOption>
+      ))}
+    </SwitchContainer>
   );
 };
 

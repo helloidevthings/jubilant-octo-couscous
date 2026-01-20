@@ -12,8 +12,8 @@ import ThemeButton from '../components/ThemeButton';
 
 const Wrapper = styled.main`
   transition: all 0.3s ease-in-out;
-  background: var(--primaryBG);
-  color: var(--primaryText);
+  background: var(--bg);
+  color: var(--text);
 `;
 
 const Intro = styled.header`
@@ -24,6 +24,10 @@ const Intro = styled.header`
 const ButtonGroup = styled.div`
   text-align: right;
   padding: 1rem;
+  min-height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const PortfolioSection = styled.section`
