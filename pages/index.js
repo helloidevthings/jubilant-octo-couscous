@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import styled from 'styled-components';
+import { useState, useMemo } from 'react';
 // import Providers from '../public/Providers';
 import ProjectShelf from '../components/ProjectShelf';
+import PortfolioFilter from '../components/PortfolioFilter';
 
 import ThemeButton from '../components/ThemeButton';
 // import { SiteTakeOver } from './SiteTakeOver';
@@ -272,6 +274,66 @@ const ProjectBranding = [
 ];
 
 export default function Home() {
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  // Combine all portfolio items
+  const allPortfolioItems = useMemo(() => {
+    return [
+      ...SiteTakeOver,
+      ...UserTesting,
+      ...ProductDesign,
+      ...ProjectsIllustration,
+      ...ProjectBranding,
+    ];
+  }, []);
+
+  // Extract unique tags (normalize case)
+  const uniqueTags = useMemo(() => {
+    const tagSet = new Set();
+    allPortfolioItems.forEach((item) => {
+      item.tag.forEach((tag) => {
+        // Normalize tag capitalization
+        tagSet.add(tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase());
+      });
+    });
+    return Array.from(tagSet).sort();
+  }, [allPortfolioItems]);
+
+  // Split portfolio items into matched and unmatched
+  const { matchedItems, unmatchedItems } = useMemo(() => {
+    if (selectedTags.length === 0) {
+      return { matchedItems: allPortfolioItems, unmatchedItems: [] };
+    }
+
+    const matched = [];
+    const unmatched = [];
+
+    allPortfolioItems.forEach((item) => {
+      const hasMatchingTag = item.tag.some((tag) => {
+        const normalizedTag = tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase();
+        return selectedTags.includes(normalizedTag);
+      });
+
+      if (hasMatchingTag) {
+        matched.push(item);
+      } else {
+        unmatched.push(item);
+      }
+    });
+
+    return { matchedItems: matched, unmatchedItems: unmatched };
+  }, [allPortfolioItems, selectedTags]);
+
+  const handleTagToggle = (tag) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    );
+  };
+
+  const handleClearFilters = () => {
+    setSelectedTags([]);
+  };
+
   return (
     // <Providers>
     <Wrapper>
@@ -297,26 +359,34 @@ export default function Home() {
             Feel free to reach out for my lastest product design work.
           </p>
         </Intro>
-        <PortfolioSection>
-          <h2>Development</h2>
-          <ProjectShelf imgs={SiteTakeOver} />
-        </PortfolioSection>
-        {/* <PortfolioSection>
-          <h2>User Testing</h2>
-          <ProjectShelf imgs={UserTesting} />
-        </PortfolioSection> */}
-        <PortfolioSection>
-          <h2>Web Design</h2>
-          <ProjectShelf imgs={ProductDesign} />
-        </PortfolioSection>
-        <PortfolioSection>
-          <h2>Branding</h2>
-          <ProjectShelf imgs={ProjectBranding} />
-        </PortfolioSection>
-        <PortfolioSection>
-          <h2>Illustration</h2>
-          <ProjectShelf imgs={ProjectsIllustration} />
-        </PortfolioSection>
+
+        <PortfolioFilter
+          tags={uniqueTags}
+          selectedTags={selectedTags}
+          onTagToggle={handleTagToggle}
+          onClearFilters={handleClearFilters}
+        />
+
+        {selectedTags.length === 0 ? (
+          <PortfolioSection>
+            <h2>All Projects</h2>
+            <ProjectShelf imgs={allPortfolioItems} />
+          </PortfolioSection>
+        ) : (
+          <>
+            <PortfolioSection>
+              <h2>Filtered by: {selectedTags.join(', ')}</h2>
+              <ProjectShelf imgs={matchedItems} />
+            </PortfolioSection>
+
+            {unmatchedItems.length > 0 && (
+              <PortfolioSection>
+                <h2>Other Projects</h2>
+                <ProjectShelf imgs={unmatchedItems} />
+              </PortfolioSection>
+            )}
+          </>
+        )}
       </main>
     </Wrapper>
     // </Providers>
