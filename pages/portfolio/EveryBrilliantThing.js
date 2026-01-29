@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const EveryBrilliantThing = () => {
+  const project = getProjectById('every-brilliant-thing');
+
   return (
-    <Wrapper>
-      <h1>EveryBrilliantThing</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263617/Portfolio_Images/everybrilliantthing3_w19dnj.png"

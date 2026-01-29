@@ -2,13 +2,9 @@ import styled from 'styled-components';
 import BackArrow from './Icons/BackArrow';
 
 const BackButton = styled.a`
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size: 1rem;
-  margin: 1em;
   padding: 0.75rem 1.25rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--text);
@@ -38,7 +34,7 @@ const BackArrowButton = () => {
   return (
     <BackButton href="/">
       <BackArrow />
-      <span>Back</span>
+      <span>Home</span>
     </BackButton>
   );
 };

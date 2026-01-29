@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const FoodPoster = () => {
+  const project = getProjectById('food-poster');
+
   return (
-    <Wrapper>
-      <h1>Food Poster</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263626/Portfolio_Images/foodgirl3_mw5gnm.png"

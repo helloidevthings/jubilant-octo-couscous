@@ -1,34 +1,34 @@
 :root {
   --light: #ffffff;
   --dark: #000000;
-  --pink: 'pink';
+  --pink: "pink";
 
   --lightBg: #dedede;
-  --darkBg: #1f1f29;
-  --pinkBg: #ffffff;
+  --darkBg: #101022;
+  --pinkBg: #fcfcfc;
 
   --lightBgTrans: #eaf6ffa6;
-  --darkBgTrans: #1f1f29ab;
+  --darkBgTrans: #363657ab;
   --pinkBgTrans: #ffffffaa;
 
   --lightText: #000000;
-  --darkText: #ffffff;
-  --pinkText: #ab01a2;
+  --darkText: #d2ceec;
+  --pinkText: #000000;
 
-  --lightSecondary: #cecece;
-  --darkSecondary: #69697c;
-  --pinkSecondary: #ffc7fe;
+  --lightSecondary: #a6a5af;
+  --darkSecondary: #2c2c47;
+  --pinkSecondary: #e771e3;
 
-  --lightBoxShadow: 2px 4px 7px 0px #c8c8d7;
-  --darkBoxShadow: 2px 4px 7px 0px #0a0a0b;
-  --pinkBoxShadow: 2px 4px 7px 0px #d372cd;
+  --lightBoxShadow: 2px 4px 17px 0px #c8c8d7;
+  --darkBoxShadow: 2px 4px 17px 0px #383849;
+  --pinkBoxShadow: 2px 4px 17px 0px #c296bf;
 
-  --darkGradient90: linear-gradient(90deg, #14141c, #b8b7d259);
+  --darkGradient90: linear-gradient(90deg, #1c1c36, #413f7259);
   --lightGradient90: linear-gradient(90deg, #c5c5d2b3, #ffffffbf);
   --pinkGradient90: linear-gradient(90deg, #fff0fea8, #ffffffbf);
   --darkGradient30: linear-gradient(30deg, #14141c, #b8b7d259);
   --lightGradient30: linear-gradient(30deg, #f4f4fcb3, #ffffffbf);
-  --pinkGradient30: linear-gradient(30deg, #fff0fea8, #ffffffbf);
+  --pinkGradient30: linear-gradient(30deg, #9f9f9fa8, #ffffffbf);
 }
 
 html {
@@ -55,6 +55,7 @@ body {
   padding: 0;
   margin: 0;
   font-family:
+    fira-sans,
     -apple-system,
     BlinkMacSystemFont,
     Segoe UI,
@@ -176,7 +177,7 @@ h6 {
 }
 
 h1 {
-  font-size: calc(25px + (62 - 25) * ((100vw - 320px) / (2100 - 320)));
+  font-size: calc(25px + (80 - 25) * ((100vw - 320px) / (2100 - 320)));
 }
 
 @media screen and (max-width: 320px) {
@@ -187,7 +188,7 @@ h1 {
 
 @media screen and (min-width: 1440px) {
   h1 {
-    font-size: 50px;
+    font-size: 80px;
   }
 }
 

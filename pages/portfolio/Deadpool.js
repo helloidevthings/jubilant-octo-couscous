@@ -3,14 +3,23 @@ import styled from 'styled-components';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const Deadpool = () => {
+  const project = getProjectById('deadpool');
+
   return (
-    <Wrapper>
-      {' '}
-      <h1>Deadpool & Wolverine</h1>{' '}
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <section>
         <AnimationOnScroll>
           <hr />

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
@@ -48,8 +49,18 @@ const Heading2 = styled.h2`
 `;
 
 const SeatsFirst = () => {
+  const project = getProjectById('seats-first');
+
   return (
-    <Wrapper>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <section>
         <AnimationOnScroll>
           <Heading>Seats First</Heading>

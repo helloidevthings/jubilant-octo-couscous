@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const LevelUpButtercup = () => {
+  const project = getProjectById('level-up-buttercup');
+
   return (
-    <Wrapper>
-      <h1>LevelUpButtercup</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263603/Portfolio_Images/buttercuplogo_viqyda.png"

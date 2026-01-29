@@ -1,12 +1,23 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
+import { getProjectById } from '../../data/portfolioData';
+
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const Borderlands = () => {
+  const project = getProjectById('borderlands');
+
   return (
-    <Wrapper>
-      <h1>Borderlands</h1>{' '}
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <section>
         <AnimationOnScroll>
           <hr />

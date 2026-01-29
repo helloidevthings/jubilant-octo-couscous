@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)`
   h1 {
@@ -9,9 +10,18 @@ const Wrapper = styled(PortfolioPageTemplate)`
 `;
 
 const BourbonBird = () => {
+  const project = getProjectById('bourbon-bird');
+
   return (
-    <Wrapper>
-      <h1>BourbonBird</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263603/Portfolio_Images/bourbonbird2_na8l4c.png"

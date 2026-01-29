@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 // import { CldImage } from 'next-cloudinary';
-import Image from 'next/image';
-
+import Image from "next/image";
 const Shelf = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
@@ -61,8 +60,8 @@ const TagWrapper = styled.ul`
 const ProjectFig = styled.figure`
   position: relative;
   overflow: hidden;
-  height: 35rem;
-  box-shadow: var(--boxShadow);
+  height: 45rem;
+  /* box-shadow: var(--boxShadow); */
 
   @media (min-width: 768px) {
     height: 25rem;
@@ -70,20 +69,26 @@ const ProjectFig = styled.figure`
 
   img {
     width: 100%;
-    height: 78%;
+    height: 90%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
+    filter: saturate(0);
+    mix-blend-mode: luminosity;
   }
 
-  &:hover img {
+  &:hover img,
+  &:focus-visible img {
     transform: scale(1.1);
+    filter: none;
+    mix-blend-mode: normal;
   }
 
   @media (min-width: 768px) {
     &:hover figcaption,
     &:focus-visible figcaption {
-      transform: translateY(0);
+      /* transform: translateY(0); */
 
+      /* for showinging a paragraph on hover */
       & > p {
         transform: translateY(0%) scaleY(1);
         opacity: 1;
@@ -94,7 +99,7 @@ const ProjectFig = styled.figure`
 
   figcaption {
     position: absolute;
-    padding: 0.5em 0 0 0;
+    padding: 0.5em 0 1em 0;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -103,12 +108,14 @@ const ProjectFig = styled.figure`
     font-weight: 600;
     font-size: 1.2rem;
     backdrop-filter: blur(13px);
-    transform: translateY(10px);
+    transform: translateY(0);
     transform-origin: left bottom;
     transition: all 0.3s ease-in-out;
 
     h3 {
+      font-family: "loos-800", sans-serif;
       font-weight: 800;
+      font-size: 1.1rem;
       padding: 0.2rem 0.8rem 0.5rem;
     }
 
@@ -118,7 +125,7 @@ const ProjectFig = styled.figure`
       @media (min-width: 768px) {
         opacity: 0;
         height: 0;
-        transform: translateY(100%) scaleY(0);
+        transform: scaleY(0) translateY(10px);
         transition:
           transform 0.4s ease-in-out,
           opacity 0.8s ease-in-out;
@@ -152,7 +159,7 @@ const ProjectShelf = ({ imgs }) => {
                 ))}
                 <small>{date}</small>
               </TagWrapper>
-              <p>{description}</p>
+              {/* <p>{description}</p> */}
             </figcaption>
           </ProjectFig>
         </ProjectLink>

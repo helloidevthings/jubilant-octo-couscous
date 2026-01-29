@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import PortfolioPageTemplate from './PortfolioPageTemplate';
-import Image from 'next/image';
-import AnimationOnScroll from '../../components/AnimationOnScroll';
+import styled from "styled-components";
+import PortfolioPageTemplate from "./PortfolioPageTemplate";
+import Image from "next/image";
+import AnimationOnScroll from "../../components/AnimationOnScroll";
+import { getProjectById } from "../../data/portfolioData";
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
@@ -34,7 +35,7 @@ const Heading2 = styled.h2`
   /* margin-bottom: 0.5rem; */
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 2px;
     left: 0;
@@ -48,11 +49,20 @@ const Heading2 = styled.h2`
 `;
 
 const UnlimitedSignUp = () => {
+  const project = getProjectById("unlimited-signup");
+
   return (
-    <Wrapper>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <section>
         <AnimationOnScroll>
-          <Heading>Unlimited Sign Up</Heading>
           <hr />
           <Heading2 className="scaleAfter">Problem:</Heading2>
           <h3>
@@ -61,7 +71,7 @@ const UnlimitedSignUp = () => {
           <p>
             We also do most of our sign ups in theatre where we pay an employee
             to walk customers through the sign up process. This wastes time for
-            both the customer and the employee.{' '}
+            both the customer and the employee.{" "}
           </p>
           <Heading2 className="scaleAfter">Solution:</Heading2>
           <h3>
@@ -82,8 +92,8 @@ const UnlimitedSignUp = () => {
             className="colorFade"
             // 3280 × 1246
           />
-          <figcaption className="fadeUp" style={{ transitionDelay: '.4s' }}>
-            {' '}
+          <figcaption className="fadeUp" style={{ transitionDelay: ".4s" }}>
+            {" "}
             Currently it takes a lot more screens to complete the flow.
           </figcaption>
         </figure>
@@ -97,7 +107,7 @@ const UnlimitedSignUp = () => {
             height={2114}
             className="colorFade"
           />
-          <figcaption className="fadeUp" style={{ transitionDelay: '.4s' }}>
+          <figcaption className="fadeUp" style={{ transitionDelay: ".4s" }}>
             Proposed flow uses newer UI to simplify the process.
           </figcaption>
         </figure>

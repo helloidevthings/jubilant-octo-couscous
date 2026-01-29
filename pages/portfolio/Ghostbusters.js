@@ -2,13 +2,23 @@ import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
 import Image from 'next/image';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const Ghostbusters = () => {
+  const project = getProjectById('ghostbusters');
+
   return (
-    <Wrapper>
-      <h1>Ghostbusters</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <AnimationOnScroll>
         <h2>Ghostbusters Take Over</h2>
         <hr />

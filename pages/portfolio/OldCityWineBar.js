@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const OldCityWineBar = () => {
+  const project = getProjectById('old-city-wine-bar');
+
   return (
-    <Wrapper>
-      <h1>Random Logos</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <figure>
         <Image
           src="https://res.cloudinary.com/labofthingsimages/image/upload/v1691263618/Portfolio_Images/oldcitywinebar_dxg6zi.png"

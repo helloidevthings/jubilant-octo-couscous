@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import Image from 'next/image';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const Heartmenders = () => {
+  const project = getProjectById('heartmenders');
+
   return (
-    <Wrapper>
-      <h1>Heartmenders</h1>
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <h2>Problem:</h2>
       <figure>
         <Image

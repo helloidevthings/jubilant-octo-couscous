@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 import AnimationOnScroll from '../../components/AnimationOnScroll';
+import { getProjectById } from '../../data/portfolioData';
 
 const Wrapper = styled(PortfolioPageTemplate)``;
 
 const IO2 = () => {
+  const project = getProjectById('io2');
+
   return (
-    <Wrapper>
-      <h1>Inside Out 2</h1>{' '}
+    <Wrapper
+      projectBrief={{
+        title: project.title,
+        description: project.description,
+        date: project.date,
+        tags: project.tag,
+        color: project.color,
+      }}
+    >
       <AnimationOnScroll>
         <video controls>
           <source
