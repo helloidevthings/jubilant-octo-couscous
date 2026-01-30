@@ -134,8 +134,8 @@ const ProjectShelf = ({ imgs }) => {
   return (
     <Shelf>
       {imgs.map(({ title, description, date, alt, src, path, tag }, i) => (
-        <AnimationOnScroll key={title + i} threshold={0.35}>
-          <ProjectLink href={path} className="fadeUp">
+        <AnimationOnScroll key={title + i} threshold={0.45}>
+          <ProjectLink href={path}>
             <ProjectFig>
               <Image
                 // cloudName="labofthingsimages"
