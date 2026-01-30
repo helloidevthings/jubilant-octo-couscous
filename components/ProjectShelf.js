@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 const Shelf = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   grid-auto-flow: dense;
   align-content: stretch;
   align-items: start;
