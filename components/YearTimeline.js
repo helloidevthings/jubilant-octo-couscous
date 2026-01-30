@@ -133,14 +133,15 @@ const ClearButton = styled.button`
   border: 2px solid var(--text);
   padding: 0.5rem 1.25rem;
   border-radius: 2rem;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s ease;
+  opacity: ${(props) => (props.disabled ? 0.4 : 1)};
 
   &:hover {
-    background: var(--text);
-    color: var(--bg);
+    background: ${(props) => (props.disabled ? 'var(--bg)' : 'var(--text)')};
+    color: ${(props) => (props.disabled ? 'var(--text)' : 'var(--bg)')};
   }
 `;
 
@@ -159,11 +160,12 @@ const YearTimeline = ({ years, selectedYears, onYearToggle, onClearFilters }) =>
     <TimelineContainer>
       <TimelineHeader>
         <TimelineTitle>Filter by Year</TimelineTitle>
-        {selectedYears.length > 0 && (
-          <ClearButton onClick={onClearFilters}>
-            Clear Years
-          </ClearButton>
-        )}
+        <ClearButton
+          onClick={onClearFilters}
+          disabled={selectedYears.length === 0}
+        >
+          All Time
+        </ClearButton>
       </TimelineHeader>
 
       <TimelineScrollContainer>

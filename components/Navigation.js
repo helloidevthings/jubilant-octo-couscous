@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ThemeButton from "./ThemeButton";
 import BackArrowButton from "./BackArrowButton";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const NavContainer = styled.nav`
   position: fixed;
@@ -36,7 +37,9 @@ const RightNav = styled.div`
 const Navigation = ({ showBackButton = false }) => {
   return (
     <NavContainer>
-      <LeftNav>{showBackButton && <BackArrowButton />}</LeftNav>
+      <LeftNav>
+        {showBackButton ? <BackArrowButton /> : <ScrollToTopButton />}
+      </LeftNav>
       <RightNav>
         <ThemeButton />
       </RightNav>

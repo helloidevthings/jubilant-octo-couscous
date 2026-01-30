@@ -3,12 +3,16 @@ import styled from "styled-components";
 import Image from "next/image";
 const Shelf = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-flow: dense;
   align-content: stretch;
   align-items: start;
   gap: 0.75em;
   transition: all 0.2s ease-in-out;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
 `;
 
 const ProjectLink = styled.a`
@@ -60,7 +64,7 @@ const TagWrapper = styled.ul`
 const ProjectFig = styled.figure`
   position: relative;
   overflow: hidden;
-  height: 45rem;
+  height: 25rem;
   /* box-shadow: var(--boxShadow); */
 
   @media (min-width: 768px) {

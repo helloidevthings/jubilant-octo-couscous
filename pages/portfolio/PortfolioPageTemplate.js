@@ -9,8 +9,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 100%;
   max-width: 100vw;
   min-height: 100vh;
   padding: 6rem 1rem 2rem;
@@ -128,17 +126,21 @@ const PortfolioPageTemplate = ({ children, projectBrief }) => {
       const root = document.documentElement;
 
       // Store original colors
-      const originalAccentText = getComputedStyle(root).getPropertyValue('--accentText').trim();
-      const originalSecondary = getComputedStyle(root).getPropertyValue('--secondary').trim();
+      const originalAccentText = getComputedStyle(root)
+        .getPropertyValue("--accentText")
+        .trim();
+      const originalSecondary = getComputedStyle(root)
+        .getPropertyValue("--secondary")
+        .trim();
 
       // Set project color as accent
-      root.style.setProperty('--accentText', projectBrief.color);
-      root.style.setProperty('--secondary', projectBrief.color);
+      root.style.setProperty("--accentText", projectBrief.color);
+      root.style.setProperty("--secondary", projectBrief.color);
 
       // Cleanup: restore original colors when leaving page
       return () => {
-        root.style.setProperty('--accentText', originalAccentText);
-        root.style.setProperty('--secondary', originalSecondary);
+        root.style.setProperty("--accentText", originalAccentText);
+        root.style.setProperty("--secondary", originalSecondary);
       };
     }
   }, [projectBrief?.color]);
