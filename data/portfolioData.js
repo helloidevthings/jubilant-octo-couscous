@@ -54,7 +54,7 @@ export const portfolioProjects = [
     description: "User Test showing that seats first is the best option",
     date: "2023",
     alt: "Seats first booking test",
-    tag: ["App", "Testing"],
+    tag: ["User Testing"],
     path: "/portfolio/SeatsFirst",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/usertesting2_xd5fao",
     color: "#6A5ACD", // Slate blue (testing/data)
@@ -65,7 +65,7 @@ export const portfolioProjects = [
     description: "User Test showing saves 48% of the time it takes to sign up",
     date: "2024",
     alt: "Unlimited sign up test",
-    tag: ["App", "Testing"],
+    tag: ["User Testing"],
     path: "/portfolio/UnlimitedSignUp",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1722869010/Screenshot_2024-08-05_at_10.43.18_AM_cwb5zw.png",
     color: "#20B2AA", // Light sea green (fresh/modern)
@@ -78,7 +78,7 @@ export const portfolioProjects = [
     description: "Website for a B2B company in the tech industry",
     date: "2021",
     alt: "Cadre5 website",
-    tag: ["Web", "Development"],
+    tag: ["Development"],
     path: "/portfolio/Cadre5",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5home_kwsufj.png",
     color: "#4169E1", // Royal blue (tech/corporate)
@@ -89,7 +89,7 @@ export const portfolioProjects = [
     description: "Website Design for a Prosthetic Company",
     date: "2018",
     alt: "Fillauer website",
-    tag: ["Web"],
+    tag: [],
     path: "/portfolio/Fillauer",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/fillauerlogo_hmmm7c",
     color: "#32CD32", // Lime green (health/medical)
@@ -102,7 +102,7 @@ export const portfolioProjects = [
     description: "Data Visualization for a B2B company in the tech industry",
     date: "2018",
     alt: "Data visualization",
-    tag: ["Web"],
+    tag: [],
     path: "/portfolio/DataVisualization",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5illustrators_jydm1q",
     color: "#9370DB", // Medium purple (data/visual)
@@ -113,7 +113,7 @@ export const portfolioProjects = [
     description: "Custom Illustration for a 404 Page",
     date: "2020",
     alt: "Cadre5 404 page",
-    tag: ["Web", "Illustration"],
+    tag: ["Illustration"],
     path: "/portfolio/Cadre5404",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/cadre5404_i1v8b9",
     color: "#FF6B6B", // Coral red (404/error)
@@ -125,7 +125,7 @@ export const portfolioProjects = [
       "Custom illustration (using food) for a poster about brand perceptions",
     alt: "Food poster",
     date: "2016",
-    tag: ["Illustration", "Print"],
+    tag: ["Illustration"],
     path: "/portfolio/FoodPoster",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/foodgirl3_mw5gnm",
     color: "#FF69B4", // Hot pink (playful/food)
@@ -136,7 +136,7 @@ export const portfolioProjects = [
     description: "Illustration for a children's book",
     alt: "Heartmenders book",
     date: "2017",
-    tag: ["Illustration", "Print"],
+    tag: ["Illustration"],
     path: "/portfolio/Heartmenders",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/heartmenders2_cplcxd",
     color: "#FF1493", // Deep pink (heartfelt)
@@ -148,7 +148,7 @@ export const portfolioProjects = [
       "Custom illustration of the Author to help explain the book to the reader",
     date: "2017",
     alt: "Playbook illustration",
-    tag: ["Illustration", "Print"],
+    tag: ["Illustration"],
     path: "/portfolio/Playbook",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/elainedrawing3_fci2rk",
     color: "#8B4789", // Purple (creative/storytelling)
@@ -161,7 +161,7 @@ export const portfolioProjects = [
     description: "Branding for a gym in Mexico near the beach",
     date: "2018",
     alt: "Barbell Playa branding",
-    tag: ["Branding", "Print"],
+    tag: ["Branding"],
     path: "/portfolio/Barbell",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/barbellplaya4_qszh6q",
     color: "#FF8C00", // Dark orange (energetic/beach)
@@ -173,7 +173,7 @@ export const portfolioProjects = [
       "Branded Experience for a play, with installation, print and digital media",
     alt: "Every Brilliant Thing branding",
     date: "2018",
-    tag: ["Branding", "Print"],
+    tag: ["Branding"],
     path: "/portfolio/EveryBrilliantThing",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/everybrilliantthinggroup_v47zb3",
     color: "#FFD700", // Gold (brilliant/optimistic)
@@ -185,7 +185,7 @@ export const portfolioProjects = [
       "Brand for a restaurant speacializing in bourbon and chicken wings.",
     alt: "Bourbon & Bird branding",
     date: "2018",
-    tag: ["Branding", "Print"],
+    tag: ["Branding"],
     path: "/portfolio/BourbonBird",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263603/Portfolio_Images/bourbonbird2_na8l4c.png",
     color: "#D2691E", // Chocolate (bourbon/rustic)
@@ -197,7 +197,7 @@ export const portfolioProjects = [
       "Logo for a local Dungeons & Dragons Group. Tshirts, Website, Streaming Frame and Animations",
     date: "2018",
     alt: "Level Up Buttercup branding",
-    tag: ["Branding", "Web", "Print"],
+    tag: ["Branding"],
     path: "/portfolio/LevelUpButtercup",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/buttercuplogo_viqyda",
     color: "#DA70D6", // Orchid (fantasy/gaming)
@@ -208,7 +208,7 @@ export const portfolioProjects = [
     description: "Custom branding and illustration for a local coffee shop",
     date: "2015",
     alt: "Curious Dog branding",
-    tag: ["Branding", "Print"],
+    tag: ["Branding"],
     path: "/portfolio/CuriousDog",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/curiousdoglogo_zjy5yh",
     color: "#8B4513", // Saddle brown (coffee)
@@ -219,7 +219,7 @@ export const portfolioProjects = [
     description: "Custom branding and logo design for a wine bar",
     date: "2015",
     alt: "Old City Wine Bar branding",
-    tag: ["Branding", "Print"],
+    tag: ["Branding"],
     path: "/portfolio/OldCityWineBar",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/oldcitywinebar_dxg6zi",
     color: "#8B0000", // Dark red (wine)
@@ -231,7 +231,7 @@ export const portfolioProjects = [
       "Custom illustration for a brochure for Cleveland State College",
     date: "2012",
     alt: "College brochure",
-    tag: ["Print"],
+    tag: ["Illustration"],
     path: "/portfolio/Brochure",
     src: "https://res.cloudinary.com/labofthingsimages/image/upload/v1691263606/Portfolio_Images/brochurch6_qu4cwb",
     color: "#2F4F4F", // Dark slate gray (academic/traditional)

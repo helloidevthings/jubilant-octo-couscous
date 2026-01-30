@@ -68,15 +68,11 @@ const ProjectFig = styled.figure`
     height: 90%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
-    /* filter: saturate(0); */
-    /* mix-blend-mode: luminosity; */
   }
 
   &:hover img,
   &:focus-visible img {
     transform: scale(1.1);
-    /* filter: none; */
-    /* mix-blend-mode: normal; */
   }
 
   @media (min-width: 768px) {
@@ -136,14 +132,13 @@ const ProjectShelf = ({ imgs }) => {
       {imgs.map(({ title, description, date, alt, src, path, tag }, i) => (
         <AnimationOnScroll key={title + i} threshold={0.45}>
           <ProjectLink href={path}>
-            <ProjectFig>
+            <ProjectFig className="colorFade">
               <Image
                 // cloudName="labofthingsimages"
                 src={src}
                 alt={alt}
                 width={500}
                 height={500}
-                className="colorFade"
               />
               <figcaption>
                 <h3>{title}</h3>
