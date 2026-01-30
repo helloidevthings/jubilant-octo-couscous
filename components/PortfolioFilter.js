@@ -13,7 +13,7 @@ const FilterContainer = styled.div`
 const FilterButton = styled.button`
   background: ${(props) =>
     props.$isActive ? "var(--accentText)" : "var(--secondary)"};
-  color: ${(props) => (props.$isActive ? "var(--bg)" : "var(--text)")};
+  color: var(--text);
   border: 2px solid
     ${(props) => (props.$isActive ? "var(--accentText)" : "var(--secondary)")};
   padding: 0.5rem 1.25rem;
@@ -27,7 +27,7 @@ const FilterButton = styled.button`
   &:hover {
     background: ${(props) =>
       props.$isActive ? "var(--accentText)" : "var(--text)"};
-    color: var(--bg);
+    color: var(--text);
     border-color: var(--text);
   }
 `;

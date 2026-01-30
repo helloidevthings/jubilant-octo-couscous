@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { useMemo } from 'react';
+import styled from "styled-components";
+import { useMemo } from "react";
 
 const TimelineContainer = styled.div`
   display: flex;
@@ -80,10 +80,11 @@ const YearNodeContainer = styled.div`
 
 const YearNode = styled.button`
   position: relative;
-  background: ${(props) => (props.$isActive ? 'var(--accentText)' : 'var(--bg)')};
-  border: 3px solid ${(props) => (props.$isActive ? 'var(--accentText)' : 'var(--secondary)')};
-  width: ${(props) => (props.$isActive ? '20px' : '16px')};
-  height: ${(props) => (props.$isActive ? '20px' : '16px')};
+  background: ${(props) => (props.$isActive ? "var(--accentBg)" : "var(--bg)")};
+  border: 3px solid
+    ${(props) => (props.$isActive ? "var(--accentBg)" : "var(--secondary)")};
+  width: ${(props) => (props.$isActive ? "20px" : "16px")};
+  height: ${(props) => (props.$isActive ? "20px" : "16px")};
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -97,7 +98,7 @@ const YearNode = styled.button`
 
     & + span {
       opacity: 1;
-      color: var(--accentText);
+      color: var(--text);
       font-weight: 700;
     }
   }
@@ -114,9 +115,9 @@ const YearLabel = styled.span`
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.85rem;
-  font-weight: ${(props) => (props.$isActive ? '700' : '500')};
-  color: ${(props) => (props.$isActive ? 'var(--accentText)' : 'var(--text)')};
-  opacity: ${(props) => (props.$isActive ? '1' : '0.7')};
+  font-weight: ${(props) => (props.$isActive ? "700" : "500")};
+  color: ${(props) => (props.$isActive ? "var(--text)" : "var(--text)")};
+  opacity: ${(props) => (props.$isActive ? "1" : "0.7")};
   white-space: nowrap;
   transition: all 0.2s ease;
   pointer-events: none;
@@ -133,19 +134,24 @@ const ClearButton = styled.button`
   border: 2px solid var(--text);
   padding: 0.5rem 1.25rem;
   border-radius: 2rem;
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s ease;
   opacity: ${(props) => (props.disabled ? 0.4 : 1)};
 
   &:hover {
-    background: ${(props) => (props.disabled ? 'var(--bg)' : 'var(--text)')};
-    color: ${(props) => (props.disabled ? 'var(--text)' : 'var(--bg)')};
+    background: ${(props) => (props.disabled ? "var(--bg)" : "var(--text)")};
+    color: ${(props) => (props.disabled ? "var(--text)" : "var(--bg)")};
   }
 `;
 
-const YearTimeline = ({ years, selectedYears, onYearToggle, onClearFilters }) => {
+const YearTimeline = ({
+  years,
+  selectedYears,
+  onYearToggle,
+  onClearFilters,
+}) => {
   // Sort years chronologically for display
   const sortedYears = useMemo(() => {
     return [...years].sort((a, b) => parseInt(a) - parseInt(b));

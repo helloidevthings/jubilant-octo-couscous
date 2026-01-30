@@ -1,6 +1,7 @@
 import styled from "styled-components";
 // import { CldImage } from 'next-cloudinary';
 import Image from "next/image";
+import AnimationOnScroll from "./AnimationOnScroll";
 const Shelf = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
@@ -17,17 +18,7 @@ const Shelf = styled.section`
 
 const ProjectLink = styled.a`
   border: none;
-  opacity: 1;
-  animation: fadeIn 1s ease-in-out;
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  /* Removed static fadeIn animation - now handled by AnimationOnScroll */
 `;
 
 const TagWrapper = styled.ul`
@@ -49,6 +40,7 @@ const TagWrapper = styled.ul`
     text-transform: uppercase;
     padding: 3px 10px;
     background: var(--secondary);
+    color: var(--text);
     /* border: 2px solid var(--secondary); */
     border-radius: 15px;
   }
@@ -76,15 +68,15 @@ const ProjectFig = styled.figure`
     height: 90%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
-    filter: saturate(0);
-    mix-blend-mode: luminosity;
+    /* filter: saturate(0); */
+    /* mix-blend-mode: luminosity; */
   }
 
   &:hover img,
   &:focus-visible img {
     transform: scale(1.1);
-    filter: none;
-    mix-blend-mode: normal;
+    /* filter: none; */
+    /* mix-blend-mode: normal; */
   }
 
   @media (min-width: 768px) {
@@ -142,31 +134,30 @@ const ProjectShelf = ({ imgs }) => {
   return (
     <Shelf>
       {imgs.map(({ title, description, date, alt, src, path, tag }, i) => (
-        <ProjectLink
-          href={path}
-          key={title + i}
-          style={{ animationDelay: `.${i * 1}s` }}
-        >
-          <ProjectFig>
-            <Image
-              // cloudName="labofthingsimages"
-              src={src}
-              alt={alt}
-              width={500}
-              height={500}
-            />
-            <figcaption>
-              <h3>{title}</h3>
-              <TagWrapper>
-                {tag.map((tag, i) => (
-                  <li key={i}>{tag}</li>
-                ))}
-                <small>{date}</small>
-              </TagWrapper>
-              {/* <p>{description}</p> */}
-            </figcaption>
-          </ProjectFig>
-        </ProjectLink>
+        <AnimationOnScroll key={title + i} threshold={0.35}>
+          <ProjectLink href={path} className="fadeUp">
+            <ProjectFig>
+              <Image
+                // cloudName="labofthingsimages"
+                src={src}
+                alt={alt}
+                width={500}
+                height={500}
+                className="colorFade"
+              />
+              <figcaption>
+                <h3>{title}</h3>
+                <TagWrapper>
+                  {tag.map((tag, i) => (
+                    <li key={i}>{tag}</li>
+                  ))}
+                  <small>{date}</small>
+                </TagWrapper>
+                {/* <p>{description}</p> */}
+              </figcaption>
+            </ProjectFig>
+          </ProjectLink>
+        </AnimationOnScroll>
       ))}
     </Shelf>
   );
