@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 
   hr {
     margin: 1rem 0 1.5rem;
-    border: 2px solid var(--secondary);
+    border: 2px solid var(--text-secondary);
   }
 
   .twoCol {
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 
     &:after {
       content: "";
-      background: var(--accentText);
+      background: var(--accent);
       height: 3px;
       width: 100%;
       height: 100%;

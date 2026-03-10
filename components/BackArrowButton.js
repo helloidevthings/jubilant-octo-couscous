@@ -11,13 +11,13 @@ const BackButton = styled.a`
   text-decoration: none;
   font-weight: 700;
   background: var(--bg);
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--text-secondary);
   border-radius: 50px;
   transition: all 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    background: var(--secondary);
+    background: var(--text-secondary);
     transform: scale(1.05);
   }
 

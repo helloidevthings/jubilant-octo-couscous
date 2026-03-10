@@ -24,7 +24,7 @@ const Intro = styled.header`
 
 const PortfolioSection = styled.section`
   padding: 1rem 0.5rem;
-  background: var(--gradient90);
+  background: var(--gradient);
   /* backdrop-filter: saturate(180%) blur(10px); */
 
   @media (min-width: 768px) {

@@ -60,7 +60,7 @@ const AnimateWrap = styled.div`
     white-space: nowrap;
     overflow: hidden;
     line-height: 1.5;
-    border-right: 3px solid var(--secondary);
+    border-right: 3px solid var(--text-secondary);
   }
 
   .isAlive {

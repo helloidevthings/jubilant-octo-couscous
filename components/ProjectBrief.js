@@ -15,7 +15,7 @@ const BriefContainer = styled.div`
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: ${(props) => props.$accentColor || "var(--accentText)"};
+    background: ${(props) => props.$accentColor || "var(--accent)"};
     border-radius: 2px;
   }
 `;
@@ -36,8 +36,8 @@ const MetaInfo = styled.div`
 `;
 
 const Tag = styled.span`
-  background: ${(props) => props.$accentColor || "var(--secondary)"};
-  color: #fff;
+  background: ${(props) => props.$accentColor || "var(--text-secondary)"};
+  color: var(--text);
   padding: 0.4rem 1rem;
   border-radius: 2rem;
   font-size: 0.85rem;
@@ -47,11 +47,11 @@ const Tag = styled.span`
 `;
 
 const Year = styled.span`
-  color: #fff;
+  color: var(--text);
   font-size: 0.9rem;
   font-weight: 600;
   padding: 0.4rem 1rem;
-  background: var(--accentSecondary);
+  background: var(--accent-secondary);
   border-radius: 2rem;
 `;
 

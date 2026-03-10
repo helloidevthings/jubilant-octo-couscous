@@ -5,7 +5,7 @@ const Tabs = styled.nav`
   position: relative;
   z-index: 1;
   margin: 1rem 0;
-  background: var(--dark);
+  background: var(--bg);
   width: max-content;
   border-radius: 4rem;
   padding: 0.3rem;
@@ -20,7 +20,7 @@ const Tabs = styled.nav`
     left: 0;
     border-radius: 4rem;
     transform: translateX(${(props) => props.positionX - 2}px);
-    background: var(--accentGradient90);
+    background: var(--accent);
     /* box-shadow: 0 0 7px 2px #4b4b4b; */
     transition: transform 0.4s cubic-bezier(1, -0.35, 0.4, 1.19);
     z-index: -1;

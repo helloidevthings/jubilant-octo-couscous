@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 const SwitchContainer = styled.div`
   display: inline-flex;
-  background: var(--bgTrans);
+  background: var(--bg-trans);
   border-radius: 2rem;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--text-secondary);
   padding: 0.25rem;
   gap: 0.25rem;
   backdrop-filter: blur(10px);

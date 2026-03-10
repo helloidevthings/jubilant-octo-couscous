@@ -1,53 +1,22 @@
-:root {
-  --light: #ffffff;
-  --dark: #000000;
-  --pink: "pink";
-
-  --lightBg: #dedede;
-  --darkBg: #101022;
-  --pinkBg: #fcfcfc;
-
-  --lightBgTrans: #eaf6ffa6;
-  --darkBgTrans: #363657ab;
-  --pinkBgTrans: #ffffffaa;
-
-  --lightText: #000000;
-  --darkText: #d2ceec;
-  --pinkText: #000000;
-
-  --lightSecondary: #a6a5af;
-  --darkSecondary: #2c2c47;
-  --pinkSecondary: #e771e3;
-
-  --lightBoxShadow: 2px 4px 17px 0px #c8c8d7;
-  --darkBoxShadow: 2px 4px 17px 0px #383849;
-  --pinkBoxShadow: 2px 4px 17px 0px #c296bf;
-
-  --darkGradient90: linear-gradient(90deg, #1c1c36, #413f7259);
-  --lightGradient90: linear-gradient(90deg, #c5c5d2b3, #ffffffbf);
-  --pinkGradient90: linear-gradient(90deg, #fff0fea8, #ffffffbf);
-  --darkGradient30: linear-gradient(30deg, #14141c, #b8b7d259);
-  --lightGradient30: linear-gradient(30deg, #f4f4fcb3, #ffffffbf);
-  --pinkGradient30: linear-gradient(30deg, #9f9f9fa8, #ffffffbf);
-}
-
+/* Default/fallback theme - dark */
 html {
-  /* Fallback theme variables (dark theme as default) */
-  --bg: var(--darkBg);
-  --bgTrans: var(--darkBgTrans);
-  --text: var(--darkText);
-  --secondary: var(--darkSecondary);
-  --boxShadow: var(--darkBoxShadow);
-  --gradient90: var(--darkGradient90);
-  --gradient30: var(--darkGradient30);
-  --accent: var(--pink);
-  --accentBg: var(--pinkBg);
-  --accentBgTrans: var(--pinkBgTrans);
-  --accentText: var(--pinkText);
-  --accentSecondary: var(--pinkSecondary);
-  --accentBoxShadow: var(--pinkBoxShadow);
-  --accentGradient90: var(--pinkGradient90);
-  --accentGradient30: var(--pinkGradient30);
+  /* Backgrounds */
+  --bg: #101022;
+  --bg-trans: #363657ab;
+
+  /* Text */
+  --text: #d2ceec;
+  --text-secondary: #a6a5af;
+
+  /* Accents */
+  --accent: #9d4edd;
+  --accent-bg: #1a1a2e;
+  --accent-bg-trans: #9d4edd22;
+  --accent-secondary: #7b2cbf;
+
+  /* Effects */
+  --shadow: 2px 4px 17px 0px #383849;
+  --gradient: linear-gradient(90deg, #1c1c36, #413f7259);
 }
 
 html,
@@ -69,58 +38,52 @@ body {
     sans-serif;
 }
 
+/* Dark theme */
 html.dark {
-  --bg: var(--darkBg);
-  --bgTrans: var(--darkBgTrans);
-  --text: var(--darkText);
-  --secondary: var(--darkSecondary);
-  --boxShadow: var(--darkBoxShadow);
-  --gradient90: var(--darkGradient90);
-  --gradient30: var(--darkGradient30);
-  --accent: var(--pink);
-  --accentBg: var(--pinkBg);
-  --accentBgTrans: var(--pinkBgTrans);
-  --accentText: var(--pinkText);
-  --accentSecondary: var(--pinkSecondary);
-  --accentBoxShadow: var(--pinkBoxShadow);
-  --accentGradient90: var(--pinkGradient90);
-  --accentGradient30: var(--pinkGradient30);
+  --bg: #101022;
+  --bg-trans: #363657ab;
+  --text: #d2ceec;
+  --text-secondary: #a6a5af;
+
+  --accent: #9d4edd;
+  --accent-bg: #1a1a2e;
+  --accent-bg-trans: #9d4edd22;
+  --accent-secondary: #7b2cbf;
+
+  --shadow: 2px 4px 17px 0px #383849;
+  --gradient: linear-gradient(90deg, #1c1c36, #413f7259);
 }
 
+/* Light theme */
 html.light {
-  --bg: var(--lightBg);
-  --bgTrans: var(--lightBgTrans);
-  --text: var(--lightText);
-  --secondary: var(--lightSecondary);
-  --boxShadow: var(--lightBoxShadow);
-  --gradient90: var(--lightGradient90);
-  --gradient30: var(--lightGradient30);
-  --accent: var(--pink);
-  --accentBg: var(--pinkBg);
-  --accentBgTrans: var(--pinkBgTrans);
-  --accentText: var(--pinkText);
-  --accentSecondary: var(--pinkSecondary);
-  --accentBoxShadow: var(--pinkBoxShadow);
-  --accentGradient90: var(--pinkGradient90);
-  --accentGradient30: var(--pinkGradient30);
+  --bg: #dedede;
+  --bg-trans: #eaf6ffa6;
+  --text: #000000;
+  --text-secondary: #666666;
+
+  --accent: #d946d4;
+  --accent-bg: #f5f5f5;
+  --accent-bg-trans: #d946d422;
+  --accent-secondary: #b93bb8;
+
+  --shadow: 2px 4px 17px 0px #c8c8d7;
+  --gradient: linear-gradient(90deg, #c5c5d2b3, #ffffffbf);
 }
 
+/* Pink theme */
 html.pink {
-  --bg: var(--pinkBg);
-  --bgTrans: var(--pinkBgTrans);
-  --text: var(--pinkText);
-  --secondary: var(--pinkSecondary);
-  --boxShadow: var(--pinkBoxShadow);
-  --gradient90: var(--pinkGradient90);
-  --gradient30: var(--pinkGradient30);
-  --accent: var(--pink);
-  --accentBg: var(--darkBg);
-  --accentBgTrans: var(--darkBgTrans);
-  --accentText: var(--darkText);
-  --accentSecondary: var(--darkSecondary);
-  --accentBoxShadow: var(--darkBoxShadow);
-  --accentGradient90: var(--darkGradient90);
-  --accentGradient30: var(--darkGradient30);
+  --bg: #fcfcfc;
+  --bg-trans: #ffffffaa;
+  --text: #000000;
+  --text-secondary: #666666;
+
+  --accent: #6b4db8;
+  --accent-bg: #f0e6ff;
+  --accent-bg-trans: #6b4db822;
+  --accent-secondary: #5a3d99;
+
+  --shadow: 2px 4px 17px 0px #c296bf;
+  --gradient: linear-gradient(90deg, #fff0fea8, #ffffffbf);
 }
 
 a {

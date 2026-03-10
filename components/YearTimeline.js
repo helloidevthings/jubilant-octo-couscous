@@ -39,7 +39,7 @@ const TimelineScrollContainer = styled.div`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: var(--secondary);
+      background: var(--text-secondary);
       border-radius: 2px;
     }
   }
@@ -51,7 +51,7 @@ const TimelineLine = styled.div`
   max-width: 60rem;
   min-width: 400px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--text-secondary);
   border-radius: 2px;
   margin: 0 auto;
 
@@ -80,9 +80,9 @@ const YearNodeContainer = styled.div`
 
 const YearNode = styled.button`
   position: relative;
-  background: ${(props) => (props.$isActive ? "var(--accentBg)" : "var(--bg)")};
+  background: ${(props) => (props.$isActive ? "var(--accent-bg)" : "var(--bg)")};
   border: 3px solid
-    ${(props) => (props.$isActive ? "var(--accentBg)" : "var(--secondary)")};
+    ${(props) => (props.$isActive ? "var(--accent-bg)" : "var(--text-secondary)")};
   width: ${(props) => (props.$isActive ? "20px" : "16px")};
   height: ${(props) => (props.$isActive ? "20px" : "16px")};
   border-radius: 50%;
@@ -91,8 +91,8 @@ const YearNode = styled.button`
   z-index: 2;
 
   &:hover {
-    background: var(--accentText);
-    border-color: var(--accentText);
+    background: var(--accent);
+    border-color: var(--accent);
     width: 20px;
     height: 20px;
 
@@ -104,7 +104,7 @@ const YearNode = styled.button`
   }
 
   &:focus-visible {
-    outline: 2px solid var(--accentText);
+    outline: 2px solid var(--accent);
     outline-offset: 4px;
   }
 `;

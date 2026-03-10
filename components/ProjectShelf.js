@@ -39,9 +39,9 @@ const TagWrapper = styled.ul`
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 3px 10px;
-    background: var(--secondary);
+    background: var(--text-secondary);
     color: var(--text);
-    /* border: 2px solid var(--secondary); */
+    /* border: 2px solid var(--text-secondary); */
     border-radius: 15px;
   }
 
@@ -57,7 +57,7 @@ const ProjectFig = styled.figure`
   position: relative;
   overflow: hidden;
   height: 25rem;
-  /* box-shadow: var(--boxShadow); */
+  /* box-shadow: var(--shadow); */
 
   @media (min-width: 768px) {
     height: 25rem;
@@ -95,7 +95,7 @@ const ProjectFig = styled.figure`
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--bgTrans);
+    background: var(--bg-trans);
     color: var(--text);
     font-weight: 600;
     font-size: 1.2rem;
